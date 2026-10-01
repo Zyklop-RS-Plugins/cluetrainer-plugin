@@ -3,6 +3,7 @@ local function main()
   local towers_solver  = require("cluetrainer/puzzles/towers/TowerSolver")
   local lockbox_solver = require("cluetrainer/puzzles/lockbox/LockboxSolver")
   local knot_solver    = require("cluetrainer/puzzles/knots/KnotSolver")
+  local buffs          = require("cluetrainer/buffs/Buffs")
   local NpcHighlight   = require("zyklib/highlights/NpcHighlight")
   local MutableMesh    = require("zyklib/MutableMesh")
   local api_util       = require("zyklib/api_util")
@@ -16,7 +17,9 @@ local function main()
   -- knot_solver:init()
   -- orchestrator.init()
 
-  local shape          = MutableMesh.cube():shapeData()
+  buffs:init()
+
+  local shape = MutableMesh.cube():shapeData()
 
 
   zyklib.ewent.Native.VarTransmit:subscribe(function(e)
