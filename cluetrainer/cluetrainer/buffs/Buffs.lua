@@ -18,33 +18,34 @@ local function updateBuff(buff, name, chargesVar, progressVar)
   buff:SetTooltip(tooltip)
 end
 
-function buffs:init()
-  local maxProgress = getMaxProgress()
+local function refreshBuffs(self)
+  updateBuff(self.backpack, "Globetrotter backpack", var.VarPlayer.TRAIL_OUTFIT_CAPE_CHARGES,
+    var.VarPlayer.TRAIL_OUTFIT_CAPE_CHARGE_PROGRESS)
+  updateBuff(self.jacket, "Globetrotter jacket", var.VarPlayer.TRAIL_OUTFIT_TORSO_CHARGES,
+    var.VarPlayer.TRAIL_OUTFIT_TORSO_CHARGE_PROGRESS)
+end
 
+function buffs:init()
   self.backpack = prettyui.BuffBar.addBuff({
     objId = 42119, -- backpack sprite
     font = id.Font.NOTOSANS_BOLD_16,
-    label = tostring(var.VarPlayer.TRAIL_OUTFIT_CAPE_CHARGES.value),
     backgroundRgba = 0x2B2100CC,
-    tooltip = "Globetrotter backpack " ..
-        tostring(var.VarPlayer.TRAIL_OUTFIT_CAPE_CHARGE_PROGRESS.value) .. "/" .. tostring(maxProgress),
   })
 
   self.jacket = prettyui.BuffBar.addBuff({
     objId = 42113, -- jacket sprite
     font = id.Font.NOTOSANS_BOLD_16,
-    label = tostring(var.VarPlayer.TRAIL_OUTFIT_TORSO_CHARGES.value),
     backgroundRgba = 0x2B2100CC,
-    tooltip = "Globetrotter jacket " ..
-        tostring(var.VarPlayer.TRAIL_OUTFIT_TORSO_CHARGE_PROGRESS.value) .. "/" .. tostring(maxProgress),
   })
+
+  refreshBuffs(self)
 
   zyklib.ewent.Native.VarTransmit:subscribe(function(e)
     if not e or not e.var or not e.var.configName then
       return
     end
 
-    -- it seems this config name is changed when the charges for jacket/backpack are changing
+    -- it seems this config name is changed when the charges for jacket/backpack
     if e.var.configName ~= "TT17_VARIABLE_2" then
       return
     end
@@ -53,10 +54,7 @@ function buffs:init()
       return
     end
 
-    updateBuff(self.backpack, "Globetrotter backpack", var.VarPlayer.TRAIL_OUTFIT_CAPE_CHARGES,
-      var.VarPlayer.TRAIL_OUTFIT_CAPE_CHARGE_PROGRESS)
-    updateBuff(self.jacket, "Globetrotter jacket", var.VarPlayer.TRAIL_OUTFIT_TORSO_CHARGES,
-      var.VarPlayer.TRAIL_OUTFIT_TORSO_CHARGE_PROGRESS)
+    refreshBuffs(self)
   end)
 end
 
