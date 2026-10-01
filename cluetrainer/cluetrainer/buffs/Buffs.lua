@@ -46,6 +46,9 @@ function buffs:init()
     end
 
     -- it seems this config name is changed when the charges for jacket/backpack
+    -- not sure if its worth it to parse it using a bit mask to have much granular updates
+    -- for example the new value for TT17_VARIABLE_2 changes from 266436671 to 266502207
+    -- when TRAIL_OUTFIT_CAPE_CHARGE_PROGRESS changes from 1 to 2
     if e.var.configName ~= "TT17_VARIABLE_2" then
       return
     end
