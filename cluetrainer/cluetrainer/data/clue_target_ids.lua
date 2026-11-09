@@ -1,6 +1,7 @@
--- Game config ids of the NPC (talk-to) or object (search) that each clue points to, keyed by clue id.
+-- Game config ids of the NPC (talk-to, master skilling) or object (search, master skilling) that each clue points to,
+-- keyed by clue id.
 -- ids: configID values. Objects that can be opened also list their opened state.
--- parent_ids: parentConfigID values of multi NPCs at the clue spot.
+-- parent_ids: parentConfigID values of multi NPCs and multi objects at the clue spot.
 -- Generated from the game cache and the RuneScape wiki (Codeberg #35). Entries marked "not confirmed" still need a check in game.
 return {
   [0] = { ids = { 67304, 67305 } }, -- Drawers
@@ -198,5 +199,20 @@ return {
   [341] = { ids = { 550 } }, -- Lowe
   [342] = { ids = { 659 } }, -- Party Pete
   [343] = { ids = { 648 } }, -- King Roald
+  [373] = { ids = { 34385 } }, -- Gem stall
+  [375] = { ids = { 12284 } }, -- Dry patch
+  [376] = { ids = {}, parent_ids = { 93367 } }, -- Elder tree
+  [377] = { ids = { 2728 } }, -- Range
+  [378] = { ids = { 5779 } }, -- Turgall
+  [381] = { ids = { 110279, 110280 }, parent_ids = { 98296 } }, -- Fire
+  [386] = { ids = { 110279, 110280 }, parent_ids = { 98296 } }, -- Fire
+  [387] = { ids = { 113261 } }, -- Furnace
+  [388] = { ids = { 2488 } }, -- Death altar
+  [389] = { ids = { 30624 } }, -- Blood altar
+  [390] = { ids = { 94048 } }, -- Corrupted Seren Stone
+  [391] = { ids = { 23139 } }, -- Charming moth
+  [392] = { ids = { 110279, 110280 }, parent_ids = { 98296 } }, -- Fire
+  [393] = { ids = { 113010 } }, -- Concentrated gold deposit
+  [396] = { ids = { 113258 } }, -- Anvil
   [471] = { ids = { 458 } }, -- Father Urhney
 }
