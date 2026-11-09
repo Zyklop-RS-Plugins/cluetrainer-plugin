@@ -99,7 +99,8 @@ end
 ---@param label string
 ---@param description string
 ---@param setting zyklib.reactive.Observable<boolean>
-local function addToggle(page, label, description, setting)
+---@param disabled boolean? Greys the checkbox out and ignores clicks on it
+local function addToggle(page, label, description, setting, disabled)
   local group = nextGroup()
 
   local title = addSettingTitle(page, label, group, CHECKBOX_RESERVED)
@@ -112,6 +113,7 @@ local function addToggle(page, label, description, setting)
     columnGap = 8,
     offsetY = centeredOffset(title, text, CHECKBOX_HEIGHT),
     rowBackgroundGroup = group,
+    disabled = disabled,
     onChange = function(group, values, value, selected)
       setting:set(selected)
     end,
@@ -381,6 +383,30 @@ local function buildCompasses(page)
     settings.compasses.beam_color)
 end
 
+---@param page table
+---@param rebuild fun()
+local function buildOutfitCharges(page, rebuild)
+  local enabled = settings.outfit_charges.enabled
+  local boots = settings.outfit_charges.boots
+
+  addPageTitle(page, "Outfit charges")
+
+  -- Boots only apply while the labels are enabled: disabling them unticks boots and greys the boots toggle out.
+  addToggle(page, "Enabled",
+    "Show the stored charges on the Globetrotter jacket and backpack in the worn equipment interface.",
+    {
+      get = function() return enabled:get() end,
+      set = function(_, value)
+        enabled:set(value)
+        if not value then boots:set(false) end
+        rebuild()
+      end,
+    })
+
+  addToggle(page, "Boots", "Also show the stored charges on the Globetrotter boots. Requires Enabled.",
+    boots, not enabled:get())
+end
+
 local COMBO_HEIGHT = 30
 local SLOT_LABEL_WIDTH = 14
 local SLOT_COMBO_GAP = 4
@@ -540,6 +566,7 @@ function SettingsDialog.mount(layer)
     { name = "Scans",     build = buildScans },
     { name = "Compasses", build = buildCompasses },
     { name = "Teleports", build = buildTeleports },
+    { name = "Outfit",    build = buildOutfitCharges },
   }
 
   ---@type PrettyUI.SimpleButton[]
