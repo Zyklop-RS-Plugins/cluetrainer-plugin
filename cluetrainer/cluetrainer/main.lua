@@ -33,6 +33,8 @@ local function main()
   require("cluetrainer/puzzles/knot/KnotSolver").init()
   require("cluetrainer/puzzles/sliders/SliderSolver").init()
 
+  require("cluetrainer/outfit/ChargeLabels").init()
+
   SolvingOrchestrator.setActive(SolvingOrchestrator.settings.enabled:get())
   if Map.settings.visible:get() then
     Map.get():setVisible(true)
