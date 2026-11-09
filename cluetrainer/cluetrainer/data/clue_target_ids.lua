@@ -163,7 +163,7 @@ return {
   [299] = { ids = { 589 } }, -- Zenesha
   [300] = { ids = { 2039 } }, -- Uglug Nar
   [301] = { ids = { 9173, 9174 }, parent_ids = { 9175 } }, -- Odd Old Man
-  [302] = { ids = { 3303 } }, -- Fairy Nuff
+  [302] = { ids = { 4434, 3303 }, parent_ids = { 4431 } }, -- Fairy Nuff
   [303] = { ids = { 14681 } }, -- Ramokee Skinweaver
   [306] = { ids = { 5616, 5617 }, parent_ids = { 5667, 5668 } }, -- Brother Tranquility
   [307] = { ids = { 23446 } }, -- Sensei Seaworth

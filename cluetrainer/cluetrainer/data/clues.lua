@@ -8,6 +8,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 67304, 67305 },
       spot = { level = 0, topleft = { x = 2914, y = 3521 }, botright = { x = 2914, y = 3521 } }
     }
   },
@@ -19,6 +20,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 34482, 34483 },
       spot = { level = 1, topleft = { x = 2575, y = 3326 }, botright = { x = 2575, y = 3326 } }
     }
   },
@@ -30,6 +32,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 34586 },
       spot = { level = 0, topleft = { x = 2620, y = 3336 }, botright = { x = 2620, y = 3336 } }
     }
   },
@@ -41,6 +44,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 25034, 25035 },
       spot = { level = 0, topleft = { x = 2830, y = 3448 }, botright = { x = 2830, y = 3448 } }
     }
   },
@@ -52,6 +56,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 85101 },
       spot = { level = 0, topleft = { x = 3018, y = 3287 }, botright = { x = 3018, y = 3287 } }
     }
   },
@@ -68,7 +73,8 @@ local clues = {
           description = "at Lumbridge Castle"
         }
       },
-      npc = "Hans"
+      npc = "Hans",
+      npc_ids = { 0 }
     }
   },
   {
@@ -79,6 +85,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 24294, 24295 },
       spot = { level = 1, topleft = { x = 3206, y = 3419 }, botright = { x = 3206, y = 3419 } }
     }
   },
@@ -90,6 +97,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Chest",
+      entity_ids = { 40093, 40092 },
       spot = { level = 1, topleft = { x = 3016, y = 3205 }, botright = { x = 3016, y = 3205 } }
     }
   },
@@ -103,6 +111,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 34482, 34483 },
       spot = { level = 1, topleft = { x = 2655, y = 3323 }, botright = { x = 2655, y = 3323 } }
     }
   },
@@ -114,6 +123,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 66624 },
       spot = { level = 0, topleft = { x = 2914, y = 3448 }, botright = { x = 2914, y = 3448 } }
     }
   },
@@ -125,6 +135,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 24911 },
       spot = { level = 0, topleft = { x = 3509, y = 3497 }, botright = { x = 3509, y = 3497 } }
     }
   },
@@ -136,6 +147,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 25775 },
       spot = { level = 0, topleft = { x = 2699, y = 3470 }, botright = { x = 2699, y = 3470 } }
     }
   },
@@ -147,6 +159,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Closed Chest",
+      entity_ids = { 99819, 99820 },
       spot = { level = 1, topleft = { x = 3041, y = 3364 }, botright = { x = 3041, y = 3364 } }
     }
   },
@@ -158,6 +171,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Chest",
+      entity_ids = { 30928, 30927 },
       spot = { level = 0, topleft = { x = 3000, y = 9798 }, botright = { x = 3000, y = 9798 } }
     }
   },
@@ -169,6 +183,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 2631, 2651 },
       spot = { level = 0, topleft = { x = 3097, y = 3277 }, botright = { x = 3097, y = 3277 } }
     }
   },
@@ -180,6 +195,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 46266 },
       spot = { level = 0, topleft = { x = 3224, y = 3492 }, botright = { x = 3224, y = 3492 } }
     }
   },
@@ -191,6 +207,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Boxes",
+      entity_ids = { 76811 },
       spot = { level = 0, topleft = { x = 3289, y = 3202 }, botright = { x = 3289, y = 3202 } }
     }
   },
@@ -202,6 +219,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Boxes",
+      entity_ids = { 46236 },
       spot = { level = 0, topleft = { x = 3203, y = 3384 }, botright = { x = 3203, y = 3384 } }
     }
   },
@@ -213,6 +231,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 46269 },
       spot = { level = 0, topleft = { x = 3226, y = 3452 }, botright = { x = 3226, y = 3452 } }
     }
   },
@@ -224,6 +243,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 11745 },
       spot = { level = 0, topleft = { x = 3029, y = 3355 }, botright = { x = 3029, y = 3355 } }
     }
   },
@@ -235,6 +255,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 47560 },
       spot = { level = 2, topleft = { x = 3106, y = 3369 }, botright = { x = 3106, y = 3369 } }
     }
   },
@@ -246,6 +267,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 48998 },
       spot = { level = 0, topleft = { x = 2636, y = 3453 }, botright = { x = 2636, y = 3453 } }
     }
   },
@@ -257,6 +279,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 63760 },
       spot = { level = 0, topleft = { x = 3415, y = 3158 }, botright = { x = 3415, y = 3158 } }
     }
   },
@@ -273,7 +296,8 @@ local clues = {
           description = "in Sinclair Mansion"
         }
       },
-      npc = "Louisa"
+      npc = "Louisa",
+      npc_ids = { 809 }
     }
   },
   {
@@ -284,6 +308,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 11745 },
       spot = { level = 0, topleft = { x = 3060, y = 3334 }, botright = { x = 3060, y = 3334 } }
     }
   },
@@ -295,6 +320,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 71943, 71944 },
       spot = { level = 1, topleft = { x = 2970, y = 3214 }, botright = { x = 2970, y = 3214 } }
     }
   },
@@ -306,6 +332,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 25766, 25767 },
       spot = { level = 1, topleft = { x = 2716, y = 3471 }, botright = { x = 2716, y = 3471 } }
     }
   },
@@ -317,6 +344,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 24202 },
       spot = { level = 0, topleft = { x = 2598, y = 3105 }, botright = { x = 2598, y = 3105 } }
     }
   },
@@ -328,6 +356,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 350, 351 },
       spot = { level = 0, topleft = { x = 2570, y = 3085 }, botright = { x = 2570, y = 3085 } }
     }
   },
@@ -339,6 +368,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Boxes",
+      entity_ids = { 76811 },
       spot = { level = 0, topleft = { x = 3308, y = 3206 }, botright = { x = 3308, y = 3206 } }
     }
   },
@@ -350,6 +380,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 46270 },
       spot = { level = 0, topleft = { x = 2660, y = 3149 }, botright = { x = 2660, y = 3149 } }
     }
   },
@@ -372,6 +403,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Barrel",
+      entity_ids = { 66875 },
       spot = { level = 0, topleft = { x = 2886, y = 3449 }, botright = { x = 2886, y = 3449 } }
     }
   },
@@ -383,6 +415,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 34585 },
       spot = { level = 0, topleft = { x = 2658, y = 3323 }, botright = { x = 2658, y = 3323 } }
     }
   },
@@ -394,6 +427,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Barrel",
+      entity_ids = { 66875 },
       spot = { level = 0, topleft = { x = 2894, y = 3418 }, botright = { x = 2894, y = 3418 } }
     }
   },
@@ -405,6 +439,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Gaius",
+      npc_ids = { 586 },
       spots = {
         {
           range = { origin = { x = 2926, y = 3546, level = 0 }, size = { x = 6, y = 7 } },
@@ -421,6 +456,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Barrel",
+      entity_ids = { 66875 },
       spot = { level = 0, topleft = { x = 2912, y = 3530 }, botright = { x = 2912, y = 3530 } }
     }
   },
@@ -432,6 +468,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Arhein",
+      npc_ids = { 563 },
       spots = {
         {
           range = { origin = { x = 2803, y = 3426, level = 0 } },
@@ -448,6 +485,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Bartender",
+      npc_ids = { 11706, 11707, 734 },
       spots = {
         {
           range = { origin = { x = 3044, y = 3255, level = 0 }, size = { x = 3, y = 4 } },
@@ -464,6 +502,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 46269 },
       spot = { level = 0, topleft = { x = 3228, y = 3433 }, botright = { x = 3228, y = 3433 } }
     }
   },
@@ -475,6 +514,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Boxes",
+      entity_ids = { 46237 },
       spot = { level = 0, topleft = { x = 3247, y = 3244 }, botright = { x = 3247, y = 3244 } }
     }
   },
@@ -486,6 +526,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 25034, 25035 },
       spot = { level = 0, topleft = { x = 2969, y = 3311 }, botright = { x = 2969, y = 3311 } }
     }
   },
@@ -497,6 +538,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Ornate chest",
+      entity_ids = { 76216, 76217 },
       spot = { level = 0, topleft = { x = 3301, y = 3164 }, botright = { x = 3301, y = 3164 } }
     }
   },
@@ -508,6 +550,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 34586 },
       spot = { level = 0, topleft = { x = 2654, y = 3299 }, botright = { x = 2654, y = 3299 } }
     }
   },
@@ -519,6 +562,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 34585 },
       spot = { level = 0, topleft = { x = 2615, y = 3291 }, botright = { x = 2615, y = 3291 } }
     }
   },
@@ -530,6 +574,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Ellis",
+      npc_ids = { 2824 },
       spots = {
         {
           range = { origin = { x = 3270, y = 3193, level = 0 }, size = { x = 7, y = 6 } },
@@ -546,6 +591,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Closed Chest",
+      entity_ids = { 25592, 25593 },
       spot = { level = 2, topleft = { x = 2748, y = 3495 }, botright = { x = 2748, y = 3495 } }
     }
   },
@@ -557,6 +603,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Closed Chest",
+      entity_ids = { 135601, 135602 },
       spot = { level = 1, topleft = { x = 3209, y = 3218 }, botright = { x = 3209, y = 3218 } }
     }
   },
@@ -568,6 +615,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crates",
+      entity_ids = { 79065 },
       spot = { level = 0, topleft = { x = 3191, y = 3257 }, botright = { x = 3192, y = 3257 } }
     }
   },
@@ -579,6 +627,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Doric",
+      npc_ids = { 284 },
       spots = {
         {
           range = { origin = { x = 2955, y = 3435, level = 0 }, size = { x = 9, y = 9 } },
@@ -595,6 +644,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 24294, 24295 },
       spot = { level = 1, topleft = { x = 3250, y = 3420 }, botright = { x = 3250, y = 3420 } }
     }
   },
@@ -606,6 +656,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Zeke",
+      npc_ids = { 541 },
       spots = {
         {
           range = { origin = { x = 3284, y = 3186, level = 0 }, size = { x = 6, y = 7 } },
@@ -622,6 +673,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Bartender",
+      npc_ids = { 733 },
       spots = {
         {
           range = { origin = { x = 3223, y = 3396, level = 0 }, size = { x = 4, y = 7 } },
@@ -638,6 +690,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 21806 },
       spot = { level = 1, topleft = { x = 3228, y = 3212 }, botright = { x = 3228, y = 3212 } }
     }
   },
@@ -649,6 +702,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 24294, 24295 },
       spot = { level = 0, topleft = { x = 3156, y = 3406 }, botright = { x = 3156, y = 3406 } }
     }
   },
@@ -660,6 +714,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 25034, 25035 },
       spot = { level = 0, topleft = { x = 2828, y = 3457 }, botright = { x = 2828, y = 3457 } }
     }
   },
@@ -671,6 +726,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 25034, 25035 },
       spot = { level = 1, topleft = { x = 2971, y = 3386 }, botright = { x = 2971, y = 3386 } }
     }
   },
@@ -682,6 +738,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Squire Asrol",
+      npc_ids = { 606 },
       spots = {
         {
           range = { origin = { x = 2970, y = 3339, level = 0 }, size = { x = 8, y = 8 } },
@@ -698,6 +755,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 11745 },
       spot = { level = 0, topleft = { x = 2955, y = 3390 }, botright = { x = 2955, y = 3390 } }
     }
   },
@@ -709,6 +767,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 11600 },
       spot = { level = 0, topleft = { x = 3073, y = 3430 }, botright = { x = 3073, y = 3430 } }
     }
   },
@@ -720,6 +779,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 40021 },
       spot = { level = 0, topleft = { x = 3012, y = 3222 }, botright = { x = 3012, y = 3222 } }
     }
   },
@@ -731,6 +791,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Sir Kay",
+      npc_ids = { 241 },
       spots = {
         {
           range = { origin = { x = 2752, y = 3493, level = 0 }, size = { x = 13, y = 11 } },
@@ -747,6 +808,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Ned",
+      npc_ids = { 918 },
       spots = {
         {
           range = { origin = { x = 3097, y = 3255, level = 0 }, size = { x = 6, y = 6 } },
@@ -763,6 +825,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Challenge Mistress Fara",
+      npc_ids = { 15780 },
       spots = {
         {
           range = { origin = { x = 2883, y = 3533, level = 0 } },
@@ -784,7 +847,8 @@ local clues = {
           description = "at Sinclair Mansion"
         }
       },
-      npc = "Donovan the Family Handyman"
+      npc = "Donovan the Family Handyman",
+      npc_ids = { 806 }
     }
   },
   {
@@ -807,7 +871,8 @@ local clues = {
           description = "in Brimstail's cave"
         }
       },
-      npc = "Brimstail"
+      npc = "Brimstail",
+      npc_ids = { 171 }
     }
   },
   {
@@ -818,6 +883,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Roavar",
+      npc_ids = { 1042 },
       spots = {
         {
           range = { origin = { x = 3489, y = 3471, level = 0 }, size = { x = 7, y = 5 } },
@@ -834,6 +900,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Ulizius",
+      npc_ids = { 1054 },
       spots = {
         {
           range = { origin = { x = 3440, y = 3458, level = 0 }, size = { x = 7, y = 7 } },
@@ -850,6 +917,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Hajedy",
+      npc_ids = { 510 },
       spots = {
         {
           range = { origin = { x = 2779, y = 3210, level = 0 }, size = { x = 4, y = 4 } },
@@ -866,6 +934,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Kangai Mau",
+      npc_ids = { 846 },
       spots = {
         {
           range = { origin = { x = 2790, y = 3181, level = 0 }, size = { x = 6, y = 5 } },
@@ -889,6 +958,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Gnome ball referee",
+      npc_ids = { 635 },
       spots = {
         {
           range = { origin = { x = 2385, y = 3488, level = 0 } },
@@ -912,6 +982,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Hazelmere",
+      npc_ids = { 669 },
       spots = {
         {
           range = { origin = { x = 2675, y = 3085, level = 1 }, size = { x = 5, y = 5 } },
@@ -928,6 +999,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Barrel",
+      entity_ids = { 136481 },
       spot = { topleft = { x = 3531, y = 1483 }, botright = { x = 3532, y = 1483 }, level = 1 }
     }
   },
@@ -942,6 +1014,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 34585 },
       spot = { level = 1, topleft = { x = 2612, y = 3306 }, botright = { x = 2612, y = 3306 } }
     }
   },
@@ -953,6 +1026,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Captain Tobias",
+      npc_ids = { 376 },
       spots = {
         {
           range = { origin = { x = 3027, y = 3216, level = 0 }, size = { x = 2, y = 3 } },
@@ -974,7 +1048,8 @@ local clues = {
           description = "north of Het's Oasis"
         }
       },
-      npc = "Jeed"
+      npc = "Jeed",
+      npc_ids = { 969 }
     }
   },
   {
@@ -988,6 +1063,7 @@ local clues = {
       type = "search",
       spot = { level = 0, topleft = { x = 3256, y = 3487 }, botright = { x = 3256, y = 3487 } },
       entity = "Closed Chest",
+      entity_ids = { 24203, 24204 },
       key = {
         instructions = "The chest is locked! An inscription on the chest says: Property of Clock Tower Monastery.",
         answer = "Kill a monk in the Kandarin Monastery.",
@@ -1005,6 +1081,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 30823, 30824 },
       spot = { level = 0, topleft = { x = 3056, y = 3497 }, botright = { x = 3056, y = 3497 } },
       key = {
         instructions = "The chest has a crude note on top. It reads 'You'll never get these drawers open now! - Zamorak Monk.'",
@@ -1021,6 +1098,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Cupboard",
+      entity_ids = { 79400 },
       spot = { level = 2, topleft = { x = 3113, y = 3153 }, botright = { x = 3113, y = 3153 } },
       key = {
         instructions = "This cupboard is locked! One of the Spellwisps might have stolen the key. ",
@@ -1037,6 +1115,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 46333 },
       spot = { level = 0, topleft = { x = 2800, y = 3074 }, botright = { x = 2800, y = 3074 } }
     }
   },
@@ -1048,6 +1127,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 46270 },
       spot = { level = 0, topleft = { x = 2770, y = 3172 }, botright = { x = 2770, y = 3172 } }
     }
   },
@@ -1062,6 +1142,7 @@ local clues = {
       type = "search",
       spot = { level = 1, topleft = { x = 2575, y = 3326 }, botright = { x = 2575, y = 3326 } },
       entity = "Drawers",
+      entity_ids = { 34482, 34483 },
       key = {
         instructions = "The drawers are locked! A note left on the drawers reads: Beware of dog!",
         answer = "Kill a guard dog.",
@@ -1077,6 +1158,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 18502 },
       spot = { level = 0, topleft = { x = 2764, y = 3273 }, botright = { x = 2764, y = 3273 } }
     }
   },
@@ -1090,6 +1172,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 52556 },
       spot = { level = 0, topleft = { x = 2399, y = 4471 }, botright = { x = 2399, y = 4471 } }
     }
   },
@@ -1103,6 +1186,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Bookcase",
+      entity_ids = { 10723 },
       spot = { level = 1, topleft = { x = 3366, y = 3319 }, botright = { x = 3366, y = 3319 } }
     }
   },
@@ -1116,6 +1200,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 24911 },
       spot = { level = 0, topleft = { x = 3498, y = 3507 }, botright = { x = 3498, y = 3507 } }
     }
   },
@@ -1129,6 +1214,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Hay bales",
+      entity_ids = { 299 },
       spot = { level = 0, topleft = { x = 2524, y = 3438 }, botright = { x = 2524, y = 3438 } }
     }
   },
@@ -1142,6 +1228,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 10159 },
       spot = { level = 0, topleft = { x = 2905, y = 3189 }, botright = { x = 2905, y = 3189 } }
     }
   },
@@ -1156,6 +1243,7 @@ local clues = {
       type = "search",
       spot = { level = 0, topleft = { x = 2928, y = 3552 }, botright = { x = 2928, y = 3552 } },
       entity = "Drawers",
+      entity_ids = { 67304, 67305 },
       key = {
         instructions = "The drawers are locked! A note on the top of the drawer reads: Wait till I get my hands on Penda; he's nicked the key again!",
         answer = "Pickpocket Penda in the house north of Heroes's Guild.",
@@ -1173,6 +1261,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 25766, 25767 },
       spot = { level = 0, topleft = { x = 2709, y = 3478 }, botright = { x = 2709, y = 3478 } },
       key = {
         instructions = "Don't forget to feed the chickens",
@@ -1191,7 +1280,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 2519, y = 3259 }, botright = { x = 2519, y = 3259 } },
-      entity = "Crates"
+      entity = "Crates",
+      entity_ids = { 40495 }
     }
   },
   {
@@ -1215,7 +1305,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 3280, y = 2787 }, botright = { x = 3280, y = 2787 } },
-      entity = "Crate"
+      entity = "Crate",
+      entity_ids = { 109470 }
     }
   },
   {
@@ -1239,7 +1330,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 3155, y = 5727 }, botright = { x = 3155, y = 5727 } },
-      entity = "Sacks"
+      entity = "Sacks",
+      entity_ids = { 32049 }
     }
   },
   {
@@ -1250,7 +1342,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 2671, y = 3437 }, botright = { x = 2671, y = 3437 } },
-      entity = "Crate"
+      entity = "Crate",
+      entity_ids = { 46333 }
     }
   },
   {
@@ -1277,6 +1370,7 @@ local clues = {
       type = "search",
       spot = { level = 1, topleft = { x = 2809, y = 3165 }, botright = { x = 2809, y = 3165 } },
       entity = "Drawers",
+      entity_ids = { 348, 349 },
       key = {
         instructions = "Shiver me timbers!",
         answer = "Kill a pirate in Brimhaven",
@@ -1305,6 +1399,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 18889 },
       spot = { level = 0, topleft = { x = 3289, y = 3022 }, botright = { x = 3289, y = 3022 } }
     }
   },
@@ -1342,6 +1437,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Cupboard",
+      entity_ids = { 37034, 37038 },
       spot = { level = 0, topleft = { x = 2811, y = 3160 }, botright = { x = 2811, y = 3160 } }
     }
   },
@@ -1354,6 +1450,7 @@ local clues = {
       type = "search",
       spot = { level = 0, topleft = { x = 3354, y = 3349 }, botright = { x = 3354, y = 3349 } },
       entity = "Closed chest",
+      entity_ids = { 375, 378 },
       key = {
         instructions = "The chest is locked!  Crude graffiti on the chest reads: 'Barbarians rule, okay!'",
         answer = "Kill a Barbarian in Barbarian Village.",
@@ -1369,7 +1466,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 2691, y = 3508 }, botright = { x = 2691, y = 3508 } },
-      entity = "Crate"
+      entity = "Crate",
+      entity_ids = { 24202 }
     }
   },
   {
@@ -1383,6 +1481,7 @@ local clues = {
       type = "search",
       spot = { level = 1, topleft = { x = 2512, y = 3641 }, botright = { x = 2512, y = 3641 } },
       entity = "Drawers",
+      entity_ids = { 350, 351 },
       key = {
         instructions = "The drawers are locked! A note on the top says 'I'm guarding the key at the market'.",
         answer = "Kill a Fremennik market guard in Relekka.",
@@ -1398,7 +1497,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 2614, y = 3204 }, botright = { x = 2614, y = 3204 } },
-      entity = "Crate"
+      entity = "Crate",
+      entity_ids = { 46331 }
     }
   },
   {
@@ -1411,6 +1511,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Closed chest",
+      entity_ids = { 375, 378 },
       spot = { level = 1, topleft = { x = 2593, y = 3108 }, botright = { x = 2593, y = 3108 } },
       key = {
         instructions = "Stand by your man.",
@@ -1429,7 +1530,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 2698, y = 9684 }, botright = { x = 2698, y = 9684 } },
-      entity = "Chest"
+      entity = "Chest",
+      entity_ids = { 18304, 18321 }
     }
   },
   {
@@ -1442,7 +1544,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 2397, y = 3355 }, botright = { x = 2397, y = 3355 } },
-      entity = "Gnome crates"
+      entity = "Gnome crates",
+      entity_ids = { 84019 }
     }
   },
   {
@@ -1468,7 +1571,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 2438, y = 3165 }, botright = { x = 2438, y = 3165 } },
-      entity = "Crate"
+      entity = "Crate",
+      entity_ids = { 28625 }
     }
   },
   {
@@ -1482,6 +1586,7 @@ local clues = {
       type = "search",
       spot = { level = 1, topleft = { x = 2610, y = 3324 }, botright = { x = 2610, y = 3324 } },
       entity = "Drawers",
+      entity_ids = { 34482, 34483 },
       key = { instructions = "It's a guard's life", answer = "Kill an ardougne guard." }
     }
   },
@@ -1519,6 +1624,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "General Bentnoze",
+      npc_ids = { 4493 },
       spots = {
         {
           range = { origin = { x = 2954, y = 3512, level = 0 }, size = { x = 7, y = 4 } },
@@ -1538,6 +1644,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Haystack",
+      entity_ids = { 300 },
       spot = { level = 0, topleft = { x = 2671, y = 3416 }, botright = { x = 2671, y = 3416 } }
     }
   },
@@ -1563,7 +1670,8 @@ local clues = {
           description = "at Iorwerth Camp"
         }
       },
-      npc = "Lord Iorwerth"
+      npc = "Lord Iorwerth",
+      npc_ids = { 19647, 19873, 1182 }
     }
   },
   {
@@ -1586,7 +1694,8 @@ local clues = {
           description = "at the Edgeville Monastery"
         }
       },
-      npc = "Abbot Langley"
+      npc = "Abbot Langley",
+      npc_ids = { 801 }
     }
   },
   {
@@ -1605,7 +1714,8 @@ local clues = {
           description = "in the fishing shop in Port Sarim"
         }
       },
-      npc = "Gerrant"
+      npc = "Gerrant",
+      npc_ids = { 11699, 12261, 558 }
     }
   },
   {
@@ -1619,6 +1729,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Examiner",
+      npc_ids = { 4566, 4567 },
       spots = {
         {
           range = { origin = { x = 3351, y = 3342, level = 0 }, size = { x = 9, y = 8 } },
@@ -1637,7 +1748,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 1, topleft = { x = 2523, y = 3493 }, botright = { x = 2523, y = 3493 } },
-      entity = "Boxes"
+      entity = "Boxes",
+      entity_ids = { 46334 }
     }
   },
   {
@@ -1667,7 +1779,8 @@ local clues = {
           description = "on the beach in Menaphos Worker District"
         }
       },
-      npc = "Hamid"
+      npc = "Hamid",
+      npc_ids = { 1008 }
     }
   },
   {
@@ -1697,7 +1810,8 @@ local clues = {
           description = "at the Gnome Agility Course"
         }
       },
-      npc = "Gnome trainer"
+      npc = "Gnome trainer",
+      npc_ids = { 162 }
     }
   },
   {
@@ -1708,7 +1822,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 3041, y = 9820 }, botright = { x = 3041, y = 9820 } },
-      entity = "Mine Cart"
+      entity = "Mine Cart",
+      entity_ids = { 6045 }
     }
   },
   {
@@ -1719,7 +1834,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 1, topleft = { x = 2702, y = 3409 }, botright = { x = 2702, y = 3409 } },
-      entity = "Bookcase"
+      entity = "Bookcase",
+      entity_ids = { 37047 }
     }
   },
   {
@@ -1730,7 +1846,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 3094, y = 3153 }, botright = { x = 3095, y = 3152 } },
-      entity = "Bookcase"
+      entity = "Bookcase",
+      entity_ids = { 79424 }
     }
   },
   {
@@ -1747,7 +1864,8 @@ local clues = {
           description = "in the south-east corner on the first floor of the Grand Tree"
         }
       },
-      npc = "Heckel Funch"
+      npc = "Heckel Funch",
+      npc_ids = { 603 }
     }
   },
   {
@@ -1760,7 +1878,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 2340, y = 3187 }, botright = { x = 2340, y = 3187 } },
-      entity = "Crate"
+      entity = "Crate",
+      entity_ids = { 46331 }
     }
   },
   {
@@ -1784,7 +1903,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 3478, y = 3091 }, botright = { x = 3478, y = 3091 } },
-      entity = "Crate"
+      entity = "Crate",
+      entity_ids = { 46331 }
     }
   },
   {
@@ -1849,7 +1969,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 2576, y = 9583 }, botright = { x = 2576, y = 9583 } },
-      entity = "Crate"
+      entity = "Crate",
+      entity_ids = { 24202 }
     }
   },
   {
@@ -1862,6 +1983,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 126971 },
       spot = { level = 1, topleft = { x = 2666, y = 3238 }, botright = { x = 2666, y = 3238 } }
     }
   },
@@ -1873,6 +1995,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Boxes",
+      entity_ids = { 6176 },
       spot = { level = 0, topleft = { x = 2576, y = 3464 }, botright = { x = 2576, y = 3464 } }
     }
   },
@@ -1884,6 +2007,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 24202 },
       spot = { level = 0, topleft = { x = 3219, y = 9617 }, botright = { x = 3219, y = 9617 } }
     }
   },
@@ -1895,6 +2019,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 46331 },
       spot = { level = 0, topleft = { x = 3178, y = 2987 }, botright = { x = 3178, y = 2987 } }
     }
   },
@@ -1908,6 +2033,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 18506 },
       spot = { level = 0, topleft = { x = 2723, y = 9891 }, botright = { x = 2723, y = 9891 } }
     }
   },
@@ -1919,6 +2045,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 34530, 34531 },
       spot = { level = 0, topleft = { x = 2561, y = 3323 }, botright = { x = 2561, y = 3323 } }
     }
   },
@@ -1956,6 +2083,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 46332 },
       spot = { level = 0, topleft = { x = 2648, y = 3662 }, botright = { x = 2648, y = 3662 } }
     }
   },
@@ -1973,7 +2101,8 @@ local clues = {
           description = "at the top of White Wolf Mountain"
         }
       },
-      npc = "Captain Bleemadge"
+      npc = "Captain Bleemadge",
+      npc_ids = { 3810 }
     }
   },
   {
@@ -1989,7 +2118,8 @@ local clues = {
           description = "at Lumbridge Castle"
         }
       },
-      npc = "Hans"
+      npc = "Hans",
+      npc_ids = { 0 }
     }
   },
   {
@@ -2002,6 +2132,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 88873, 88874 },
       spot = { level = 1, topleft = { x = 3213, y = 3216 }, botright = { x = 3213, y = 3216 } }
     }
   },
@@ -2018,7 +2149,8 @@ local clues = {
           description = "in Varrock Castle"
         }
       },
-      npc = "Sir Prysin"
+      npc = "Sir Prysin",
+      npc_ids = { 883, 9359 }
     }
   },
   {
@@ -2031,6 +2163,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 21806 },
       spot = { level = 2, topleft = { x = 3166, y = 3309 }, botright = { x = 3166, y = 3309 } }
     }
   },
@@ -2050,7 +2183,8 @@ local clues = {
           description = "near Varrock's fountain"
         }
       },
-      npc = "Wilough"
+      npc = "Wilough",
+      npc_ids = { 783 }
     }
   },
   {
@@ -2069,7 +2203,8 @@ local clues = {
           description = "in Edgeville"
         }
       },
-      npc = "Oziach"
+      npc = "Oziach",
+      npc_ids = { 747 }
     }
   },
   {
@@ -2096,6 +2231,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Drawers",
+      entity_ids = { 127765, 127766 },
       spot = { level = 0, topleft = { x = 2818, y = 3351 }, botright = { x = 2818, y = 3351 } }
     }
   },
@@ -2161,6 +2297,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Bookcase",
+      entity_ids = { 394 },
       spot = { level = 0, topleft = { x = 2833, y = 2992 }, botright = { x = 2833, y = 2992 } }
     }
   },
@@ -2247,7 +2384,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 2565, y = 3248 }, botright = { x = 2565, y = 3248 } },
-      entity = "Crate"
+      entity = "Crate",
+      entity_ids = { 46331 }
     }
   },
   {
@@ -2259,7 +2397,8 @@ local clues = {
     solution = {
       type = "search",
       spot = { level = 0, topleft = { x = 2658, y = 3488 }, botright = { x = 2658, y = 3488 } },
-      entity = "Crate"
+      entity = "Crate",
+      entity_ids = { 24202 }
     }
   },
   {
@@ -2330,8 +2469,8 @@ local clues = {
     text = { "X marks the spot near a rock on a peninsula." },
     solution = {
       type = "dig",
-      spot = { x = 2906, y = 3294, level = 0 },
-      description = "west of the snape grass at the tip of the hobgoblin peninsula."
+      spot = { x = 2906, y = 3292, level = 0 },
+      description = "at the tip of the hobgoblin peninsula."
     }
   },
   {
@@ -2381,6 +2520,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 18506 },
       spot = { level = 0, topleft = { x = 2457, y = 3182 }, botright = { x = 2457, y = 3182 } }
     }
   },
@@ -2429,6 +2569,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 46331 },
       spot = { level = 0, topleft = { x = 3026, y = 3629 }, botright = { x = 3026, y = 3629 } }
     }
   },
@@ -2441,6 +2582,7 @@ local clues = {
     solution = {
       type = "search",
       entity = "Crate",
+      entity_ids = { 124881 },
       spot = { level = 0, topleft = { x = 3312, y = 3528 }, botright = { x = 3312, y = 3528 } }
     }
   },
@@ -3453,6 +3595,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Zookeeper",
+      npc_ids = { 28, 7570, 7571 },
       spots = {
         {
           range = { origin = { x = 2607, y = 3268, level = 0 }, size = { x = 14, y = 14 } },
@@ -3480,7 +3623,8 @@ local clues = {
           note = "Before 'Death Plateu'"
         }
       },
-      npc = "Sabbot"
+      npc = "Sabbot",
+      npc_ids = { 15096, 15098, 15095, 15097 }
     },
     anagram = { "Stab Ob", "Boast B" }
   },
@@ -3499,6 +3643,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Edmond",
+      npc_ids = { 714, 3213 },
       spots = {
         {
           range = { origin = { x = 2564, y = 3330, level = 0 }, size = { x = 7, y = 7 } },
@@ -3523,6 +3668,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Nails Newton",
+      npc_ids = { 15085 },
       spots = {
         {
           range = { origin = { x = 2881, y = 3444, level = 0 } },
@@ -3547,6 +3693,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Valerio",
+      npc_ids = { 15939, 15940, 14640 },
       spots = {
         {
           range = { origin = { x = 3400, y = 3149, level = 0 } },
@@ -3564,6 +3711,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Fycie",
+      npc_ids = { 1011 },
       spots = {
         {
           range = { origin = { x = 2646, y = 9390, level = 0 }, size = { x = 8, y = 9 } },
@@ -3581,6 +3729,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Jaraah",
+      npc_ids = { 962 },
       spots = {
         {
           range = { origin = { x = 3290, y = 3215, level = 0 }, size = { x = 8, y = 5 } },
@@ -3603,7 +3752,8 @@ local clues = {
           description = "in his cave at Tree Gnome Stronghold"
         }
       },
-      npc = "Brimstail"
+      npc = "Brimstail",
+      npc_ids = { 171 }
     },
     anagram = { "Bail Trims" }
   },
@@ -3622,6 +3772,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Cook",
+      npc_ids = { 278 },
       spots = {
         {
           range = { origin = { x = 3208, y = 3215, level = 0 }, size = { x = 3, y = 1 } },
@@ -3646,6 +3797,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Oracle",
+      npc_ids = { 746 },
       spots = {
         {
           range = { origin = { x = 3008, y = 3498, level = 0 }, size = { x = 12, y = 6 } },
@@ -3673,6 +3825,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Caroline",
+      npc_ids = { 696, 7163, 7181 },
       spots = {
         {
           id = "default",
@@ -3702,7 +3855,8 @@ local clues = {
           description = "in Tree Gnome Village"
         }
       },
-      npc = "King Bolren"
+      npc = "King Bolren",
+      npc_ids = { 469 }
     },
     anagram = { "Goblin Kern" }
   },
@@ -3721,6 +3875,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Father Urhney",
+      npc_ids = { 458 },
       spots = {
         {
           range = { origin = { x = 3203, y = 3147, level = 0 }, size = { x = 8, y = 5 } },
@@ -3745,6 +3900,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Brundt the Chieftain",
+      npc_ids = { 1294 },
       spots = {
         {
           range = { origin = { x = 2657, y = 3666, level = 0 }, size = { x = 4, y = 5 } },
@@ -3767,7 +3923,8 @@ local clues = {
           description = "at gates of Tree Gnome Stronghold"
         }
       },
-      npc = "Femi"
+      npc = "Femi",
+      npc_ids = { 676 }
     },
     anagram = { "Me if" }
   },
@@ -3786,6 +3943,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Karim",
+      npc_ids = { 543 },
       spots = {
         {
           range = {
@@ -3814,6 +3972,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Gabooty",
+      npc_ids = { 2520, 2521, 2519 },
       spots = {
         {
           range = { origin = { x = 2786, y = 3063, level = 0 }, size = { x = 16, y = 8 } },
@@ -3836,7 +3995,8 @@ local clues = {
           description = "at Musa Point"
         }
       },
-      npc = "Luthas"
+      npc = "Luthas",
+      npc_ids = { 379 }
     },
     anagram = { "Halt Us" }
   },
@@ -3855,6 +4015,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Recruiter",
+      npc_ids = { 720 },
       spots = {
         {
           range = { origin = { x = 2539, y = 3302, level = 0 }, size = { x = 6, y = 7 } },
@@ -3882,6 +4043,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Moldark, Emissary of Zamorak",
+      npc_ids = { 17135 },
       spots = {
         {
           range = { origin = { x = 3104, y = 3508, level = 0 }, size = { x = 2, y = 3 } },
@@ -3906,6 +4068,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Rommik",
+      npc_ids = { 585 },
       spots = {
         {
           range = { origin = { x = 2945, y = 3193, level = 0 }, size = { x = 6, y = 7 } },
@@ -3928,7 +4091,8 @@ local clues = {
           description = "in Varrock's Archery Store"
         }
       },
-      npc = "Lowe"
+      npc = "Lowe",
+      npc_ids = { 550 }
     },
     anagram = { "El Ow" }
   },
@@ -3945,7 +4109,8 @@ local clues = {
           description = "in the Party Room"
         }
       },
-      npc = "Party Pete"
+      npc = "Party Pete",
+      npc_ids = { 659 }
     },
     anagram = { "Peaty Pert" }
   },
@@ -3964,6 +4129,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "King Roald",
+      npc_ids = { 648 },
       spots = {
         {
           range = { origin = { x = 3217, y = 3471, level = 0 }, size = { x = 8, y = 8 } },
@@ -3991,7 +4157,8 @@ local clues = {
           description = "north of Al Kharid"
         }
       },
-      npc = "Cam the Camel"
+      npc = "Cam the Camel",
+      npc_ids = { 2812 }
     },
     anagram = { "Me Am The Calc", "Ace Match Elm", "The Cal Came" }
   },
@@ -4013,7 +4180,8 @@ local clues = {
           description = "in Nardah"
         }
       },
-      npc = "Shiratti the Custodian"
+      npc = "Shiratti the Custodian",
+      npc_ids = { 3044 }
     },
     anagram = { "I Eat Its Chart Hints Do U" }
   },
@@ -4031,7 +4199,8 @@ local clues = {
           description = "in the Dwarven Tunnel under the White Wolf Mountain"
         }
       },
-      npc = "Captain Ninto"
+      npc = "Captain Ninto",
+      npc_ids = { 4594 }
     },
     anagram = { "An Paint Tonic" }
   },
@@ -4049,7 +4218,8 @@ local clues = {
           description = "at the Piscatoris Fishing Colony"
         }
       },
-      npc = "Ramara du Croissant"
+      npc = "Ramara du Croissant",
+      npc_ids = { 3827 }
     },
     anagram = { "Arr! So I am a crust, and?" }
   },
@@ -4068,6 +4238,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Gnome Coach",
+      npc_ids = { 2802 },
       spots = {
         {
           range = { origin = { x = 2406, y = 3498, level = 0 } },
@@ -4091,7 +4262,8 @@ local clues = {
           description = "in eastern Keldagrim"
         }
       },
-      npc = "Riki the sculptor's model"
+      npc = "Riki the sculptor's model",
+      npc_ids = { 2143, 2144, 2145, 2146, 2147, 2148, 2149, 2150, 2142 }
     },
     anagram = { "He Do Pose. It Is Cultrrl, Mk?" }
   },
@@ -4113,7 +4285,8 @@ local clues = {
           description = "on the ground floor of Wizard's Tower"
         }
       },
-      npc = "Professor Onglewip"
+      npc = "Professor Onglewip",
+      npc_ids = { 4585 }
     },
     anagram = { "Profs Lose Wrong Pie" }
   },
@@ -4132,6 +4305,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Cap'n Izzy No-Beard",
+      npc_ids = { 437 },
       spots = {
         {
           range = { origin = { x = 2807, y = 3190, level = 0 }, size = { x = 1, y = 2 } },
@@ -4155,7 +4329,8 @@ local clues = {
           description = "in Port Sarim"
         }
       },
-      npc = "Trader Stan"
+      npc = "Trader Stan",
+      npc_ids = { 4650 }
     },
     anagram = { "Red Art Tans" }
   },
@@ -4173,7 +4348,8 @@ local clues = {
           description = "in the basement of Wizard's Guild"
         }
       },
-      npc = "Wizard Frumscone"
+      npc = "Wizard Frumscone",
+      npc_ids = { 460 }
     },
     anagram = { "Or Zinc Fumes Ward" }
   },
@@ -4192,6 +4368,7 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Bolkoy",
+      npc_ids = { 471 },
       spots = {
         {
           range = {
@@ -4225,7 +4402,8 @@ local clues = {
           description = "in Etceteria Castle"
         }
       },
-      npc = "Queen Sigrid"
+      npc = "Queen Sigrid",
+      npc_ids = { 9088, 1359, 9349 }
     },
     anagram = { "Sequin Dirge" }
   },
@@ -4247,7 +4425,8 @@ local clues = {
           description = "in her house south of Ardougne Market"
         }
       },
-      npc = "Zenesha"
+      npc = "Zenesha",
+      npc_ids = { 589 }
     },
     anagram = { "A Zen She" }
   },
@@ -4265,7 +4444,8 @@ local clues = {
           description = "south of Castle Wars"
         }
       },
-      npc = "Uglug Nar"
+      npc = "Uglug Nar",
+      npc_ids = { 2039 }
     },
     anagram = { "Gulag Run" }
   },
@@ -4287,7 +4467,8 @@ local clues = {
           description = "at the limestone mine"
         }
       },
-      npc = "Odd Old Man"
+      npc = "Odd Old Man",
+      npc_ids = { 9173, 9174, 9175 }
     },
     anagram = { "Land Doomd" }
   },
@@ -4305,7 +4486,8 @@ local clues = {
           description = "north of the bank in Zanaris"
         }
       },
-      npc = "Fairy Nuff"
+      npc = "Fairy Nuff",
+      npc_ids = { 4434, 3303, 4431 }
     },
     anagram = { "I Faffy Run" }
   },
@@ -4324,7 +4506,8 @@ local clues = {
           description = "at the bottom of Polypore Dungeon"
         }
       },
-      npc = "Ramokee Skinweaver"
+      npc = "Ramokee Skinweaver",
+      npc_ids = { 14681 }
     },
     anagram = { "WE IRK OVER NAMESAKE" }
   },
@@ -4349,7 +4532,8 @@ local clues = {
           note = "Harmony"
         }
       },
-      npc = "Brother Tranquility"
+      npc = "Brother Tranquility",
+      npc_ids = { 5616, 5617, 5667, 5668 }
     },
     anagram = { "QUIT THY BRINE RAT ROLL" }
   },
@@ -4367,7 +4551,8 @@ local clues = {
           description = "on Tuaei Leit"
         }
       },
-      npc = "Sensei Seaworth"
+      npc = "Sensei Seaworth",
+      npc_ids = { 23446 }
     },
     anagram = { "O EASTERN WISHES" }
   },
@@ -4395,7 +4580,8 @@ local clues = {
           note = "Inside the empty throne room"
         }
       },
-      npc = "Celia Diggory"
+      npc = "Celia Diggory",
+      npc_ids = { 23572 }
     },
     anagram = { "ERGO I DIG CLAY" }
   },
@@ -4421,7 +4607,8 @@ local clues = {
           description = "at the Ritual Site"
         }
       },
-      npc = "Malignius Mortifer"
+      npc = "Malignius Mortifer",
+      npc_ids = { 2713, 30258, 30289 }
     },
     anagram = { "REIGN US IF IMMORTAL" }
   },
@@ -4441,7 +4628,8 @@ local clues = {
           description = "in Lletya"
         }
       },
-      npc = "Amaethwr"
+      npc = "Amaethwr",
+      npc_ids = { 2860 }
     },
     anagram = { "AH; WET ARM" }
   },
@@ -4455,6 +4643,22 @@ local clues = {
     solution = {
       type = "talkto",
       npc = "Philipe Carnillean",
+      npc_ids = {
+        15612,
+        15613,
+        15615,
+        15618,
+        888,
+        3334,
+        15619,
+        15620,
+        15621,
+        15622,
+        15623,
+        15624,
+        15625,
+        15626
+      },
       spots = {
         {
           id = "before",
@@ -4535,7 +4739,8 @@ local clues = {
           description = "in Draynor"
         }
       },
-      npc = "Wise Old Man"
+      npc = "Wise Old Man",
+      npc_ids = { 2253, 11569, 3820 }
     },
     anagram = { "WINSOME LAD" }
   },
@@ -4562,7 +4767,8 @@ local clues = {
           description = "at the farm south of Varrock"
         }
       },
-      npc = "Paul Gower"
+      npc = "Paul Gower",
+      npc_ids = { 22794, 22792, 22793 }
     },
     anagram = { "A PURE GLOW" }
   },
@@ -4581,7 +4787,8 @@ local clues = {
           description = "at the entrance to Telos"
         }
       },
-      npc = "Soothsayer Sybil"
+      npc = "Soothsayer Sybil",
+      npc_ids = { 22890 }
     },
     anagram = { "TABOO RISES SHYLY" }
   },
@@ -4600,7 +4807,8 @@ local clues = {
           description = "at the seren stones"
         }
       },
-      npc = "Lady Trahaearn"
+      npc = "Lady Trahaearn",
+      npc_ids = { 19927 }
     },
     anagram = { "HEAR A LADY RANT" }
   },
@@ -4623,7 +4831,8 @@ local clues = {
           description = "in Nardaah"
         }
       },
-      npc = "Ali The Wise"
+      npc = "Ali The Wise",
+      npc_ids = { 7447, 7469, 14251, 14330, 27916, 7406, 7468, 14329, 27915 }
     },
     anagram = { "I SAW THE LIE" }
   },
@@ -4642,7 +4851,8 @@ local clues = {
           note = "Death's Office"
         }
       },
-      npc = "Death"
+      npc = "Death",
+      npc_ids = { 8867, 27299 }
     },
     anagram = { "HATED" }
   },
@@ -4659,7 +4869,8 @@ local clues = {
           description = "in Wendlewick"
         }
       },
-      npc = "Miriam"
+      npc = "Miriam",
+      npc_ids = { 32548 }
     },
     anagram = { "MR MIAI" }
   },
@@ -6238,7 +6449,8 @@ local clues = {
     id = 373,
     areas = { { origin = { x = 2666, y = 3301, level = 0 }, size = { x = 4, y = 5 } } },
     answer = "Steal from the Ardougne Gem Stall.",
-    cursor = "thieve"
+    cursor = "thieve",
+    entity_ids = { 34385 }
   },
   {
     type = "skilling",
@@ -6256,6 +6468,8 @@ local clues = {
     id = 375,
     areas = { { origin = { x = 3017, y = 9242, level = 0 }, size = { x = 4, y = 4 } } },
     cursor = "burn",
+    ingredients = { { name = "Curly root", ids = { 21350 } } },
+    entity_ids = { 12284 },
     answer = "Start a firepit with a Curly Root in the Jadinko Lair."
   },
   {
@@ -6267,7 +6481,8 @@ local clues = {
     id = 376,
     areas = { { origin = { x = 2269, y = 3386, level = 1 }, size = { x = 5, y = 5 } } },
     answer = "Cut some elder logs from an elder tree.",
-    cursor = "chop"
+    cursor = "chop",
+    entity_ids = { 93367 }
   },
   {
     type = "skilling",
@@ -6276,6 +6491,8 @@ local clues = {
     id = 377,
     answer = "Cook a wild pie. The 'Bake Pie' spell works.",
     cursor = "cook",
+    ingredients = { { name = "Raw wild pie", ids = { 7206 } } },
+    entity_ids = { 2728 },
     areas = { { origin = { x = 2633, y = 3164, level = 0 }, size = { x = 2, y = 2 } } }
   },
   {
@@ -6287,6 +6504,7 @@ local clues = {
     id = 378,
     areas = { { origin = { x = 2698, y = 5186, level = 2 }, size = { x = 50, y = 61 } } },
     cursor = "agility",
+    npc_ids = { 5779 },
     answer = "Help Turgall at the Dorgesh-Kaan Agility Course."
   },
   {
@@ -6320,6 +6538,8 @@ local clues = {
     id = 381,
     answer = "Light some magic logs.",
     cursor = "burn",
+    ingredients = { { name = "Magic logs or corrupted magic logs", ids = { 1513, 40338 } } },
+    entity_ids = { 110279, 110280, 98296 },
     areas = {
       {
         origin = { x = 4310, y = 823, level = 0 },
@@ -6359,6 +6579,10 @@ local clues = {
     id = 384,
     answer = "Craft a black dragonhide body.",
     cursor = "craft",
+    ingredients = {
+      { name = "Black dragon leather", ids = { 2509 }, amount = 3 },
+      { name = "Thread", ids = { 1734 } }
+    },
     areas = { { origin = { x = 2274, y = 3311, level = 1 }, size = { x = 5, y = 3 } } }
   },
   {
@@ -6370,6 +6594,10 @@ local clues = {
     id = 385,
     answer = "Add a fire rune to a decorated cooking urn (nr).",
     cursor = "craft",
+    ingredients = {
+      { name = "Decorated cooking urn (no rune)", ids = { 20374 } },
+      { name = "Fire rune", ids = { 554 } }
+    },
     areas = { { origin = { x = 2274, y = 3311, level = 1 }, size = { x = 5, y = 3 } } }
   },
   {
@@ -6381,6 +6609,10 @@ local clues = {
     id = 386,
     answer = "Cook a raw shark, raw rocktail or raw sailfish.",
     cursor = "cook",
+    ingredients = {
+      { name = "Raw shark, raw rocktail or raw sailfish", ids = { 383, 15270, 42249 } }
+    },
+    entity_ids = { 110279, 110280, 98296 },
     areas = { { origin = { x = 4310, y = 823, level = 0 }, size = { x = 3, y = 3 } } }
   },
   {
@@ -6390,6 +6622,8 @@ local clues = {
     id = 387,
     answer = "Smelt a Bane bar at a furnace.",
     cursor = "smith",
+    ingredients = { { name = "Banite ore", ids = { 21778 }, amount = 2 } },
+    entity_ids = { 113261 },
     areas = { { origin = { x = 3225, y = 3255, level = 0 }, size = { x = 5, y = 3 } } }
   },
   {
@@ -6401,7 +6635,9 @@ local clues = {
     id = 388,
     areas = { { origin = { x = 2203, y = 4834, level = 0 }, size = { x = 5, y = 5 } } },
     answer = "Craft a death rune.",
-    cursor = "runecraft"
+    cursor = "runecraft",
+    ingredients = { { name = "Pure essence", ids = { 7936 } } },
+    entity_ids = { 2488 }
   },
   {
     type = "skilling",
@@ -6410,7 +6646,9 @@ local clues = {
     id = 389,
     areas = { { origin = { x = 2460, y = 4893, level = 1 }, size = { x = 6, y = 6 } } },
     answer = "Craft a blood rune.",
-    cursor = "runecraft"
+    cursor = "runecraft",
+    ingredients = { { name = "Pure or exalted essence", ids = { 7936, 63938 } } },
+    entity_ids = { 30624 }
   },
   {
     type = "skilling",
@@ -6421,7 +6659,9 @@ local clues = {
     id = 390,
     areas = { { origin = { x = 2188, y = 3446, level = 1 }, size = { x = 5, y = 5 } } },
     answer = "Completely use up a cleansing crystal on the Corrupted Seren Stone.",
-    cursor = "pray"
+    cursor = "pray",
+    ingredients = { { name = "Cleansing crystal", ids = { 32615 } } },
+    entity_ids = { 94048 }
   },
   {
     type = "skilling",
@@ -6430,7 +6670,8 @@ local clues = {
     id = 391,
     areas = { { origin = { x = 3365, y = 3730, level = 0 }, size = { x = 21, y = 21 } } },
     answer = "Catch a charming moth in the Wilderness.",
-    cursor = "hunt"
+    cursor = "hunt",
+    npc_ids = { 23139 }
   },
   {
     type = "skilling",
@@ -6441,6 +6682,8 @@ local clues = {
     id = 392,
     answer = "Burn some elder logs.",
     cursor = "herblore",
+    ingredients = { { name = "Elder logs", ids = { 29556 } } },
+    entity_ids = { 110279, 110280, 98296 },
     areas = {
       {
         origin = { x = 4310, y = 823, level = 0 },
@@ -6456,6 +6699,7 @@ local clues = {
     id = 393,
     answer = "Mine a concentrated gold deposit in the Living Rock Caverns.",
     cursor = "mine",
+    entity_ids = { 113010 },
     areas = { { origin = { x = 3646, y = 5141, level = 0 }, size = { x = 3, y = 5 } } }
   },
   {
@@ -6482,6 +6726,10 @@ local clues = {
     id = 395,
     answer = "Create a Saradomin brew.",
     cursor = "herblore",
+    ingredients = {
+      { name = "Toadflax potion (unfinished)", ids = { 3002 } },
+      { name = "Crushed nest", ids = { 6693 } }
+    },
     areas = { { origin = { x = 2274, y = 3311, level = 1 }, size = { x = 5, y = 3 } } }
   },
   {
@@ -6493,6 +6741,8 @@ local clues = {
     id = 396,
     answer = "Smith a rune med helm or rune full helm.",
     cursor = "smith",
+    ingredients = { { name = "Rune bar", ids = { 2363 }, amount = 2 } },
+    entity_ids = { 113258 },
     areas = { { origin = { x = 3228, y = 3253, level = 0 }, size = { x = 2, y = 3 } } }
   },
   {
@@ -6504,6 +6754,10 @@ local clues = {
     id = 397,
     answer = "Create a Zamorak brew.",
     cursor = "herblore",
+    ingredients = {
+      { name = "Torstol potion (unfinished)", ids = { 111 } },
+      { name = "Jangerberries", ids = { 247 } }
+    },
     areas = { { origin = { x = 2274, y = 3311, level = 1 }, size = { x = 5, y = 3 } } }
   },
   {

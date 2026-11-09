@@ -157,6 +157,20 @@ local function clue_map_bounds(step)
   return bounds
 end
 
+--- The skilling answer with the ingredients it uses up, such as "Craft a black dragonhide body. (3× Black dragon
+--- leather + Thread)", so the player knows what to bring.
+---@param clue Skilling
+---@return string
+local function skilling_text(clue)
+  if not clue.ingredients or #clue.ingredients == 0 then return clue.answer end
+  local parts = {}
+  for i, ingredient in ipairs(clue.ingredients) do
+    local amount = ingredient.amount or 1
+    parts[i] = (amount > 1 and (amount .. "× ") or "") .. ingredient.name
+  end
+  return clue.answer .. " (" .. table.concat(parts, " + ") .. ")"
+end
+
 ---@param method Method.GenericPath
 ---@return Path.Step[]
 local function stitch_path(method)
@@ -239,7 +253,7 @@ function SimpleClueSolver:buildActions()
 
   if clue.type == "skilling" then
     ---@cast clue Skilling
-    self.actions.skill = state_panel:addAction(ClueStateAction.Text.new(clue.answer))
+    self.actions.skill = state_panel:addAction(ClueStateAction.Text.new(skilling_text(clue)))
   end
 
   local challenges = clue.challenge
