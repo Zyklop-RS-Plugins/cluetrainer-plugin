@@ -60,6 +60,7 @@ clues.ClueTier = {
 ---@class Solution.TalkTo
 ---@field type "talkto"
 ---@field npc string
+---@field npc_ids? integer[] NPC config ids, including the parents of multi NPCs.
 ---@field spots Solution.TalkToSpot[]
 
 
@@ -79,6 +80,7 @@ clues.ClueTier = {
 ---@field type "search"
 ---@field spot TileRectangle
 ---@field entity string
+---@field entity_ids? integer[] Loc config ids, including the opened state.
 ---@field key? Solution.SearchKey
 
 ---@class StepShared
@@ -150,6 +152,14 @@ clues.ClueTier = {
 ---@field areas TileArea[]
 ---@field answer string
 ---@field cursor MyCursorType
+---@field entity_ids? integer[] Loc config ids of the object to use, including multi-loc parents.
+---@field npc_ids? integer[] NPC config ids of the NPC to use, including the parents of multi NPCs.
+---@field ingredients? Skilling.Ingredient[] Items the task uses up; tools are left out.
+
+---@class Skilling.Ingredient
+---@field name string
+---@field ids integer[] Obj config ids; any of them counts, such as raw shark, raw rocktail or raw sailfish.
+---@field amount? integer Default 1.
 
 
 ---@alias Step
