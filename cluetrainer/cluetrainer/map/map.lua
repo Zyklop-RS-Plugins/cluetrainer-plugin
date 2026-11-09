@@ -18,6 +18,10 @@ local WORLD_WIDTH = 12800
 local WORLD_HEIGHT = 12800
 -- A panel over the top of the map never takes more than this part of the view when fitting bounds.
 local MAX_TOP_INSET = 0.5
+-- Room in tiles at every edge when fitting bounds, so a teleport icon at the edge of a small, zoomed-in fit is shown
+-- whole and not under the floor control (bottom right). In tiles rather than pixels, so it barely changes large,
+-- zoomed-out fits like a scan overview.
+local EDGE_MARGIN_TILES = 4
 
 local geometry = WindowGeometry.new("map_window_geometry", { size = true })
 
@@ -143,8 +147,8 @@ function GameMap:fitBounds(bounds, top_inset)
   -- Bounds uses x/y tile coordinates, the map uses x/z
   local x1, z1 = rect.topleft.x, rect.topleft.y
   local x2, z2 = rect.botright.x, rect.botright.y
-  local minX, maxX = math.min(x1, x2), math.max(x1, x2)
-  local minZ, maxZ = math.min(z1, z2), math.max(z1, z2)
+  local minX, maxX = math.min(x1, x2) - EDGE_MARGIN_TILES, math.max(x1, x2) + EDGE_MARGIN_TILES
+  local minZ, maxZ = math.min(z1, z2) - EDGE_MARGIN_TILES, math.max(z1, z2) + EDGE_MARGIN_TILES
 
   local cx, cz = (minX + maxX) // 2, (minZ + maxZ) // 2
   local centre = CoordGrid.new(level, cx // 64, cz // 64, cx % 64, cz % 64)
