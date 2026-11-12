@@ -45,10 +45,12 @@ function PdbData:step()
   local file = self.files[self.loaded + 1]
   if file == nil then return true end
 
-  local text = require(file.name)
+  local result = require(file.name)
+  local text = type(result) == "table" and result[1] or result
   if type(text) ~= "string" or #text ~= file.length then
-    error(string.format("%s holds %s characters instead of %d", file.name,
-      type(text) == "string" and #text or type(text), file.length))
+    -- Level 0 leaves out the source position, so the reason stays short enough to show on the puzzle
+    local got = type(text) == "string" and (#text .. " characters") or tostring(text)
+    error(string.format("%s: %s, expected %d", file.name:match("[^/]+$"), got, file.length), 0)
   end
 
   file.parts[#file.parts + 1] = text

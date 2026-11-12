@@ -50,7 +50,8 @@ local function loadPDB()
   local function step()
     local loaded, done = pcall(pdb_data.step, pdb_data)
     if not loaded then
-      loading.data:reject("Failed to load the slider tables: " .. tostring(done))
+      print("[cluetrainer] Failed to load the slider tables: " .. tostring(done))
+      loading.data:reject(tostring(done))
       return
     end
     loading.progress = pdb_data:progress()
