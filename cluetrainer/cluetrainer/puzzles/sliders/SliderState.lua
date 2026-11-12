@@ -215,15 +215,16 @@ function SliderState.reflect(state)
   state[15], state[23] = state[23], state[15]
   state[20], state[24] = state[24], state[20]
 
-  -- Update tile values to the reflected tile id
+  -- Update tile values to the reflected tile id. The table holds tile + 1, so - 1 gives the 0-based id back.
   for i = 1, 25 do
-    state[i] = SliderState.tile_reflection_table[state[i] + 1]
+    state[i] = SliderState.tile_reflection_table[state[i] + 1] - 1
   end
 
+  -- The blank is stored as a 1-based cell index, which is the table's own numbering, so no correction here
   state[SliderState.BLANK_TILE_INDEX] = SliderState.tile_reflection_table[state[SliderState.BLANK_TILE_INDEX]]
 
   local last_move = state[SliderState.LAST_MOVE_INDEX]
-  state[SliderState.LAST_MOVE_INDEX] = SliderState.move_translation_reflect[last_move + 1] + 20
+  state[SliderState.LAST_MOVE_INDEX] = SliderState.move_translation_reflect[last_move + 21]
 end
 
 function SliderState.isSolved(state)

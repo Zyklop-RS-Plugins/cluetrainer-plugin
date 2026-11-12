@@ -80,7 +80,7 @@ local function getPDB()
       local final_value = table.concat(chunks)
 
       -- Rejects on invalid data
-      local parsed, graph = pcall(function() return RegionGraph.new(RegionGraph.parseTables(final_value), false) end)
+      local parsed, graph = pcall(function() return RegionGraph.new(RegionGraph.parseTables(final_value), true) end)
       if parsed then
         download.data:resolve(graph)
       else
