@@ -6,8 +6,8 @@ local schema          = require("cluetrainer/util/schema")
 local storage         = require("cluetrainer/util/storage")
 local SliderState     = require("cluetrainer/puzzles/sliders/SliderState")
 local Move            = require("cluetrainer/puzzles/sliders/Move")
--- The pattern database solver is disabled for now. To re-enable it, restore these requires, the `graph` below and the PdbSolver call in ActivePuzzle.new.
 local RegionGraph     = require("cluetrainer/puzzles/sliders/pdb/RegionGraph")
+local PdbData         = require("cluetrainer/puzzles/sliders/pdb/PdbData")
 local util            = require("cluetrainer/util")
 local PdbSolverTicked = require("cluetrainer/puzzles/sliders/pdb/PdbSolverTicked")
 
@@ -35,157 +35,62 @@ slider_solver.settings = {
     schema.bool({ default = true })),
 }
 
----@alias ct.sliders.PdbDownloadState {progress: number, data: zyklib.async.Promise<ct.sliders.pdb.RegionGraph>}
+---@alias ct.sliders.PdbLoadState {progress: number, data: zyklib.async.Promise<ct.sliders.pdb.RegionGraph>}
 
----@class ct.sliders.PdbDescription
----@field description {multitile: boolean, regions: (0 | 1 | 2)[][]}
----@field file_pattern string
----@field file_count integer
-
---- I am sorry for what you are about to read. This function downloads 170MB of data, and needs to cache it locally to avoid DDOSing cloudflare.
---- This really pushes the limits of the API, and various performance-intensive workarounds are needed.
----@return ct.sliders.PdbDownloadState
-local function getPDB()
-  --- Compile time toggle to enable or disable PDB caching
-  local ENABLE_PDB_CACHE = true
-  local CACHE_SUBCHUNK_SIZE = 130000
-
-  local download = {
+---Loads the slider tables that ship with the plugin, one part file per tick, so no tick comes near the client's time
+---limit per callback.
+---@return ct.sliders.PdbLoadState
+local function loadPDB()
+  local loading = {
     progress = 0,
     data = zyklib.async.Promise.new()
   }
+  local pdb_data = PdbData.new()
 
-  --- API WORKAROUND: PersistentDB has a bug where it wrongly truncates strings at null bytes, so we need to escape them before storing and unescape after retrieving.
-  ---@param str string
-  ---@return string
-  local function escape_null_bytes(str)
-    local res = str:gsub("[%z\1]", { ["\0"] = "\1\1", ["\1"] = "\1\2" })
-    return res
-  end
+  local function step()
+    local loaded, done = pcall(pdb_data.step, pdb_data)
+    if not loaded then
+      loading.data:reject("Failed to load the slider tables: " .. tostring(done))
+      return
+    end
+    loading.progress = pdb_data:progress()
 
-  ---@param str string
-  ---@return string
-  local function unescape_null_bytes(str)
-    local res = str:gsub("\1[\1\2]", { ["\1\1"] = "\0", ["\1\2"] = "\1" })
-    return res
-  end
+    if not done then
+      zyklib.game_events.native.Logic:once(step)
+      return
+    end
 
-  local BASE_URL = "/data/sliderpdb/mtm_huge/rechunked/"
-
-  --- We cannot use an async-await pattern here because it triggers a client crash, so we use recursion with a delayed call instead.
-  --- @param desc ct.sliders.PdbDescription
-  --- @param chunks string[]
-  local function recur(desc, chunks)
-    if #chunks == desc.file_count then
-      local final_value = table.concat(chunks)
-
-      -- Rejects on invalid data
-      local parsed, graph = pcall(function() return RegionGraph.new(RegionGraph.parseTables(final_value), true) end)
-      if parsed then
-        download.data:resolve(graph)
-      else
-        download.data:reject("Failed to read the downloaded data")
-      end
+    -- `true` also uses every table on the board mirrored along its diagonal (rows become columns), which doubles the
+    -- routes the solver can take without extra data.
+    local built, graph = pcall(function() return RegionGraph.new(pdb_data.tables, true) end)
+    if built then
+      loading.data:resolve(graph)
     else
-      local file_name = desc.file_pattern:gsub("%*", string.format("%03d", #chunks), 1)
-
-      local chunk_url = BASE_URL .. file_name
-      local cache_key = "sliderpdb/" .. file_name .. "/subchunks-v1/"
-      local length_key = cache_key .. "length"
-
-      local function accept_chunk(data)
-        table.insert(chunks, data)
-        download.progress = #chunks / desc.file_count
-
-        --- API WORKAROUND: The following is a bug workaround. Recursing directly triggers a client crash, hence we delay by a tick
-        zyklib.game_events.native.Logic:once(function(tick)
-          recur(desc, chunks)
-        end)
-      end
-
-      if ENABLE_PDB_CACHE then
-        --- API WORKAROUND: PersistentDB only allows 131070 characters per string, so we need to split the data into subchunks of size CACHE_SUBCHUNK_SIZE.
-
-        local length = PersistentDB:GetInt(length_key)
-        if length ~= nil then
-          if type(length) ~= "number" or length < 0 or length % 1 ~= 0 then
-            download.data:reject("Invalid cached length for chunk " .. #chunks)
-            return
-          end
-
-          local parts = {}
-          local part_count = math.ceil(length / CACHE_SUBCHUNK_SIZE)
-          for index = 1, part_count do
-            local part = PersistentDB:GetString(cache_key .. index)
-            local expected_length = math.min(CACHE_SUBCHUNK_SIZE, length - (index - 1) * CACHE_SUBCHUNK_SIZE)
-            if type(part) ~= "string" or #part ~= expected_length then
-              download.data:reject("Invalid cached subchunk " .. index .. " of chunk " .. #chunks)
-              return
-            end
-            parts[index] = part
-          end
-          accept_chunk(unescape_null_bytes(table.concat(parts)))
-          return
-        end
-      end
-
-      zyklib.http.get(Plugin.urls["cluetrainer"], chunk_url)
-          :onCompletion(function(result, data)
-            if not result then
-              download.data:reject("Failed to download chunk " .. #chunks)
-              return
-            end
-
-            if ENABLE_PDB_CACHE then
-              local escaped = escape_null_bytes(data)
-              for offset = 1, #escaped, CACHE_SUBCHUNK_SIZE do
-                local index = (offset - 1) // CACHE_SUBCHUNK_SIZE + 1
-                local part = escaped:sub(offset, offset + CACHE_SUBCHUNK_SIZE - 1)
-                local part_key = cache_key .. index
-                PersistentDB:SetString(part_key, part)
-              end
-              PersistentDB:SetInt(length_key, #escaped)
-            end
-
-            accept_chunk(data)
-          end)
+      loading.data:reject("Failed to read the slider tables")
     end
   end
 
-  --- Download a description JSON file for the pdb metadata
-  zyklib.http.get(Plugin.urls["cluetrainer"], BASE_URL .. "description.json")
-      :map(function(data) return zyklib.json.decode(data) end)
-      :onCompletion(
-      ---@param data ct.sliders.PdbDescription
-        function(result, data)
-          if not result then
-            download.data:reject("Failed to download description.json")
-            return
-          end
+  zyklib.game_events.native.Logic:once(step)
 
-          -- Start actual download of chunks
-          recur(data, {})
-        end)
-
-  return download
+  return loading
 end
 
----@type ct.sliders.PdbDownloadState?
-local current_download = nil
+---@type ct.sliders.PdbLoadState?
+local current_load = nil
 
----The running or finished download. Starts a new one when the last one failed, so the next slider tries again without
----reloading the plugin.
----@return ct.sliders.PdbDownloadState
+---The running or finished load, which keeps the tables for the session. Starts a new one when the last one failed, so
+---the next slider tries again without reloading the plugin.
+---@return ct.sliders.PdbLoadState
 local function pdb()
-  local download = current_download
-  if download == nil then
-    download = getPDB()
-    current_download = download
-    download.data:onFailure(function()
-      if current_download == download then current_download = nil end
+  local loading = current_load
+  if loading == nil then
+    loading = loadPDB()
+    current_load = loading
+    loading.data:onFailure(function()
+      if current_load == loading then current_load = nil end
     end)
   end
-  return download
+  return loading
 end
 
 local STROKE = 3
@@ -221,7 +126,7 @@ SMALL_TEXT_CONFIG.isShadowed = true
 ---@field recovering_to_mainline_index integer The mainline entry the recovery leads back to
 
 ---@alias ct.sliders.ct.sliders.ActiveSliderPuzzle.State
----           | {state: "waitingforpdb", last_drawn_progress: number?, progress: ct.sliders.PdbDownloadState}
+---           | {state: "waitingforpdb", last_drawn_progress: number?, progress: ct.sliders.PdbLoadState}
 ---           | {state: "solving", start_tick: number, solver: ct.sliders.pdb.PdbSolverTicked}
 ---           | {state: "executing", start_tick: number, solution: ct.sliders.AugmentedMove[], mainline_index: integer, last_mainline_state: ct.sliders.SliderState, finished_tick: integer?, last_drawn_state: ct.sliders.SliderState?, last_drawn_arrows_inverted: boolean?, recovery_solution: ct.sliders.RecoverySolution}
 ---           | {state: "failed", reason: string}
@@ -424,13 +329,13 @@ CENTER_TEXT_CONFIG.rgba = 0xFFFFFFFF
 CENTER_TEXT_CONFIG.shadowRGBA = 0x000000FF
 CENTER_TEXT_CONFIG.isShadowed = true
 
----Stub: draws the pattern database download progress.
+---Draws the progress of loading the slider tables.
 ---@param progress number Fraction between 0 and 1
-function ActivePuzzle:drawDownloadProgress(progress)
+function ActivePuzzle:drawLoadProgress(progress)
   local canvas = self.progress_canvas
   canvas:Clear()
 
-  drawCenteredText(canvas, canvas.width // 2, canvas.height // 2 - 15, "Downloading Data", CENTER_TEXT_CONFIG)
+  drawCenteredText(canvas, canvas.width // 2, canvas.height // 2 - 15, "Loading Data", CENTER_TEXT_CONFIG)
 
   drawProgressBar(canvas, canvas.width // 2, canvas.height // 2 + 25, 100, progress, 2, 1, 0x00FFFFFF, 0xFFFFFFFF)
 end
@@ -641,16 +546,16 @@ function ActivePuzzle:logictick()
   local s = self.state
 
   if s.state == "waitingforpdb" then
-    local download = s.progress
+    local loading = s.progress
 
-    if download.data:isSettled() then
-      if download.data:isRejected() then
-        self.state = { state = "failed", reason = download.data:getRejectionReason() }
+    if loading.data:isSettled() then
+      if loading.data:isRejected() then
+        self.state = { state = "failed", reason = loading.data:getRejectionReason() }
         self:drawFailed()
         return
       end
 
-      local graph = download.data:get()
+      local graph = loading.data:get()
 
       local solver = PdbSolverTicked.new(SliderState.getSliderState(), graph,
         slider_solver.settings.mode:get() ~= "keyboard")
@@ -658,9 +563,9 @@ function ActivePuzzle:logictick()
       self.solver = solver
       self.state = { state = "solving", start_tick = self.ticks, solver = solver }
       self.progress_canvas:Clear()
-    elseif s.last_drawn_progress ~= download.progress then
-      s.last_drawn_progress = download.progress
-      self:drawDownloadProgress(download.progress)
+    elseif s.last_drawn_progress ~= loading.progress then
+      s.last_drawn_progress = loading.progress
+      self:drawLoadProgress(loading.progress)
     end
   end
 

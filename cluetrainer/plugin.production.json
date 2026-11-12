@@ -3,12 +3,7 @@
   "contactEmailAddress": "zyklop@cluetrainer.app",
   "version": "83",
   "requiredPermissions": [],
-  "optionalPermissions": [
-    "httpAccess"
-  ],
-  "urls": {
-    "cluetrainer": "https://cluetrainer.app"
-  },
+  "optionalPermissions": [],
   "hasSettingsIcon" : true,
   "hasRibbonIcon" : true
 }
