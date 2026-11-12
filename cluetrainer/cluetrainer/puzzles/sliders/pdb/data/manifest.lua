@@ -3,7 +3,9 @@
 -- Region: per cell 2 = placed before this table, 1 = placed by this table, 0 = free.
 return {
   multitile = true,         -- tables for mouse moves (a whole row or column part in one move)
-  part_size = 4 * 1024 * 1024, -- characters per part file, small enough to load one per tick
+  -- Characters per part file. Stays below the largest file the client is known to load (scan_methods.lua, 2.2 MB);
+  -- the client's require returned nil for 4 MiB parts.
+  part_size = 2 * 1024 * 1024,
   tables = {
     { region = "1111100000000000000000000" }, -- row 1
     { region = "2222211111000000000000000" }, -- row 2

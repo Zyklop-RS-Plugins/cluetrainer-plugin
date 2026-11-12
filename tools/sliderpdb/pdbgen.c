@@ -5,7 +5,8 @@
 // RegionIndexing.lua indexes them. The solver only compares neighbours, whose distances differ by at most 1, so the
 // distance mod 3 is enough. Four entries are packed into one character: the base-3 number d0 + 3 d1 + 9 d2 + 27 d3
 // (0..80), written as the character 0x21 + that number, skipping ']' (0x5D). The text is printable ASCII without ']',
-// so each part is a plain Lua long string: <prefix>_01.lua, <prefix>_02.lua, ... each holding `return [[...]]`.
+// so each part is a plain Lua long string: <prefix>_01.lua, <prefix>_02.lua, ... each holding `return { [[...]] }`,
+// a table like the plugin's other data files.
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -199,9 +200,9 @@ int main(int argc, char **argv) {
     snprintf(path, sizeof path, "%s_%02d.lua", argv[3], ++part);
     FILE *f = fopen(path, "wb");
     if (!f) { fprintf(stderr, "cannot write %s\n", path); return 1; }
-    fputs("return [[", f);
+    fputs("return { [[", f);
     fwrite(text + start, 1, length, f);
-    fputs("]]\n", f);
+    fputs("]] }\n", f);
     fclose(f);
   }
   printf("%d\n", part);
