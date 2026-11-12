@@ -93,6 +93,7 @@ package_into target environment="production": (check-environment environment)
     cp -R dependencies/zyklib/src/. "{{target}}/"
     rm "{{target}}/plugin.production.json" "{{target}}/plugin.test.json"
     cp "cluetrainer/plugin.{{environment}}.json" "{{target}}/plugin.json"
+    @if grep -rln --include='*.lua' 'ExecuteConsoleCommand' "{{target}}"; then echo "ExecuteConsoleCommand must not ship: the plugin hub handles permissions." >&2; exit 1; fi
 
 [private]
 check-environment environment:
