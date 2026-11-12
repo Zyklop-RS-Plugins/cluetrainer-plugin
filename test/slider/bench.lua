@@ -4,7 +4,6 @@
 -- Each combination is compared per puzzle with today's game (8 tables, no fixes) and with the same tables without fixes.
 -- Usage (from anywhere): lua test/slider/bench.lua [options]
 --   --puzzles N     first N puzzles of each data set, or all (default 1000)
---   --times "a b"   solve times in ms, as the setting (100..5000, default "200 1000")
 --   --mode M        mouse (default), hybrid or keyboard
 --   --sets "A B"    route sets (default A A+B A+B+C = 4, 6 and 8 tables; also B, C and other combinations)
 --   --fixes "a b"   code variants: none, all, or fix names joined by + (default none mirror prune dedupe all)
@@ -32,7 +31,7 @@ local SLIDERS = "cluetrainer/cluetrainer/puzzles/sliders"
 -- Same location as SliderSolver.getPDB: Plugin.urls.cluetrainer (plugin.production.json) .. BASE_URL
 local DATA_URL = "https://cluetrainer.app/data/sliderpdb/mtm_huge/rechunked/"
 
--- Routes through the published tables, by table number. Table 1 is the only start; the solver links each table to the
+-- Routes through the tables, by table number. Table 1 is the only start; the solver links each table to the
 -- next that fits (Region.isChild), so a set of routes is just the tables they use.
 local ROUTES = {
   A = { 1, 2, 3, 4 }, -- row 1, row 2, columns 1-2, final 3x3
@@ -59,11 +58,12 @@ local FIXES = {
   dedupe = "skip a board the same table was already given with no more moves",
 }
 local FIX_ORDER = { "mirror", "prune", "dedupe" }
+local SOLVE_TIME = 200 -- ms, the game's default setting
 
 -- Options -------------------------------------------------------------------------------------------------------------
 
 local options = {
-  puzzles = 1000, times = { 200, 1000 }, mode = "mouse", sets = { "A", "A+B", TODAY_SET },
+  puzzles = 1000, mode = "mouse", sets = { "A", "A+B", TODAY_SET },
   fixes = { "none", "mirror", "prune", "dedupe", "all" }, data = { "sliders.json", "sliders_2024.json" },
 }
 for i = 1, #arg, 2 do
@@ -74,20 +74,16 @@ for i = 1, #arg, 2 do
     return result
   end
   if key == "--puzzles" then options.puzzles = value == "all" and math.huge or assert(tonumber(value))
-  elseif key == "--times" then options.times = {}; for _, v in ipairs(words()) do options.times[#options.times + 1] = assert(tonumber(v)) end
   elseif key == "--mode" then options.mode = value
   elseif key == "--sets" then options.sets = words()
   elseif key == "--fixes" then options.fixes = words()
   elseif key == "--data" then options.data = words()
   elseif key == "--out" then options.out = value
   else
-    io.stderr:write("usage: lua ", arg[0], " [--puzzles N|all] [--times \"200 1000\"] [--mode mouse|hybrid|keyboard] ",
+    io.stderr:write("usage: lua ", arg[0], " [--puzzles N|all] [--mode mouse|hybrid|keyboard] ",
       "[--sets \"A A+B A+B+C\"] [--fixes \"none mirror all\"] [--data \"sliders_2024.json\"] [--out FILE]\n")
     os.exit(2)
   end
-end
-for _, ms in ipairs(options.times) do
-  assert(ms >= 100 and ms <= 5000 and ms % 100 == 0, "solve times are 100..5000 ms in steps of 100, like the setting")
 end
 assert(options.mode == "mouse" or options.mode == "hybrid" or options.mode == "keyboard", "unknown --mode")
 
@@ -210,7 +206,7 @@ local function loadPuzzles(file)
   return set
 end
 
--- Tables: the published data the plugin downloads, cached in .cache ------------------------------------------------
+-- Tables: 1-4 from the plugin (PdbData), 5-8 from the data the plugin downloaded before, cached in .cache ----------
 
 local function publishedData()
   local path = CACHE .. "/pdb.bin"
@@ -236,10 +232,14 @@ package.preload["zyklib"] = function()
 end
 local SliderState = require("cluetrainer/puzzles/sliders/SliderState")
 local RegionGraph = require("cluetrainer/puzzles/sliders/pdb/RegionGraph")
+local PdbData = require("cluetrainer/puzzles/sliders/pdb/PdbData")
+local PdbRegion = require("cluetrainer/puzzles/sliders/pdb/PdbRegion")
+local Indexing = require("cluetrainer/puzzles/sliders/pdb/RegionIndexing")
+local AllowedMoveTable = require("cluetrainer/puzzles/sliders/pdb/AllowedMoveTable")
 
 -- SliderSolver itself needs the client, so the two values it passes to the solver are read from its source text
 local solver_settings = read(ROOT .. "/" .. SLIDERS .. "/SliderSolver.lua")
-local MIRRORED = assert(solver_settings:match("RegionGraph%.new%(RegionGraph%.parseTables%(final_value%),%s*(%a+)%)"),
+local MIRRORED = assert(solver_settings:match("RegionGraph%.new%(pdb_data%.tables,%s*(%a+)%)"),
   "RegionGraph.new call not found in SliderSolver.lua") == "true"
 local BUDGET = assert(tonumber(solver_settings:match("SOLVER_TICK_BUDGET%s*=%s*(%d+)")),
   "SOLVER_TICK_BUDGET not found in SliderSolver.lua")
@@ -318,8 +318,36 @@ end
 local datasets = {}
 for k, file in ipairs(options.data) do datasets[k] = loadPuzzles(file) end
 
+---The tables in the published file: per table a 26-byte header (multitile, 25 region cells), then the distance mod 4
+---of every state, 2 bits each. Same interface as the plugin's PdbRegion.
+local function publishedTables(data)
+  local result, offset = {}, 0
+  while offset < #data do
+    local region = {}
+    for i = 1, 25 do region[i] = data:byte(offset + 1 + i) end
+    local description = { multitile = data:byte(offset + 1) == 1, region = region }
+    local indexing = Indexing.new(region)
+    local start = offset + 26
+    result[#result + 1] = {
+      description = description, indexing = indexing, move_table = AllowedMoveTable.new(description), modulus = 4,
+      byte_size = (indexing.size + 3) // 4, source = "downloaded before",
+      getDistanceByIndex = function(_, index) return (data:byte(start + index // 4 + 1) >> (2 * (index % 4))) & 3 end,
+    }
+    offset = start + (indexing.size + 3) // 4
+  end
+  return result
+end
+
 io.stderr:write("Loading the tables\n")
-local tables = RegionGraph.parseTables(publishedData())
+local tables = publishedTables(publishedData())
+local shipped = PdbData.new()
+while not shipped:step() do end
+for t, tbl in ipairs(shipped.tables) do
+  assert(table.concat(tbl.description.region) == table.concat(tables[t].description.region),
+    "plugin table " .. t .. " has another region than published table " .. t)
+  tbl.byte_size, tbl.source = PdbRegion.characters(tbl.indexing), "plugin"
+  tables[t] = tbl
+end
 
 -- One configuration per route set and code variant; graphs per route set and mirrored flag
 local solvers, graphs, sizes, configs = {}, {}, {}, {}
@@ -340,23 +368,20 @@ local function configIndex(set, fixes)
   for k, c in ipairs(configs) do if c.set == set and c.fixes == fixes then return k end end
 end
 
-local results = {} -- results[dataset][time][config][puzzle]
+local results = {} -- results[dataset][config][puzzle]
 for d, dataset in ipairs(datasets) do
-  results[d] = {}
-  for _, time in ipairs(options.times) do
-    local r = {}
-    for k = 1, #configs do r[k] = {} end
-    for i, puzzle in ipairs(dataset.puzzles) do
-      -- Each puzzle through every configuration, starting at a different one each time, so warm-up and CPU throttling
-      -- do not favour one
-      for n = 1, #configs do
-        local k = (i + n) % #configs + 1
-        r[k][i] = solve(configs[k], puzzle, time)
-      end
-      if i % 100 == 0 then io.stderr:write(string.format("  %s, %d ms: %d/%d\n", dataset.file, time, i, #dataset.puzzles)) end
+  local r = {}
+  for k = 1, #configs do r[k] = {} end
+  for i, puzzle in ipairs(dataset.puzzles) do
+    -- Each puzzle through every configuration, starting at a different one each time, so warm-up and CPU throttling
+    -- do not favour one
+    for n = 1, #configs do
+      local k = (i + n) % #configs + 1
+      r[k][i] = solve(configs[k], puzzle, SOLVE_TIME)
     end
-    results[d][time] = r
+    if i % 100 == 0 then io.stderr:write(string.format("  %s: %d/%d\n", dataset.file, i, #dataset.puzzles)) end
   end
+  results[d] = r
 end
 
 -- Report --------------------------------------------------------------------------------------------------------------
@@ -364,10 +389,11 @@ end
 local lines = {}
 local function out(fmt, ...) lines[#lines + 1] = select("#", ...) > 0 and string.format(fmt, ...) or fmt end
 local function row(cells) out("| " .. table.concat(cells, " | ") .. " |") end
-local function header(cells)
+---Header row and rule; the first `text_columns` (default 3) are left-aligned, the rest are numbers.
+local function header(cells, text_columns)
   row(cells)
   local rule = {}
-  for c = 1, #cells do rule[c] = c <= 3 and "---" or "---:" end
+  for c = 1, #cells do rule[c] = c <= (text_columns or 3) and "---" or "---:" end
   row(rule)
 end
 local function f(fmt, v) return (v == nil or v ~= v) and "-" or string.format(fmt, v) end
@@ -460,7 +486,7 @@ out("- Code: %s, %s. SliderSolver passes mirrored = %s, %d positions per tick.",
   branch == "HEAD" and commit or ("`" .. branch .. "` at " .. commit),
   #changed > 0 and ("with uncommitted changes in " .. table.concat(changed, ", ")) or "no uncommitted slider changes",
   tostring(MIRRORED), BUDGET)
-out("- %s mode, solve times %s ms. %s.", (options.mode:gsub("^%l", string.upper)), table.concat(options.times, " and "),
+out("- %s mode, solve time %d ms. %s.", (options.mode:gsub("^%l", string.upper)), SOLVE_TIME,
   options.puzzles == math.huge and "All puzzles of each data set" or ("First " .. options.puzzles .. " puzzles of each data set"))
 out("- Machine: %s, %s. Times are desktop Lua; compare them with each other, not with the game.",
   sh("uname -sm"), _VERSION)
@@ -479,14 +505,14 @@ for _, dataset in ipairs(datasets) do
     tostring(dataset.left_out), tostring(#dataset.puzzles) })
 end
 out("")
-header({ "Table", "Region", "Size MB" })
+header({ "Table", "Region", "Size MB", "From" })
 local total = 0
 for t, tbl in ipairs(tables) do
   local region = table.concat(tbl.description.region)
   total = total + tbl.byte_size
-  row({ tostring(t), REGION_NAMES[region] or ("`" .. region .. "`"), mb(tbl.byte_size) })
+  row({ tostring(t), REGION_NAMES[region] or ("`" .. region .. "`"), mb(tbl.byte_size), tbl.source })
 end
-row({ "all", "", mb(total) })
+row({ "all", "", mb(total), "" })
 out("")
 header({ "Tables", "Numbers", "Size MB", "Routes", "Routes with mirror" })
 for _, set in ipairs(options.sets) do
@@ -500,18 +526,17 @@ for d, dataset in ipairs(datasets) do
   out("")
   out("## %s", dataset.file)
   local problems = {}
-  for _, time in ipairs(options.times) do
-    for k, c in ipairs(configs) do
-      local none, wrong = 0, 0
-      for _, x in ipairs(results[d][time][k]) do
-        if not x.steps then none = none + 1 elseif not x.ok then wrong = wrong + 1 end
-      end
-      if none + wrong > 0 then
-        problems[#problems + 1] = string.format("%d ms, %s, %s: %d without solution, %d wrong", time, setLabel(c.set),
-          c.fixes, none, wrong)
-      end
-      failed = failed or wrong > 0
+  local r = results[d]
+  for k, c in ipairs(configs) do
+    local none, wrong = 0, 0
+    for _, x in ipairs(r[k]) do
+      if not x.steps then none = none + 1 elseif not x.ok then wrong = wrong + 1 end
     end
+    if none + wrong > 0 then
+      problems[#problems + 1] = string.format("%s, %s: %d without solution, %d wrong", setLabel(c.set), c.fixes, none,
+        wrong)
+    end
+    failed = failed or wrong > 0
   end
   out("")
   out(#problems == 0 and "Every solve found a solution and every solution replays to the solved puzzle." or
@@ -521,65 +546,55 @@ for d, dataset in ipairs(datasets) do
     out("")
     out("### Against today (8 tables, no fixes)")
     out("")
-    header({ "Solve time", "Tables", "Fixes", "Avg moves", "Delta", "95% CI", "p", "Min", "p5", "p50", "p95", "Max",
-      "Better", "Worse", "Equal", "CPU ms", "CPU", "Tick p99 ms", "Tick max ms" })
-    for _, time in ipairs(options.times) do
-      local r = results[d][time]
-      for k, c in ipairs(configs) do
-        local steps, tick = {}, {}
-        for i, x in ipairs(r[k]) do
-          if x.steps then steps[#steps + 1] = x.steps end
-          tick[i] = x.tick_ms
-        end
-        tick = sorted(tick)
-        row(cells({ time .. " ms", setLabel(c.set), c.fixes, f("%.2f", mean(steps)) }, versus(r[today], r[k]),
-          { f("%.1f", cpuMean(r[k])), f("%+.0f%%", 100 * (cpuMean(r[k]) / cpuMean(r[today]) - 1)), f("%.2f", pct(tick, 99)),
-            f("%.2f", tick[#tick]) }))
+    header({ "Tables", "Fixes", "Avg moves", "Delta", "95% CI", "p", "Min", "p5", "p50", "p95", "Max",
+      "Better", "Worse", "Equal", "CPU ms", "CPU", "Tick p99 ms", "Tick max ms" }, 2)
+    for k, c in ipairs(configs) do
+      local steps, tick = {}, {}
+      for i, x in ipairs(r[k]) do
+        if x.steps then steps[#steps + 1] = x.steps end
+        tick[i] = x.tick_ms
       end
+      tick = sorted(tick)
+      row(cells({ setLabel(c.set), c.fixes, f("%.2f", mean(steps)) }, versus(r[today], r[k]),
+        { f("%.1f", cpuMean(r[k])), f("%+.0f%%", 100 * (cpuMean(r[k]) / cpuMean(r[today]) - 1)), f("%.2f", pct(tick, 99)),
+          f("%.2f", tick[#tick]) }))
     end
 
     out("")
     out("Spread of the difference per puzzle:")
     out("")
-    local spread_header = { "Solve time", "Tables", "Fixes", "Min" }
+    local spread_header = { "Tables", "Fixes", "Min" }
     for _, p in ipairs(SPREAD) do spread_header[#spread_header + 1] = "p" .. p end
     spread_header[#spread_header + 1] = "Max"
-    header(spread_header)
-    for _, time in ipairs(options.times) do
-      for k, c in ipairs(configs) do
-        if k ~= today then row(cells({ time .. " ms", setLabel(c.set), c.fixes }, spread(results[d][time][today], results[d][time][k]))) end
-      end
+    header(spread_header, 2)
+    for k, c in ipairs(configs) do
+      if k ~= today then row(cells({ setLabel(c.set), c.fixes }, spread(r[today], r[k]))) end
     end
 
     out("")
     out("Puzzles per size of the difference, in moves:")
     out("")
-    local size_header = { "Solve time", "Tables", "Fixes" }
+    local size_header = { "Tables", "Fixes" }
     for k = #SIZES, 1, -1 do size_header[#size_header + 1] = sizeLabel(k, "-") end
     size_header[#size_header + 1] = "0"
     for k = 1, #SIZES do size_header[#size_header + 1] = sizeLabel(k, "+") end
     for _, h in ipairs({ "Avg gain", "Avg loss", "Moves won", "Moves lost" }) do size_header[#size_header + 1] = h end
-    header(size_header)
-    for _, time in ipairs(options.times) do
-      for k, c in ipairs(configs) do
-        if k ~= today then row(cells({ time .. " ms", setLabel(c.set), c.fixes }, sizeClasses(results[d][time][today], results[d][time][k]))) end
-      end
+    header(size_header, 2)
+    for k, c in ipairs(configs) do
+      if k ~= today then row(cells({ setLabel(c.set), c.fixes }, sizeClasses(r[today], r[k]))) end
     end
   end
 
   out("")
   out("### Fixes against the same tables without fixes")
   out("")
-  header({ "Solve time", "Tables", "Fixes", "Delta", "95% CI", "p", "Min", "p5", "p50", "p95", "Max", "Better", "Worse",
-    "Equal", "CPU" })
-  for _, time in ipairs(options.times) do
-    local r = results[d][time]
-    for k, c in ipairs(configs) do
-      local base = configIndex(c.set, "none")
-      if base and k ~= base then
-        row(cells({ time .. " ms", setLabel(c.set), c.fixes }, versus(r[base], r[k]),
-          { f("%+.0f%%", 100 * (cpuMean(r[k]) / cpuMean(r[base]) - 1)) }))
-      end
+  header({ "Tables", "Fixes", "Delta", "95% CI", "p", "Min", "p5", "p50", "p95", "Max", "Better", "Worse",
+    "Equal", "CPU" }, 2)
+  for k, c in ipairs(configs) do
+    local base = configIndex(c.set, "none")
+    if base and k ~= base then
+      row(cells({ setLabel(c.set), c.fixes }, versus(r[base], r[k]),
+        { f("%+.0f%%", 100 * (cpuMean(r[k]) / cpuMean(r[base]) - 1)) }))
     end
   end
 end

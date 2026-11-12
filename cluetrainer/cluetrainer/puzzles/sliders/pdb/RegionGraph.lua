@@ -1,5 +1,4 @@
 -- RegionGraph.lua
-local RegionDistanceTable = require("cluetrainer/puzzles/sliders/pdb/PdbRegion")
 local Region              = require("cluetrainer/puzzles/sliders/pdb/Region")
 
 
@@ -69,24 +68,6 @@ function RegionGraph.new(databases, include_reflected_nodes)
   end)
 
   return self
-end
-
----Parses the given data into a list of RegionDistanceTable instances.
----@param data string
----@return ct.sliders.pdb.RegionDistanceTable[]
-function RegionGraph.parseTables(data)
-  local tables = {}
-
-  local offset = 0
-
-  while offset < #data do
-    local region = RegionDistanceTable.new(data, offset)
-
-    tables[#tables + 1] = region
-    offset = offset + region.byte_size
-  end
-
-  return tables
 end
 
 ---@return ct.sliders.pdb.RegionGraph.Node[]

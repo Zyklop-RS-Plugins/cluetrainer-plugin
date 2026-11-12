@@ -1,0 +1,2 @@
+# Generated slider tables (tools/sliderpdb): one 4 MB line each, not readable as a diff
+cluetrainer/cluetrainer/puzzles/sliders/pdb/data/t*.lua -diff linguist-generated

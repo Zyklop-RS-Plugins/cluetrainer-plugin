@@ -199,7 +199,9 @@ SliderState.move_translation_reflect = {
   [21 + 20] = 4,
 }
 
----Reflects the state in place along the main diagonal.
+---Reflects the state in place along the main diagonal, so rows become columns.
+---The three parts each keep their own encoding: cells 1-25 hold 0-based tile ids, the blank index is a 1-based cell
+---number and the last move is a step of -20 to 20 (0 = none).
 ---@param state ct.sliders.SliderState
 function SliderState.reflect(state)
   -- Swap tiles on opposing sides of the main diagonal

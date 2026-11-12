@@ -123,7 +123,8 @@ function PdbSolverTicked:pushState(region, state, moves, known_distance)
   end
 
   -- Skip a board this node was already given with no more moves: that search covers this one, so it saves budget for
-  -- other branches. Keyed per node, because the same board has a different distance in another table.
+  -- other branches. Keyed per node, because the same board has a different distance in another table. The key is the
+  -- 25 tile ids as one string (one byte each), which is the cheapest table key; the blank position follows from it.
   local seen = self.seen[region]
   if seen == nil then
     seen = {}
@@ -165,6 +166,7 @@ function PdbSolverTicked:step()
   local current_region = frame.region
   local indexing = current_region.table.indexing
   local distance_table = current_region.table
+  local modulus = distance_table.modulus
 
   local move_translation = current_region.reflected
       and SliderState.move_translation_reflect
@@ -198,7 +200,7 @@ function PdbSolverTicked:step()
 
       local child_distance = distance_table:getDistanceByIndex(child_index)
 
-      if (child_distance + 1) % 4 == known_distance then
+      if (child_distance + 1) % modulus == known_distance then -- one move closer to the goal of this table
         if next_move == nil then
           next_move = move
           next_distance = child_distance

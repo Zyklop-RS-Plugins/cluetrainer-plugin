@@ -1,78 +1,55 @@
 -- PdbRegion.lua
 local AllowedMoveTable          = require("cluetrainer/puzzles/sliders/pdb/AllowedMoveTable")
-local Region                    = require("cluetrainer/puzzles/sliders/pdb/Region")
 local Indexing                  = require("cluetrainer/puzzles/sliders/pdb/RegionIndexing")
 
+--- The distance of every state of one region to its goal, as built by tools/sliderpdb. Only the distance mod 3 is
+--- stored: the solver compares a state with its neighbours, whose distances differ by at most 1, so mod 3 tells closer,
+--- equal and further apart.
 ---@class ct.sliders.pdb.RegionDistanceTable
----@field region ct.sliders.pdb.RegionDescription
----@field indexing ct.sliders.pdb.RegionIndexing
----@field underlying_data string
----@field data_offset integer
----@field byte_size integer
----@field real_data_offset integer
 ---@field description ct.sliders.pdb.RegionDescription
+---@field indexing ct.sliders.pdb.RegionIndexing
 ---@field move_table ct.sliders.pdb.AllowedMoveTable
+---@field modulus integer the stored distances are the real distances mod this
+---@field private parts string[]
+---@field private part_size integer
 local RegionDistanceTable       = {}
 RegionDistanceTable.__index     = RegionDistanceTable
 
-local Description               = {}
-RegionDistanceTable.Description = Description
-
-Description.SERIALIZED_SIZE     = 26
-
-function Description.serialize(description)
-  local bytes = {
-    string.char(description.multitile and 1 or 0)
-  }
-
-  for i = 1, 25 do
-    bytes[i + 1] = string.char(description.region[i])
+--- One character holds 4 entries: the base-3 digits of (character - 0x21), skipping ']' so the data fits in a Lua long
+--- string. DIGITS[byte * 4 + k] is entry k of that character, so a lookup is one table access.
+local DIGITS                    = {}
+for value = 0, 80 do
+  local byte = 0x21 + value
+  if byte >= 0x5D then byte = byte + 1 end
+  local power = 1
+  for k = 0, 3 do
+    DIGITS[byte * 4 + k] = value // power % 3
+    power = power * 3
   end
-
-  return table.concat(bytes)
 end
 
-function Description.deserialize(data, offset)
-  offset = offset or 0
-
-  local multitile = data:byte(offset + 1) == 1
-  local region = {}
-
-  for i = 1, 25 do
-    region[i] = data:byte(offset + 1 + i)
-  end
-
-  return {
-    multitile = multitile,
-    region = region
-  }
-end
-
-function Description.byteSize(indexing)
-  return Description.SERIALIZED_SIZE
-      + math.ceil(indexing.size / 4)
-end
-
----Creates a new RegionDistanceTable instance from the given data and offset.
----@param data string
----@param offset integer 0-based offset where the data starts
+---@param description ct.sliders.pdb.RegionDescription
+---@param parts string[] the table's characters, split into strings of `part_size` (the last may be shorter)
+---@param part_size integer
 ---@return ct.sliders.pdb.RegionDistanceTable
-function RegionDistanceTable.new(data, offset)
+function RegionDistanceTable.new(description, parts, part_size)
   local self = setmetatable({}, RegionDistanceTable)
 
-  self.underlying_data = data
-  self.data_offset = offset
-  self.description = Description.deserialize(data, offset)
-
-  self.indexing = Indexing.new(self.description.region)
-  self.move_table = AllowedMoveTable.new(
-    self.description
-  )
-
-  self.byte_size = Description.byteSize(self.indexing)
-  self.real_data_offset = offset + Description.SERIALIZED_SIZE
+  self.description = description
+  self.indexing = Indexing.new(description.region)
+  self.move_table = AllowedMoveTable.new(description)
+  self.modulus = 3
+  self.parts = parts
+  self.part_size = part_size
 
   return self
+end
+
+---Number of characters the table needs, which is what its part files hold together.
+---@param indexing ct.sliders.pdb.RegionIndexing
+---@return integer
+function RegionDistanceTable.characters(indexing)
+  return (indexing.size + 3) // 4
 end
 
 function RegionDistanceTable:getDistance(state)
@@ -81,88 +58,12 @@ function RegionDistanceTable:getDistance(state)
   )
 end
 
+---@param index integer 0-based state index
+---@return integer distance mod `modulus`
 function RegionDistanceTable:getDistanceByIndex(index)
-  local byte_index = self.real_data_offset
-      + (index // 4) + 1
-
-  local byte = self.underlying_data:byte(byte_index)
-  local shift = 2 * (index % 4)
-
-  return (byte >> shift) & 0x03
+  local character = index // 4
+  local part = self.parts[character // self.part_size + 1]
+  return DIGITS[part:byte(character % self.part_size + 1) * 4 + index % 4]
 end
-
--- Region graph
-
-local RegionGraph = {}
-RegionGraph.__index = RegionGraph
-RegionDistanceTable.RegionGraph = RegionGraph
-
-function RegionGraph.new(databases, include_reflected_nodes)
-  local self = setmetatable({}, RegionGraph)
-  local nodes = {}
-
-  for i, db in ipairs(databases) do
-    local region = db.description.region
-
-    nodes[#nodes + 1] = {
-      effective_region = region,
-      table = db,
-      reflected = false,
-      children = {},
-      name = tostring(i - 1)
-    }
-
-    if include_reflected_nodes then
-      local reflected = Region.reflect(region)
-      local exists = false
-
-      for _, node in ipairs(nodes) do
-        if Region.equals(
-              node.effective_region, reflected
-            ) then
-          exists = true
-          break
-        end
-      end
-
-      if not exists then
-        nodes[#nodes + 1] = {
-          effective_region = reflected,
-          table = db,
-          reflected = true,
-          children = {},
-          name = tostring(i - 1) .. "R"
-        }
-      end
-    end
-  end
-
-  for _, parent in ipairs(nodes) do
-    for _, child in ipairs(nodes) do
-      if parent ~= child and Region.isChild(
-            parent.effective_region,
-            child.effective_region
-          ) then
-        parent.children[#parent.children + 1] = child
-      end
-    end
-  end
-
-  self.nodes = nodes
-  self.entry_nodes = {}
-
-  for _, node in ipairs(nodes) do
-    if Region.isFirst(node.effective_region) then
-      self.entry_nodes[#self.entry_nodes + 1] = node
-    end
-  end
-
-  return self
-end
-
-function RegionGraph:getEntryPoints()
-  return self.entry_nodes
-end
-
 
 return RegionDistanceTable
