@@ -25,7 +25,8 @@ local cache = {}
 ---@return table<integer, true>
 local function to_set(list)
   local set = {}
-  for _, id in ipairs(list or {}) do set[id] = true end
+  -- pairs, so a name the game does not know drops only that id, not the ids after it.
+  for _, id in pairs(list or {}) do set[id] = true end
   return set
 end
 

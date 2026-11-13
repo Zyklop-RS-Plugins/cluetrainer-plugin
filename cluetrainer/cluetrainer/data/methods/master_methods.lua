@@ -182,7 +182,7 @@ local pack = {
           assumed_start = { x = 3088, y = 3250, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 1239,
+            source_loc = id.Loc.BUILD_IMP_DRAYNOR_DOOR1_CLOSED,
             entity = { kind = "static", name = "Door" },
             clickable_area = {
               topleft = { x = 3087.5, y = 3251 },
@@ -1701,7 +1701,7 @@ local pack = {
           assumed_start = { x = 3423, y = 3538, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 82728,
+            source_loc = id.Loc.SLAYER2012_IMP_PORT_CULLIS,
             entity = { name = "Portcullis", kind = "static" },
             clickable_area = {
               topleft = { x = 3422.5, y = 3539.5 },
@@ -1793,7 +1793,7 @@ local pack = {
           assumed_start = { x = 3659, y = 3509, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 5259,
+            source_loc = id.Loc.AHOY_TOWN_BARRIER,
             entity = { name = "Energy Barrier", kind = "static" },
             clickable_area = {
               topleft = { x = 3658.5, y = 3508.5 },
@@ -2025,7 +2025,7 @@ local pack = {
           assumed_start = { x = 2997, y = 3439, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 100850,
+            source_loc = id.Loc.INVENT_GUILD_ENTRANCE,
             entity = { name = "Workshop", kind = "static" },
             clickable_area = {
               topleft = { x = 2994.5, y = 3440.5 },
@@ -2129,7 +2129,7 @@ local pack = {
           assumed_start = { x = 4629, y = 5454, level = 3 },
           internal = {
             type = "entity",
-            source_loc = 64360,
+            source_loc = id.Loc.POLYPORE_VERTICAL_VINE_TOP_VAR2,
             entity = { name = "Vine", kind = "static" },
             clickable_area = {
               topleft = { x = 4628.5, y = 5453.5 },
@@ -2160,7 +2160,7 @@ local pack = {
           assumed_start = { x = 4632, y = 5444, level = 2 },
           internal = {
             type = "entity",
-            source_loc = 64359,
+            source_loc = id.Loc.POLYPORE_VERTICAL_VINE_TOP,
             entity = { name = "Vine", kind = "static" },
             clickable_area = {
               topleft = { x = 4631.5, y = 5443.5 },
@@ -2258,7 +2258,7 @@ local pack = {
           assumed_start = { x = 4652, y = 5389, level = 1 },
           internal = {
             type = "entity",
-            source_loc = 64359,
+            source_loc = id.Loc.POLYPORE_VERTICAL_VINE_TOP,
             entity = { name = "Vine", kind = "static" },
             clickable_area = {
               topleft = { x = 4651.5, y = 5388.5 },
@@ -2479,7 +2479,7 @@ local pack = {
           assumed_start = { x = 3294, y = 10127, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 114746,
+            source_loc = id.Loc.PVM_HUB_EXIT,
             entity = { name = "Portal", kind = "static" },
             clickable_area = {
               topleft = { x = 3293.5, y = 10128.5 },
@@ -2615,7 +2615,7 @@ local pack = {
           assumed_start = { x = 2177, y = 3402, level = 1 },
           internal = {
             type = "entity",
-            source_loc = 94050,
+            source_loc = id.Loc.ELFCITY_HEFIN_COURSE_CHECKPOINT_1,
             entity = { name = "Walkway", kind = "static" },
             clickable_area = {
               topleft = { x = 2175.5, y = 3406.5 },
@@ -2645,7 +2645,7 @@ local pack = {
           assumed_start = { x = 2180, y = 3419, level = 1 },
           internal = {
             type = "entity",
-            source_loc = 94051,
+            source_loc = id.Loc.ELFCITY_HEFIN_COURSE_CHECKPOINT_2,
             entity = { name = "Cliff", kind = "static" },
             clickable_area = {
               topleft = { x = 2178.5, y = 3422.5 },
@@ -2675,7 +2675,7 @@ local pack = {
           assumed_start = { x = 2171, y = 3437, level = 1 },
           internal = {
             type = "entity",
-            source_loc = 94055,
+            source_loc = id.Loc.ELFCITY_HEFIN_COURSE_CHECKPOINT_3,
             entity = { name = "Cathedral", kind = "static" },
             clickable_area = {
               topleft = { x = 2169.5, y = 3440.5 },
@@ -2704,7 +2704,7 @@ local pack = {
           assumed_start = { x = 2177, y = 3448, level = 2 },
           internal = {
             type = "entity",
-            source_loc = 94056,
+            source_loc = id.Loc.ELFCITY_HEFIN_COURSE_CHECKPOINT_4,
             entity = { name = "Roof", kind = "static" },
             clickable_area = {
               topleft = { x = 2177.5, y = 3449.5 },
@@ -2842,7 +2842,7 @@ local pack = {
           assumed_start = { x = 2723, y = 5260, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 22939,
+            source_loc = id.Loc.DORGESH_1STAIRS_POSH,
             entity = { name = "Stairs", kind = "static" },
             clickable_area = {
               topleft = { x = 2721.5, y = 5259.5 },
@@ -3617,7 +3617,7 @@ local pack = {
           assumed_start = { x = 1863, y = 4638, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 2462,
+            source_loc = id.Loc.DEATHTEMPLE_RUINED,
             entity = { name = "Death ruins", kind = "static" },
             clickable_area = {
               topleft = { x = 1859.5, y = 4640.5 },
@@ -4403,7 +4403,7 @@ local pack = {
                           assumed_start = { x = 2191, y = 11475, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 105111,
+                            source_loc = id.Loc.ELR2_TORTLE_PORTAL_DIVINER_TO_COLONY,
                             entity = { name = "Tortle portal", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2189.5, y = 11475.5 },
@@ -4636,7 +4636,7 @@ local pack = {
                     assumed_start = { x = 2251, y = 11431, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 105109,
+                      source_loc = id.Loc.ELR2_TORTLE_PORTAL_FORT_TO_DIVINER,
                       entity = { name = "Tortle portal", kind = "static" },
                       clickable_area = {
                         topleft = { x = 2250.5, y = 11432.5 },
@@ -4707,7 +4707,7 @@ local pack = {
                           assumed_start = { x = 2251, y = 11431, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 105109,
+                            source_loc = id.Loc.ELR2_TORTLE_PORTAL_FORT_TO_DIVINER,
                             entity = { name = "Tortle portal", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2250.5, y = 11432.5 },
@@ -7725,7 +7725,7 @@ local pack = {
           assumed_start = { x = 2251, y = 11431, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 105109,
+            source_loc = id.Loc.ELR2_TORTLE_PORTAL_FORT_TO_DIVINER,
             entity = { name = "Tortle portal", kind = "static" },
             clickable_area = {
               topleft = { x = 2250.5, y = 11432.5 },
@@ -7779,7 +7779,7 @@ local pack = {
           assumed_start = { x = 2191, y = 11475, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 105111,
+            source_loc = id.Loc.ELR2_TORTLE_PORTAL_DIVINER_TO_COLONY,
             entity = { name = "Tortle portal", kind = "static" },
             clickable_area = {
               topleft = { x = 2189.5, y = 11475.5 },
@@ -7873,7 +7873,7 @@ local pack = {
           assumed_start = { x = 2251, y = 11431, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 105109,
+            source_loc = id.Loc.ELR2_TORTLE_PORTAL_FORT_TO_DIVINER,
             entity = { name = "Tortle portal", kind = "static" },
             clickable_area = {
               topleft = { x = 2250.5, y = 11432.5 },
@@ -9392,7 +9392,7 @@ local pack = {
           assumed_start = { x = 4652, y = 5389, level = 1 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 64359 },
+            source_loc = { "loc", id.Loc.POLYPORE_VERTICAL_VINE_TOP },
             entity = { name = "Vine", kind = "static" },
             clickable_area = {
               topleft = { x = 4651.5, y = 5388.5 },

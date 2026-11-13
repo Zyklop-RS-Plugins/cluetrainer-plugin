@@ -375,7 +375,7 @@ local pack = {
           assumed_start = { x = 3090, y = 3474, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 1814,
+            source_loc = id.Loc.WILDINLEVER,
             entity = { name = "Lever", kind = "static" },
             clickable_area = {
               topleft = { x = 3089.5, y = 3474.5 },
@@ -431,7 +431,7 @@ local pack = {
           assumed_start = { x = 3090, y = 3474, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 1814,
+            source_loc = id.Loc.WILDINLEVER,
             entity = { name = "Lever", kind = "static" },
             clickable_area = {
               topleft = { x = 3089.5, y = 3474.5 },
@@ -484,7 +484,7 @@ local pack = {
           assumed_start = { x = 3158, y = 3950, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 65346,
+            source_loc = id.Loc.BIGWEB_SLASHABLE_WILDERNESS,
             entity = { name = "Web", kind = "static" },
             clickable_area = {
               topleft = { x = 3157.5, y = 3951.5 },
@@ -1122,7 +1122,7 @@ local pack = {
           assumed_start = { x = 3495, y = 3466, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 5055,
+            source_loc = id.Loc.THRT_TAVERN_TRAP_DOOR,
             entity = { name = "Trapdoor", kind = "static" },
             clickable_area = {
               topleft = { x = 3494.5, y = 3465.5 },
@@ -1163,7 +1163,7 @@ local pack = {
           assumed_start = { x = 3523, y = 3283, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 6969,
+            source_loc = id.Loc.ROUTE_ROWBOAT_MORTTON,
             entity = { name = "Swamp Boat", kind = "static" },
             clickable_area = {
               topleft = { x = 3523.5, y = 3285.5 },
@@ -2348,7 +2348,7 @@ local pack = {
           assumed_start = { x = 2827, y = 3496, level = 1 },
           internal = {
             type = "entity",
-            source_loc = 104423,
+            source_loc = id.Loc.WWM_CAVE,
             entity = { name = "Cave", kind = "static" },
             clickable_area = {
               topleft = { x = 2824.5, y = 3503.5 },
@@ -2916,7 +2916,7 @@ local pack = {
           assumed_start = { x = 3423, y = 3538, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 82728,
+            source_loc = id.Loc.SLAYER2012_IMP_PORT_CULLIS,
             entity = { name = "Portcullis", kind = "static" },
             clickable_area = {
               topleft = { x = 3422.5, y = 3539.5 },
@@ -5345,7 +5345,7 @@ local pack = {
           assumed_start = { x = 3257, y = 3520, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 65080,
+            source_loc = id.Loc.WILD_IMP_BOUNDRY_WALL_LOW_3X2_VAR3,
             entity = { name = "Wilderness wall", kind = "static" },
             clickable_area = {
               topleft = { x = 3255.5, y = 3522.5 },
@@ -6261,7 +6261,7 @@ local pack = {
           assumed_start = { x = 3495, y = 3466, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 5055,
+            source_loc = id.Loc.THRT_TAVERN_TRAP_DOOR,
             entity = { name = "Trapdoor", kind = "static" },
             clickable_area = {
               topleft = { x = 3494.5, y = 3465.5 },
@@ -6597,7 +6597,7 @@ local pack = {
           assumed_start = { x = 2857, y = 9569, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 1764,
+            source_loc = id.Loc.CLIMBING_ROPE2,
             entity = { name = "Climbing rope", kind = "static" },
             clickable_area = {
               topleft = { x = 2855.5, y = 9569.5 },
@@ -7032,7 +7032,7 @@ local pack = {
           assumed_start = { x = 2709, y = 3209, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 2322 },
+            source_loc = { "loc", id.Loc.TREE_ROPESWING1 },
             entity = { name = "Ropeswing", kind = "static" },
             clickable_area = {
               topleft = { x = 2704.5, y = 3209.5 },
@@ -7203,7 +7203,7 @@ local pack = {
           assumed_start = { x = 2842, y = 9823, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 74866 },
+            source_loc = { "loc", id.Loc.TAV_DNG_IMP_LADDER_BASE },
             entity = { name = "Ladder", kind = "static" },
             clickable_area = {
               topleft = { x = 2841.5, y = 9824.5 },
@@ -8932,7 +8932,7 @@ local pack = {
           assumed_start = { x = 3444, y = 3458, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 3506 },
+            source_loc = { "loc", id.Loc.MORTMYRE_METALGATECLOSED_L },
             entity = { name = "Gate", kind = "static" },
             clickable_area = {
               topleft = { x = 3443.5, y = 3458.5 },
@@ -9368,7 +9368,7 @@ local pack = {
           assumed_start = { x = 3485, y = 3243, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 17757 },
+            source_loc = { "loc", id.Loc.BURGH_FENCEGATE_JUMP_L },
             entity = { name = "Gate", kind = "static" },
             clickable_area = {
               topleft = { x = 3484.5, y = 3244.5 },
@@ -10301,7 +10301,7 @@ local pack = {
           assumed_start = { x = 2979, y = 3520, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 65086 },
+            source_loc = { "loc", id.Loc.WILD_IMP_BOUNDRY_WALL_LOW_3X2_VAR6 },
             entity = { name = "Wilderness wall", kind = "static" },
             clickable_area = {
               topleft = { x = 2977.5, y = 3522.5 },
@@ -10691,7 +10691,7 @@ local pack = {
           assumed_start = { x = 3097, y = 3520, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 65082,
+            source_loc = id.Loc.WILD_IMP_BOUNDRY_WALL_LOW_3X2_VAR4,
             entity = { name = "Wilderness wall", kind = "static" },
             clickable_area = {
               topleft = { x = 3095.5, y = 3522.5 },
@@ -11577,7 +11577,7 @@ local pack = {
           assumed_start = { x = 2885, y = 4372, level = 2 },
           internal = {
             type = "entity",
-            source_loc = 37928,
+            source_loc = id.Loc.SUM1_CAVE_EXIT,
             entity = { name = "Exit", kind = "static" },
             clickable_area = {
               topleft = { x = 2882.5, y = 4371.5 },
@@ -11750,7 +11750,7 @@ local pack = {
           assumed_start = { x = 2529, y = 3302, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 2543,
+            source_loc = id.Loc.PLAGUEMANHOLECLOSED,
             entity = { name = "Manhole", kind = "static" },
             clickable_area = {
               topleft = { x = 2528.5, y = 3303.5 },
@@ -11799,7 +11799,7 @@ local pack = {
           assumed_start = { x = 2518, y = 9759, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 2533,
+            source_loc = id.Loc.PLAGUEMUDPILE,
             entity = { name = "Mud pile", kind = "static" },
             clickable_area = {
               topleft = { x = 2518.5, y = 9760.5 },
@@ -12331,7 +12331,7 @@ local pack = {
           assumed_start = { x = 1886, y = 3178, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 42220 },
+            source_loc = { "loc", id.Loc.SNP_LEAVE_SOULWARS_PORTAL },
             entity = { name = "Edgeville portal", kind = "static" },
             clickable_area = {
               topleft = { x = 1884.5, y = 3179.5 },
@@ -14184,7 +14184,7 @@ local pack = {
           assumed_start = { x = 3359, y = 2757, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 100267 },
+            source_loc = { "loc", id.Loc.HLM_2015_CAMEL_STEPPING_STONE },
             entity = { name = "Stepping Stone", kind = "static" },
             clickable_area = {
               topleft = { x = 3358.5, y = 2756.5 },
@@ -14419,7 +14419,7 @@ local pack = {
           assumed_start = { x = 2885, y = 4372, level = 2 },
           internal = {
             type = "entity",
-            source_loc = 37928,
+            source_loc = id.Loc.SUM1_CAVE_EXIT,
             entity = { name = "Exit", kind = "static" },
             clickable_area = {
               topleft = { x = 2882.5, y = 4371.5 },
@@ -15463,7 +15463,7 @@ local pack = {
           assumed_start = { x = 2885, y = 4372, level = 2 },
           internal = {
             type = "entity",
-            source_loc = 37928,
+            source_loc = id.Loc.SUM1_CAVE_EXIT,
             entity = { name = "Exit", kind = "static" },
             clickable_area = {
               topleft = { x = 2882.5, y = 4371.5 },
@@ -15765,7 +15765,7 @@ local pack = {
           assumed_start = { x = 2885, y = 4372, level = 2 },
           internal = {
             type = "entity",
-            source_loc = 37928,
+            source_loc = id.Loc.SUM1_CAVE_EXIT,
             entity = { name = "Exit", kind = "static" },
             clickable_area = {
               topleft = { x = 2882.5, y = 4371.5 },
@@ -16263,7 +16263,7 @@ local pack = {
           assumed_start = { x = 2379, y = 3467, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 91457,
+            source_loc = id.Loc.GNOME_AREA_IMP_FENCE_STYLE,
             entity = { name = "Stile", kind = "static" },
             clickable_area = {
               topleft = { x = 2379.5, y = 3467.5 },
@@ -16631,7 +16631,7 @@ local pack = {
           assumed_start = { x = 2557, y = 3299, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 9738,
+            source_loc = id.Loc.ARDOUGNEDOOR_R,
             entity = { name = "Ardougne wall door", kind = "static" },
             clickable_area = {
               topleft = { x = 2557.5, y = 3299.5 },
@@ -16888,7 +16888,7 @@ local pack = {
           assumed_start = { x = 3020, y = 3632, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 64833,
+            source_loc = id.Loc.WILD_IMP_ROGUE_DOUBLE_DOOR_2X1,
             entity = { name = "Gate", kind = "static" },
             clickable_area = {
               topleft = { x = 3020.5, y = 3632.5 },
@@ -17117,7 +17117,7 @@ local pack = {
           assumed_start = { x = 3034, y = 3631, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 64833,
+            source_loc = id.Loc.WILD_IMP_ROGUE_DOUBLE_DOOR_2X1,
             entity = { name = "Gate", kind = "static" },
             clickable_area = {
               topleft = { x = 3032.5, y = 3632.5 },
@@ -18584,7 +18584,7 @@ local pack = {
           assumed_start = { x = 3485, y = 3243, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 17757,
+            source_loc = id.Loc.BURGH_FENCEGATE_JUMP_L,
             entity = { name = "Gate", kind = "static" },
             clickable_area = {
               topleft = { x = 3484.5, y = 3244.5 },
@@ -19541,7 +19541,7 @@ local pack = {
           assumed_start = { x = 2575, y = 3107, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 9301 },
+            source_loc = { "loc", id.Loc.YANILLE_CASTLEWALL_SC },
             entity = { name = "Underwall tunnel", kind = "static" },
             clickable_area = {
               topleft = { x = 2574.5, y = 3108.5 },
@@ -19952,7 +19952,7 @@ local pack = {
           assumed_start = { x = 2827, y = 3496, level = 1 },
           internal = {
             type = "entity",
-            source_loc = 104423,
+            source_loc = id.Loc.WWM_CAVE,
             entity = { name = "Cave", kind = "static" },
             clickable_area = {
               topleft = { x = 2824.5, y = 3503.5 },
@@ -20582,7 +20582,7 @@ local pack = {
           assumed_start = { x = 2885, y = 4372, level = 2 },
           internal = {
             type = "entity",
-            source_loc = 37928,
+            source_loc = id.Loc.SUM1_CAVE_EXIT,
             entity = { name = "Exit", kind = "static" },
             clickable_area = {
               topleft = { x = 2882.5, y = 4371.5 },
@@ -22203,7 +22203,7 @@ local pack = {
           assumed_start = { x = 3054, y = 3520, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 65084 },
+            source_loc = { "loc", id.Loc.WILD_IMP_BOUNDRY_WALL_LOW_3X2_VAR5 },
             entity = { name = "Wilderness wall", kind = "static" },
             clickable_area = {
               topleft = { x = 3051.5, y = 3522.5 },
@@ -22307,7 +22307,7 @@ local pack = {
           assumed_start = { x = 3423, y = 3538, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 82728,
+            source_loc = id.Loc.SLAYER2012_IMP_PORT_CULLIS,
             entity = { name = "Portcullis", kind = "static" },
             clickable_area = {
               topleft = { x = 3422.5, y = 3539.5 },
@@ -22674,7 +22674,7 @@ local pack = {
           assumed_start = { x = 2885, y = 4372, level = 2 },
           internal = {
             type = "entity",
-            source_loc = 37928,
+            source_loc = id.Loc.SUM1_CAVE_EXIT,
             entity = { name = "Exit", kind = "static" },
             clickable_area = {
               topleft = { x = 2882.5, y = 4371.5 },
@@ -23065,7 +23065,7 @@ local pack = {
           assumed_start = { x = 3485, y = 3243, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 17757,
+            source_loc = id.Loc.BURGH_FENCEGATE_JUMP_L,
             entity = { name = "Gate", kind = "static" },
             clickable_area = {
               topleft = { x = 3484.5, y = 3244.5 },
@@ -24045,7 +24045,7 @@ local pack = {
           assumed_start = { x = 3474, y = 3221, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 12776 },
+            source_loc = { "loc", id.Loc.BURGH_AGILITY_SHORTCUT_FENCE },
             entity = { name = "Low fence", kind = "static" },
             clickable_area = {
               topleft = { x = 3473.5, y = 3221.5 },
@@ -24928,7 +24928,7 @@ local pack = {
           assumed_start = { x = 3444, y = 3458, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 3506,
+            source_loc = id.Loc.MORTMYRE_METALGATECLOSED_L,
             entity = { name = "Gate", kind = "static" },
             clickable_area = {
               topleft = { x = 3443.5, y = 3458.5 },
@@ -25642,7 +25642,7 @@ local pack = {
           assumed_start = { x = 2978, y = 3520, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 65086 },
+            source_loc = { "loc", id.Loc.WILD_IMP_BOUNDRY_WALL_LOW_3X2_VAR6 },
             entity = { name = "Wilderness wall", kind = "static" },
             clickable_area = {
               topleft = { x = 2977.5, y = 3522.5 },
@@ -26437,7 +26437,7 @@ local pack = {
           assumed_start = { x = 3444, y = 3458, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 3506,
+            source_loc = id.Loc.MORTMYRE_METALGATECLOSED_L,
             entity = { name = "Gate", kind = "static" },
             clickable_area = {
               topleft = { x = 3443.5, y = 3458.5 },
@@ -27576,7 +27576,7 @@ local pack = {
           assumed_start = { x = 2885, y = 4372, level = 2 },
           internal = {
             type = "entity",
-            source_loc = 37928,
+            source_loc = id.Loc.SUM1_CAVE_EXIT,
             entity = { name = "Exit", kind = "static" },
             clickable_area = {
               topleft = { x = 2882.5, y = 4371.5 },
@@ -28371,7 +28371,7 @@ local pack = {
           assumed_start = { x = 3495, y = 3466, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 5055,
+            source_loc = id.Loc.THRT_TAVERN_TRAP_DOOR,
             entity = { name = "Trapdoor", kind = "static" },
             clickable_area = {
               topleft = { x = 3494.5, y = 3465.5 },
@@ -28412,7 +28412,7 @@ local pack = {
           assumed_start = { x = 3523, y = 3283, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 6969,
+            source_loc = id.Loc.ROUTE_ROWBOAT_MORTTON,
             entity = { name = "Swamp Boat", kind = "static" },
             clickable_area = {
               topleft = { x = 3523.5, y = 3285.5 },
@@ -30312,7 +30312,7 @@ local pack = {
           assumed_start = { x = 2885, y = 4372, level = 2 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 37928 },
+            source_loc = { "loc", id.Loc.SUM1_CAVE_EXIT },
             entity = { name = "Exit", kind = "static" },
             clickable_area = {
               topleft = { x = 2882.5, y = 4371.5 },
@@ -30907,7 +30907,7 @@ local pack = {
           assumed_start = { x = 2955, y = 2942, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 56805 },
+            source_loc = { "loc", id.Loc.ECO_VINE_JUMP_3X1 },
             entity = { name = "Climbable vine", kind = "static" },
             clickable_area = {
               topleft = { x = 2953.5, y = 2941.5 },

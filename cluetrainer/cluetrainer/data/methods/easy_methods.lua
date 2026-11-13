@@ -253,7 +253,7 @@ local pack = {
                 }
               }
             },
-            source_loc = 24354
+            source_loc = id.Loc.FAI_VARROCK_LADDER
           }
         },
         {
@@ -983,7 +983,7 @@ local pack = {
           assumed_start = { x = 3100, y = 3276, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 1239,
+            source_loc = id.Loc.BUILD_IMP_DRAYNOR_DOOR1_CLOSED,
             entity = { kind = "static", name = "Door" },
             clickable_area = {
               topleft = { x = 3099.5, y = 3277 },
@@ -1223,7 +1223,7 @@ local pack = {
           assumed_start = { x = 2659, y = 3319, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 34807,
+            source_loc = id.Loc.AREA_ARDOUGNE_DOOR1_CLOSED,
             entity = { kind = "static", name = "Door" },
             clickable_area = {
               topleft = { x = 2658.5, y = 3320 },
@@ -2078,7 +2078,7 @@ local pack = {
           assumed_start = { x = 3151, y = 3412, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 24376,
+            source_loc = id.Loc.FAI_VARROCK_DOOR,
             entity = { kind = "static", name = "Door" },
             clickable_area = {
               topleft = { x = 3150.5, y = 3412 },
@@ -2123,7 +2123,7 @@ local pack = {
           assumed_start = { x = 3153, y = 3405, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 24381,
+            source_loc = id.Loc.FAI_VARROCK_POOR_DOOR,
             entity = { kind = "static", name = "Door" },
             clickable_area = {
               topleft = { x = 3153, y = 3405.5 },
@@ -2368,7 +2368,7 @@ local pack = {
           assumed_start = { x = 3103, y = 3257, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 1239,
+            source_loc = id.Loc.BUILD_IMP_DRAYNOR_DOOR1_CLOSED,
             entity = { kind = "static", name = "Door" },
             clickable_area = {
               topleft = { x = 3102, y = 3257.5 },
@@ -3934,7 +3934,7 @@ local pack = {
           assumed_start = { x = 3218, y = 3492, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 15536,
+            source_loc = id.Loc.FAI_VARROCK_CASTLE_DOOR,
             entity = { kind = "static", name = "Door" },
             clickable_area = {
               topleft = { x = 3217, y = 3492.5 },
@@ -3987,7 +3987,7 @@ local pack = {
           assumed_start = { x = 3210, y = 3489, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 15536,
+            source_loc = id.Loc.FAI_VARROCK_CASTLE_DOOR,
             entity = { kind = "static", name = "Door" },
             clickable_area = {
               topleft = { x = 3209.5, y = 3490 },
@@ -5458,7 +5458,7 @@ local pack = {
           assumed_start = { x = 2465, y = 3493, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 69197,
+            source_loc = id.Loc.GNOME_IMP_TREEDOORL,
             entity = { name = "Tree Door", kind = "static" },
             clickable_area = {
               topleft = { x = 2464.5, y = 3492.5 },
@@ -6334,7 +6334,7 @@ local pack = {
           assumed_start = { x = 2715, y = 3471, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 25938,
+            source_loc = id.Loc.KR_LADDER,
             entity = { name = "Ladder", kind = "static" },
             clickable_area = {
               topleft = { x = 2714.5, y = 3470.5 },
@@ -7245,7 +7245,7 @@ local pack = {
           assumed_start = { x = 3255, y = 3420, level = 0 },
           internal = {
             type = "entity",
-            source_loc = 24349,
+            source_loc = id.Loc.VARROCK_SPIRALSTAIRS,
             entity = { name = "Staircase", kind = "static" },
             clickable_area = {
               topleft = { x = 3254.5, y = 3422.5 },
