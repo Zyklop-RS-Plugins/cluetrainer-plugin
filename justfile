@@ -93,6 +93,7 @@ package_into target environment="production": (check-environment environment)
     cp -R dependencies/zyklib/src/. "{{target}}/"
     rm "{{target}}/plugin.production.json" "{{target}}/plugin.test.json"
     cp "cluetrainer/plugin.{{environment}}.json" "{{target}}/plugin.json"
+    @if grep -rnE '(ids|source_loc) = ([^-]*[{,])? *[0-9]' "{{target}}/cluetrainer/data"; then echo "Entity ids must be names: run lua tools/entity_names/name_ids.lua" >&2; exit 1; fi
 
 [private]
 check-environment environment:

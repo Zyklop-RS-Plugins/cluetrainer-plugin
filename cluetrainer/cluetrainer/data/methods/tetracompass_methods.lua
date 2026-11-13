@@ -1326,7 +1326,7 @@ local pack = {
           assumed_start = { x = 2188, y = 3162, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 3999 },
+            source_loc = { "loc", id.Loc.REGICIDE_CROSS_OVER1_TYRAS_CAMP },
             entity = { name = "Dense forest", kind = "static" },
             clickable_area = {
               topleft = { x = 2186.5, y = 3164.5 },
@@ -1365,7 +1365,7 @@ local pack = {
           assumed_start = { x = 2188, y = 3165, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 3939 },
+            source_loc = { "loc", id.Loc.REGICIDE_CROSS_OVER3 },
             entity = { name = "Dense forest", kind = "static" },
             clickable_area = {
               topleft = { x = 2186.5, y = 3167.5 },
@@ -1404,7 +1404,7 @@ local pack = {
           assumed_start = { x = 2188, y = 3168, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 3998 },
+            source_loc = { "loc", id.Loc.REGICIDE_CROSS_OVER2_TYRAS_CAMP },
             entity = { name = "Dense forest", kind = "static" },
             clickable_area = {
               topleft = { x = 2186.5, y = 3170.5 },
@@ -1469,7 +1469,7 @@ local pack = {
           assumed_start = { x = 2199, y = 3169, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 3922 },
+            source_loc = { "loc", id.Loc.REGICIDE_TRAP_WOODSPRING },
             entity = { name = "Sticks", kind = "static" },
             clickable_area = {
               topleft = { x = 2199.5, y = 3169.5 },
@@ -1956,7 +1956,7 @@ local pack = {
           assumed_start = { x = 2671, y = 3368, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 112215 },
+            source_loc = { "loc", id.Loc.HUMAN_WOODEN_FENCE_STY_V1 },
             entity = { name = "Stile", kind = "static" },
             clickable_area = {
               topleft = { x = 2671.5, y = 3368.5 },
@@ -2728,7 +2728,7 @@ local pack = {
           assumed_start = { x = 2875, y = 3663, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 9304 },
+            source_loc = { "loc", id.Loc.ASC_TROLL_MOUNTAIN_CLIMBROCK_2 },
             entity = { name = "Cliffside", kind = "static" },
             clickable_area = {
               topleft = { x = 2872.5, y = 3662.5 },
@@ -3692,7 +3692,7 @@ local pack = {
           assumed_start = { x = 2870, y = 2971, level = 1 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 1746 },
+            source_loc = { "loc", id.Loc.LADDERTOP },
             entity = { name = "Ladder", kind = "static" },
             clickable_area = {
               topleft = { x = 2870.5, y = 2971.5 },
@@ -4894,7 +4894,7 @@ local pack = {
           assumed_start = { x = 2274, y = 3172, level = 0 },
           internal = {
             type = "entity",
-            source_loc = { "loc", 3924 },
+            source_loc = { "loc", id.Loc.REGICIDE_PITFALL_MID },
             entity = { name = "Leaves", kind = "static" },
             clickable_area = {
               topleft = { x = 2273.5, y = 3174.5 },

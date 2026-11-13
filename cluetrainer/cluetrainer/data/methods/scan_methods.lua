@@ -7349,7 +7349,7 @@ local pack = {
                                       assumed_start = { x = 2314, y = 3848, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = { "loc", 21311 },
+                                        source_loc = { "loc", id.Loc.FRISB_BRIDGE_3_N },
                                         entity = { name = "Rope bridge", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2313.5, y = 3847.5 },
@@ -17938,7 +17938,7 @@ local pack = {
                           assumed_start = { x = 1565, y = 4356, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 12260,
+                            source_loc = id.Loc._100_PORTAL_CHICKEN,
                             entity = { name = "Portal", kind = "static" },
                             clickable_area = {
                               topleft = { x = 1562.5, y = 4355.5 },
@@ -19082,7 +19082,7 @@ local pack = {
                                 assumed_start = { x = 3173, y = 2639, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = 109065,
+                                  source_loc = id.Loc.MENAPHOS_TOMB_ENTRANCE_PORT,
                                   entity = { name = "Shifting tombs", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 3172.5, y = 2638.5 },
@@ -19210,7 +19210,7 @@ local pack = {
                           assumed_start = { x = 3192, y = 2714, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 109056,
+                            source_loc = id.Loc.MENAPHOS_TOMB_ENTRANCE_IMPERIAL,
                             entity = { name = "Shifting tombs", kind = "static" },
                             clickable_area = {
                               topleft = { x = 3190.5, y = 2713.5 },
@@ -19260,7 +19260,7 @@ local pack = {
                                 assumed_start = { x = 3173, y = 2639, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = 109065,
+                                  source_loc = id.Loc.MENAPHOS_TOMB_ENTRANCE_PORT,
                                   entity = { name = "Shifting tombs", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 3172.5, y = 2638.5 },
@@ -19500,7 +19500,7 @@ local pack = {
                           assumed_start = { x = 3192, y = 2714, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 109056,
+                            source_loc = id.Loc.MENAPHOS_TOMB_ENTRANCE_IMPERIAL,
                             entity = { name = "Shifting tombs", kind = "static" },
                             clickable_area = {
                               topleft = { x = 3190.5, y = 2713.5 },
@@ -19618,7 +19618,7 @@ local pack = {
                     assumed_start = { x = 3228, y = 2779, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 109059,
+                      source_loc = id.Loc.MENAPHOS_TOMB_ENTRANCE_MERCHANT,
                       entity = { name = "Shifting tombs", kind = "static" },
                       clickable_area = {
                         topleft = { x = 3225.5, y = 2784.5 },
@@ -19673,7 +19673,7 @@ local pack = {
                           assumed_start = { x = 3148, y = 2787, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 109062,
+                            source_loc = id.Loc.MENAPHOS_TOMB_ENTRANCE_SLAVE,
                             entity = { name = "Shifting tombs", kind = "static" },
                             clickable_area = {
                               topleft = { x = 3145.5, y = 2786.5 },
@@ -19851,7 +19851,7 @@ local pack = {
                     assumed_start = { x = 3228, y = 2779, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 109059,
+                      source_loc = id.Loc.MENAPHOS_TOMB_ENTRANCE_MERCHANT,
                       entity = { name = "Shifting tombs", kind = "static" },
                       clickable_area = {
                         topleft = { x = 3225.5, y = 2784.5 },
@@ -19906,7 +19906,7 @@ local pack = {
                     assumed_start = { x = 3228, y = 2779, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 109059,
+                      source_loc = id.Loc.MENAPHOS_TOMB_ENTRANCE_MERCHANT,
                       entity = { name = "Shifting tombs", kind = "static" },
                       clickable_area = {
                         topleft = { x = 3225.5, y = 2784.5 },
@@ -20656,7 +20656,7 @@ local pack = {
                                             assumed_start = { x = 3336, y = 3896, level = 0 },
                                             internal = {
                                               type = "entity",
-                                              source_loc = 65386,
+                                              source_loc = id.Loc.WILD_IMP_WILDERNESS_FENCE_GATE_2X1,
                                               entity = { name = "Gate", kind = "static" },
                                               clickable_area = {
                                                 topleft = { x = 3335.5, y = 3896.5 },
@@ -20788,7 +20788,7 @@ local pack = {
                                       assumed_start = { x = 3158, y = 3950, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 65346,
+                                        source_loc = id.Loc.BIGWEB_SLASHABLE_WILDERNESS,
                                         entity = { name = "Web", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 3157.5, y = 3951.5 },
@@ -21000,7 +21000,7 @@ local pack = {
                                 assumed_start = { x = 3158, y = 3950, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = 65346,
+                                  source_loc = id.Loc.BIGWEB_SLASHABLE_WILDERNESS,
                                   entity = { name = "Web", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 3157.5, y = 3951.5 },
@@ -21085,7 +21085,7 @@ local pack = {
                                 assumed_start = { x = 3158, y = 3950, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = 65346,
+                                  source_loc = id.Loc.BIGWEB_SLASHABLE_WILDERNESS,
                                   entity = { name = "Web", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 3157.5, y = 3951.5 },
@@ -21237,7 +21237,7 @@ local pack = {
                                 assumed_start = { x = 3158, y = 3950, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = 65346,
+                                  source_loc = id.Loc.BIGWEB_SLASHABLE_WILDERNESS,
                                   entity = { name = "Web", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 3157.5, y = 3951.5 },
@@ -21331,7 +21331,7 @@ local pack = {
                                 assumed_start = { x = 3158, y = 3950, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = 65346,
+                                  source_loc = id.Loc.BIGWEB_SLASHABLE_WILDERNESS,
                                   entity = { name = "Web", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 3157.5, y = 3951.5 },
@@ -21411,7 +21411,7 @@ local pack = {
                           assumed_start = { x = 3090, y = 3474, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 1814,
+                            source_loc = id.Loc.WILDINLEVER,
                             entity = { name = "Lever", kind = "static" },
                             clickable_area = {
                               topleft = { x = 3089.5, y = 3474.5 },
@@ -22372,7 +22372,7 @@ local pack = {
                                       assumed_start = { x = 2230, y = 3249, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 3938,
+                                        source_loc = id.Loc.REGICIDE_CROSS_OVER2,
                                         entity = { name = "Dense forest", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2230.5, y = 3250.5 },
@@ -22437,7 +22437,7 @@ local pack = {
                                       assumed_start = { x = 2275, y = 3262, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 3924,
+                                        source_loc = id.Loc.REGICIDE_PITFALL_MID,
                                         entity = { name = "Leaves", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2276.5, y = 3262.5 },
@@ -22524,7 +22524,7 @@ local pack = {
                                             assumed_start = { x = 2303, y = 3213, level = 0 },
                                             internal = {
                                               type = "entity",
-                                              source_loc = 3937,
+                                              source_loc = id.Loc.REGICIDE_CROSS_OVER1,
                                               entity = { name = "Dense forest", kind = "static" },
                                               clickable_area = {
                                                 topleft = { x = 2301.5, y = 3215.5 },
@@ -22615,7 +22615,7 @@ local pack = {
                                       assumed_start = { x = 2306, y = 3194, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 8742,
+                                        source_loc = id.Loc.ELF_VILLAGE_TREEGATE,
                                         entity = { name = "Tree", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2304.5, y = 3194.5 },
@@ -22678,7 +22678,7 @@ local pack = {
                                       assumed_start = { x = 2287, y = 3188, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 3921,
+                                        source_loc = id.Loc.REGICIDE_TRAP_TRIPWIRE,
                                         entity = { name = "Tripwire", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2284.5, y = 3188.5 },
@@ -22738,7 +22738,7 @@ local pack = {
                                       assumed_start = { x = 2274, y = 3192, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 3937,
+                                        source_loc = id.Loc.REGICIDE_CROSS_OVER1,
                                         entity = { name = "Dense forest", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2271.5, y = 3193.5 },
@@ -22788,7 +22788,7 @@ local pack = {
                                       assumed_start = { x = 2267, y = 3201, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 3924,
+                                        source_loc = id.Loc.REGICIDE_PITFALL_MID,
                                         entity = { name = "Leaves", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2266.5, y = 3203.5 },
@@ -22901,7 +22901,7 @@ local pack = {
                                       assumed_start = { x = 2306, y = 3194, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 8742,
+                                        source_loc = id.Loc.ELF_VILLAGE_TREEGATE,
                                         entity = { name = "Tree", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2304.5, y = 3194.5 },
@@ -23222,7 +23222,7 @@ local pack = {
                                 assumed_start = { x = 2226, y = 3219, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = 3938,
+                                  source_loc = id.Loc.REGICIDE_CROSS_OVER2,
                                   entity = { name = "Dense forest", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 2226.5, y = 3220.5 },
@@ -23343,7 +23343,7 @@ local pack = {
                                       assumed_start = { x = 2181, y = 3212, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 3922,
+                                        source_loc = id.Loc.REGICIDE_TRAP_WOODSPRING,
                                         entity = { name = "Sticks", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2180.5, y = 3211.5 },
@@ -23437,7 +23437,7 @@ local pack = {
                                       assumed_start = { x = 2226, y = 3219, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 3938,
+                                        source_loc = id.Loc.REGICIDE_CROSS_OVER2,
                                         entity = { name = "Dense forest", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2226.5, y = 3220.5 },
@@ -23632,7 +23632,7 @@ local pack = {
                           assumed_start = { x = 2196, y = 3237, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 3931,
+                            source_loc = id.Loc.REGICIDE_LOGBALANCE1_START,
                             entity = { name = "Log balance", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2196.5, y = 3237.5 },
@@ -23844,7 +23844,7 @@ local pack = {
                           assumed_start = { x = 2188, y = 3162, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 3999,
+                            source_loc = id.Loc.REGICIDE_CROSS_OVER1_TYRAS_CAMP,
                             entity = { name = "Dense forest", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2186.5, y = 3164.5 },
@@ -24152,7 +24152,7 @@ local pack = {
                     assumed_start = { x = 2188, y = 3162, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 3999,
+                      source_loc = id.Loc.REGICIDE_CROSS_OVER1_TYRAS_CAMP,
                       entity = { name = "Dense forest", kind = "static" },
                       clickable_area = {
                         topleft = { x = 2186.5, y = 3164.5 },
@@ -24207,7 +24207,7 @@ local pack = {
                     assumed_start = { x = 2199, y = 3169, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 3922,
+                      source_loc = id.Loc.REGICIDE_TRAP_WOODSPRING,
                       entity = { name = "Sticks", kind = "static" },
                       clickable_area = {
                         topleft = { x = 2199.5, y = 3169.5 },
@@ -24299,7 +24299,7 @@ local pack = {
                     assumed_start = { x = 2220, y = 3152, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 3921,
+                      source_loc = id.Loc.REGICIDE_TRAP_TRIPWIRE,
                       entity = { name = "Tripwire", kind = "static" },
                       clickable_area = {
                         topleft = { x = 2219.5, y = 3154.5 },
@@ -25364,7 +25364,7 @@ local pack = {
                                 assumed_start = { x = 3715, y = 2970, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = 112526,
+                                  source_loc = id.Loc.STEPPING_STONE_SPAN_3_EAST_WEST,
                                   entity = { name = "Stepping stone", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 3712.5, y = 2970.5 },
@@ -25479,7 +25479,7 @@ local pack = {
                                       assumed_start = { x = 3715, y = 2970, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 112526,
+                                        source_loc = id.Loc.STEPPING_STONE_SPAN_3_EAST_WEST,
                                         entity = { name = "Stepping stone", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 3712.5, y = 2970.5 },
@@ -25608,7 +25608,7 @@ local pack = {
                                       assumed_start = { x = 3715, y = 2970, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 112526,
+                                        source_loc = id.Loc.STEPPING_STONE_SPAN_3_EAST_WEST,
                                         entity = { name = "Stepping stone", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 3712.5, y = 2970.5 },
@@ -25981,7 +25981,7 @@ local pack = {
                           assumed_start = { x = 3715, y = 2970, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 112526,
+                            source_loc = id.Loc.STEPPING_STONE_SPAN_3_EAST_WEST,
                             entity = { name = "Stepping stone", kind = "static" },
                             clickable_area = {
                               topleft = { x = 3712.5, y = 2970.5 },
@@ -26604,7 +26604,7 @@ local pack = {
                                                   assumed_start = { x = 2683, y = 9568, level = 0 },
                                                   internal = {
                                                     type = "entity",
-                                                    source_loc = 77373,
+                                                    source_loc = id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_2A,
                                                     entity = { name = "Vines", kind = "static" },
                                                     clickable_area = {
                                                       topleft = { x = 2682.5, y = 9569.5 },
@@ -26714,7 +26714,7 @@ local pack = {
                                                   assumed_start = { x = 2683, y = 9568, level = 0 },
                                                   internal = {
                                                     type = "entity",
-                                                    source_loc = 77373,
+                                                    source_loc = id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_2A,
                                                     entity = { name = "Vines", kind = "static" },
                                                     clickable_area = {
                                                       topleft = { x = 2682.5, y = 9569.5 },
@@ -26846,7 +26846,7 @@ local pack = {
                                             assumed_start = { x = 2691, y = 9564, level = 0 },
                                             internal = {
                                               type = "entity",
-                                              source_loc = 77371,
+                                              source_loc = id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_1A,
                                               entity = { name = "Vines", kind = "static" },
                                               clickable_area = {
                                                 topleft = { x = 2689.5, y = 9564.5 },
@@ -26947,7 +26947,7 @@ local pack = {
                                                   assumed_start = { x = 2683, y = 9568, level = 0 },
                                                   internal = {
                                                     type = "entity",
-                                                    source_loc = 77373,
+                                                    source_loc = id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_2A,
                                                     entity = { name = "Vines", kind = "static" },
                                                     clickable_area = {
                                                       topleft = { x = 2682.5, y = 9569.5 },
@@ -27031,7 +27031,7 @@ local pack = {
                                             assumed_start = { x = 2691, y = 9564, level = 0 },
                                             internal = {
                                               type = "entity",
-                                              source_loc = 77371,
+                                              source_loc = id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_1A,
                                               entity = { name = "Vines", kind = "static" },
                                               clickable_area = {
                                                 topleft = { x = 2689.5, y = 9564.5 },
@@ -27146,7 +27146,7 @@ local pack = {
                                       assumed_start = { x = 2744, y = 3152, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 5083,
+                                        source_loc = id.Loc.DUNGEON_TREE_CLOSED,
                                         entity = { name = "Dungeon entrance", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2742.5, y = 3156.5 },
@@ -27418,7 +27418,7 @@ local pack = {
                                       assumed_start = { x = 2672, y = 9499, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = 77375,
+                                        source_loc = id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_3A,
                                         entity = { name = "Vines", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2672.5, y = 9499.5 },
@@ -27587,7 +27587,7 @@ local pack = {
                           assumed_start = { x = 2695, y = 9482, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 77379,
+                            source_loc = id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_5A,
                             entity = { name = "Vines", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2693.5, y = 9482.5 },
@@ -27646,7 +27646,7 @@ local pack = {
                           assumed_start = { x = 2676, y = 9479, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 77377,
+                            source_loc = id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_4A,
                             entity = { name = "Vines", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2674.5, y = 9479.5 },
@@ -28020,7 +28020,7 @@ local pack = {
                                 assumed_start = { x = 2695, y = 9482, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = 77379,
+                                  source_loc = id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_5A,
                                   entity = { name = "Vines", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 2693.5, y = 9482.5 },
@@ -28726,7 +28726,7 @@ local pack = {
                     assumed_start = { x = 2695, y = 9482, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 77379,
+                      source_loc = id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_5A,
                       entity = { name = "Vines", kind = "static" },
                       clickable_area = {
                         topleft = { x = 2693.5, y = 9482.5 },
@@ -28776,7 +28776,7 @@ local pack = {
                     assumed_start = { x = 2676, y = 9479, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 77377,
+                      source_loc = id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_4A,
                       entity = { name = "Vines", kind = "static" },
                       clickable_area = {
                         topleft = { x = 2674.5, y = 9479.5 },
@@ -28852,7 +28852,7 @@ local pack = {
                     assumed_start = { x = 2637, y = 9518, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 77506,
+                      source_loc = id.Loc.BRIMH_DUNG_IMP_STAIRS_4X6_1A,
                       entity = { name = "Stairs", kind = "static" },
                       clickable_area = {
                         topleft = { x = 2634.5, y = 9517.5 },
@@ -28961,7 +28961,7 @@ local pack = {
                           assumed_start = { x = 2735, y = 10008, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 77052,
+                            source_loc = id.Loc.FSD_IMP_WALL_CRACK_OP,
                             entity = { name = "Crevice", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2733.5, y = 10008.5 },
@@ -29292,7 +29292,7 @@ local pack = {
                           assumed_start = { x = 2735, y = 10008, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 77052,
+                            source_loc = id.Loc.FSD_IMP_WALL_CRACK_OP,
                             entity = { name = "Crevice", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2733.5, y = 10008.5 },
@@ -29339,7 +29339,7 @@ local pack = {
                           assumed_start = { x = 2735, y = 10008, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 77052,
+                            source_loc = id.Loc.FSD_IMP_WALL_CRACK_OP,
                             entity = { name = "Crevice", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2733.5, y = 10008.5 },
@@ -29445,7 +29445,7 @@ local pack = {
                           assumed_start = { x = 2735, y = 10008, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 77052,
+                            source_loc = id.Loc.FSD_IMP_WALL_CRACK_OP,
                             entity = { name = "Crevice", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2733.5, y = 10008.5 },
@@ -29538,7 +29538,7 @@ local pack = {
                           assumed_start = { x = 2735, y = 10008, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 77052,
+                            source_loc = id.Loc.FSD_IMP_WALL_CRACK_OP,
                             entity = { name = "Crevice", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2733.5, y = 10008.5 },
@@ -29592,7 +29592,7 @@ local pack = {
                           assumed_start = { x = 2735, y = 10008, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = 77052,
+                            source_loc = id.Loc.FSD_IMP_WALL_CRACK_OP,
                             entity = { name = "Crevice", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2733.5, y = 10008.5 },
@@ -29707,7 +29707,7 @@ local pack = {
                     assumed_start = { x = 2795, y = 3615, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 34395,
+                      source_loc = id.Loc.TROLLHEIM_MOUNTAIN_CAVE_ENTRANCE_4X4_1A,
                       entity = { name = "Cave entrance", kind = "static" },
                       clickable_area = {
                         topleft = { x = 2795.5, y = 3617.5 },
@@ -29768,7 +29768,7 @@ local pack = {
                     assumed_start = { x = 2775, y = 10002, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 44339,
+                      source_loc = id.Loc.SLAYER_CHASM_JUMP,
                       entity = { name = "Chasm", kind = "static" },
                       clickable_area = {
                         topleft = { x = 2768.5, y = 10002.5 },
@@ -29847,7 +29847,7 @@ local pack = {
                                 assumed_start = { x = 2775, y = 10002, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = 44339,
+                                  source_loc = id.Loc.SLAYER_CHASM_JUMP,
                                   entity = { name = "Chasm", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 2768.5, y = 10002.5 },
@@ -30041,7 +30041,7 @@ local pack = {
                                 assumed_start = { x = 2775, y = 10002, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = 44339,
+                                  source_loc = id.Loc.SLAYER_CHASM_JUMP,
                                   entity = { name = "Chasm", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 2768.5, y = 10002.5 },
@@ -30280,7 +30280,7 @@ local pack = {
                                 assumed_start = { x = 2775, y = 10002, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = 44339,
+                                  source_loc = id.Loc.SLAYER_CHASM_JUMP,
                                   entity = { name = "Chasm", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 2768.5, y = 10002.5 },
@@ -30454,7 +30454,7 @@ local pack = {
                     assumed_start = { x = 2795, y = 3615, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = 34395,
+                      source_loc = id.Loc.TROLLHEIM_MOUNTAIN_CAVE_ENTRANCE_4X4_1A,
                       entity = { name = "Cave entrance", kind = "static" },
                       clickable_area = {
                         topleft = { x = 2795.5, y = 3617.5 },
@@ -33499,7 +33499,7 @@ local pack = {
                           assumed_start = { x = 3173, y = 2639, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = { "loc", 109065 },
+                            source_loc = { "loc", id.Loc.MENAPHOS_TOMB_ENTRANCE_PORT },
                             entity = { name = "Shifting tombs", kind = "static" },
                             clickable_area = {
                               topleft = { x = 3172.5, y = 2638.5 },
@@ -33779,7 +33779,7 @@ local pack = {
                           assumed_start = { x = 3173, y = 2639, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = { "loc", 109065 },
+                            source_loc = { "loc", id.Loc.MENAPHOS_TOMB_ENTRANCE_PORT },
                             entity = { name = "Shifting tombs", kind = "static" },
                             clickable_area = {
                               topleft = { x = 3172.5, y = 2638.5 },
@@ -33967,7 +33967,7 @@ local pack = {
                     assumed_start = { x = 3148, y = 2787, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = { "loc", 109062 },
+                      source_loc = { "loc", id.Loc.MENAPHOS_TOMB_ENTRANCE_SLAVE },
                       entity = { name = "Shifting tombs", kind = "static" },
                       clickable_area = {
                         topleft = { x = 3145.5, y = 2786.5 },
@@ -35013,7 +35013,7 @@ local pack = {
                                       assumed_start = { x = 2730, y = 10008, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = { "loc", 77052 },
+                                        source_loc = { "loc", id.Loc.FSD_IMP_WALL_CRACK_OP },
                                         entity = { name = "Crevice", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2730.5, y = 10008.5 },
@@ -35412,7 +35412,7 @@ local pack = {
                           assumed_start = { x = 2775, y = 10002, level = 0 },
                           internal = {
                             type = "entity",
-                            source_loc = { "loc", 44339 },
+                            source_loc = { "loc", id.Loc.SLAYER_CHASM_JUMP },
                             entity = { name = "Chasm", kind = "static" },
                             clickable_area = {
                               topleft = { x = 2768.5, y = 10002.5 },
@@ -35597,7 +35597,7 @@ local pack = {
                                 assumed_start = { x = 2775, y = 10002, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = { "loc", 44339 },
+                                  source_loc = { "loc", id.Loc.SLAYER_CHASM_JUMP },
                                   entity = { name = "Chasm", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 2768.5, y = 10002.5 },
@@ -35750,7 +35750,7 @@ local pack = {
                     assumed_start = { x = 2795, y = 3615, level = 0 },
                     internal = {
                       type = "entity",
-                      source_loc = { "loc", 34395 },
+                      source_loc = { "loc", id.Loc.TROLLHEIM_MOUNTAIN_CAVE_ENTRANCE_4X4_1A },
                       entity = { name = "Cave entrance", kind = "static" },
                       clickable_area = {
                         topleft = { x = 2795.5, y = 3617.5 },
@@ -35907,7 +35907,7 @@ local pack = {
                                                         assumed_start = { x = 2691, y = 9564, level = 0 },
                                                         internal = {
                                                           type = "entity",
-                                                          source_loc = { "loc", 77371 },
+                                                          source_loc = { "loc", id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_1A },
                                                           entity = { name = "Vines", kind = "static" },
                                                           clickable_area = {
                                                             topleft = { x = 2689.5, y = 9564.5 },
@@ -36053,7 +36053,7 @@ local pack = {
                                                   assumed_start = { x = 2744, y = 3152, level = 0 },
                                                   internal = {
                                                     type = "entity",
-                                                    source_loc = { "loc", 5083 },
+                                                    source_loc = { "loc", id.Loc.DUNGEON_TREE_CLOSED },
                                                     entity = { name = "Dungeon entrance", kind = "static" },
                                                     clickable_area = {
                                                       topleft = { x = 2742.5, y = 3156.5 },
@@ -36185,7 +36185,7 @@ local pack = {
                                                         assumed_start = { x = 2683, y = 9570, level = 0 },
                                                         internal = {
                                                           type = "entity",
-                                                          source_loc = { "loc", 77373 },
+                                                          source_loc = { "loc", id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_2A },
                                                           entity = { name = "Vines", kind = "static" },
                                                           clickable_area = {
                                                             topleft = { x = 2682.5, y = 9569.5 },
@@ -36275,7 +36275,7 @@ local pack = {
                                                   assumed_start = { x = 2643, y = 9593, level = 2 },
                                                   internal = {
                                                     type = "entity",
-                                                    source_loc = { "loc", 77509 },
+                                                    source_loc = { "loc", id.Loc.BRIMH_DUNG_IMP_STAIRS_3X4_VAR2 },
                                                     entity = { name = "Stairs", kind = "static" },
                                                     clickable_area = {
                                                       topleft = { x = 2643.5, y = 9596.5 },
@@ -36330,7 +36330,7 @@ local pack = {
                                                   assumed_start = { x = 2643, y = 9593, level = 2 },
                                                   internal = {
                                                     type = "entity",
-                                                    source_loc = { "loc", 77509 },
+                                                    source_loc = { "loc", id.Loc.BRIMH_DUNG_IMP_STAIRS_3X4_VAR2 },
                                                     entity = { name = "Stairs", kind = "static" },
                                                     clickable_area = {
                                                       topleft = { x = 2643.5, y = 9596.5 },
@@ -36649,7 +36649,7 @@ local pack = {
                                                   assumed_start = { x = 2672, y = 9499, level = 0 },
                                                   internal = {
                                                     type = "entity",
-                                                    source_loc = { "loc", 77375 },
+                                                    source_loc = { "loc", id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_3A },
                                                     entity = { name = "Vines", kind = "static" },
                                                     clickable_area = {
                                                       topleft = { x = 2672.5, y = 9499.5 },
@@ -36845,7 +36845,7 @@ local pack = {
                                 assumed_start = { x = 2695, y = 9482, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = { "loc", 77379 },
+                                  source_loc = { "loc", id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_5A },
                                   entity = { name = "Vines", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 2693.5, y = 9482.5 },
@@ -36904,7 +36904,7 @@ local pack = {
                                 assumed_start = { x = 2676, y = 9479, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = { "loc", 77377 },
+                                  source_loc = { "loc", id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_4A },
                                   entity = { name = "Vines", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 2674.5, y = 9479.5 },
@@ -37305,7 +37305,7 @@ local pack = {
                                 assumed_start = { x = 2695, y = 9482, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = { "loc", 77379 },
+                                  source_loc = { "loc", id.Loc.BRIMH_DUNG_IMP_VINES_UNCUT_5A },
                                   entity = { name = "Vines", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 2693.5, y = 9482.5 },
@@ -39388,7 +39388,7 @@ local pack = {
                                 assumed_start = { x = 3711, y = 2970, level = 0 },
                                 internal = {
                                   type = "entity",
-                                  source_loc = { "loc", 112526 },
+                                  source_loc = { "loc", id.Loc.STEPPING_STONE_SPAN_3_EAST_WEST },
                                   entity = { name = "Stepping stone", kind = "static" },
                                   clickable_area = {
                                     topleft = { x = 3712.5, y = 2970.5 },
@@ -39943,7 +39943,7 @@ local pack = {
                                                         assumed_start = { x = 2372, y = 3621, level = 0 },
                                                         internal = {
                                                           type = "entity",
-                                                          source_loc = { "loc", 45205 },
+                                                          source_loc = { "loc", id.Loc.BUILD_IMP_LUMBRIDGE_FENCE_STYLE },
                                                           entity = { name = "Stile", kind = "static" },
                                                           clickable_area = {
                                                             topleft = { x = 2370.5, y = 3621.5 },
@@ -40494,7 +40494,7 @@ local pack = {
                                       assumed_start = { x = 2370, y = 3621, level = 0 },
                                       internal = {
                                         type = "entity",
-                                        source_loc = { "loc", 45205 },
+                                        source_loc = { "loc", id.Loc.BUILD_IMP_LUMBRIDGE_FENCE_STYLE },
                                         entity = { name = "Stile", kind = "static" },
                                         clickable_area = {
                                           topleft = { x = 2370.5, y = 3621.5 },
