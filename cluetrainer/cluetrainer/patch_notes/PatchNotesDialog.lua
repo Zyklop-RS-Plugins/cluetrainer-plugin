@@ -157,7 +157,7 @@ end
 function PatchNotesDialog.init()
   local previous_version = last_opened:get()
 
-  if previous_version ~= data.current_version then
+  if previous_version ~= data.latest_patch.version then
     pending = zyklib.game_events.native.Logic:subscribe(function()
       local parent = ui.Interfaces:GetComponent(id.Component.TOPLEVEL_V2__PLUGIN_BUILD_LAYER_TOP)
       if parent == nil or parent.visibleGlobal == false then return end
