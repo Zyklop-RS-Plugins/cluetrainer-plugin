@@ -1,3 +1,4 @@
+local tilecoordinates    = require("cluetrainer/math/math").tilecoordinates
 local path_shapes        = require "cluetrainer/solving/common/path_shapes"
 local map                = require "cluetrainer/map/map"
 local EmoteAreaEntity    = require "cluetrainer/map/elements/EmoteAreaEntity"
@@ -14,11 +15,59 @@ local ClueStateAction    = require("cluetrainer/solving/cluestateinterface/ClueS
 local TeleportAction     = require "cluetrainer/solving/cluestateinterface/TeleportAction"
 local zyklib             = require "zyklib"
 
+---@param config LocType?
+---@return boolean
+local function is_hidey_hole_config(config)
+  return config ~= nil and config.configName ~= nil
+      and string.find(string.upper(config.configName), "^TRAIL17_STASH_") ~= nil
+end
+
+-- Hidey-holes are multilocs whose configs, in every state (unbuilt, built, filled), share the internal name prefix
+-- TRAIL17_STASH_.
+---@param loc LocEntity
+---@return boolean
+local function is_hidey_hole(loc)
+  return is_hidey_hole_config(loc.config) or (loc.isMultiLoc and is_hidey_hole_config(loc.parentConfig))
+end
+
+-- The box colour per state of a hidey-hole, by the suffix of the internal name of its current config.
+local HIDEY_HOLE_STATE_COLOURS = {
+  { suffix = "_UNBUILT", colour = 0xFF0000A0 }, -- Red: not built yet
+  { suffix = "_BUILT",   colour = 0xFF9900A0 }, -- Orange: built, but empty
+  { suffix = "_FILLED",  colour = 0x00FF00A0 }, -- Green: filled
+}
+
+-- The state is the hidey-hole's current config, which the game picks per player, so the colour follows the player's
+-- own hidey-hole. A state change gives the object another config and thereby a new box with the new colour.
+---@param loc LocEntity
+---@return ColourRGBA
+local function hidey_hole_colour(loc)
+  local name = loc.config and loc.config.configName and string.upper(loc.config.configName) or ""
+  for _, state in ipairs(HIDEY_HOLE_STATE_COLOURS) do
+    if string.sub(name, -#state.suffix) == state.suffix then return state.colour end
+  end
+  return 0x00FFFFA0 -- Cyan, like other objects, should the state be unknown
+end
+
 ---@param step Emote
 local function create_step_highlights(step)
-  return zyklib.highlights.HighlightGroup.new({
+  local highlights = {
     path_shapes.areaHighlight(step.area, 0x914183FF, 0x91418380)
-  })
+  }
+
+  local hole = step.hidey_hole
+  if hole ~= nil then
+    -- Any hidey-hole object on or next to the hole's tile, whether it is unbuilt, built or filled.
+    -- The same south-west corner as for containers in SimpleClueSolver.
+    local location = hole.location
+    table.insert(highlights, path_shapes.locHighlight({
+      coordGrid = tilecoordinates.toCoordGrid({ x = location.topleft.x, y = location.botright.y, level = location.level }),
+      range = 2,
+      func = is_hidey_hole
+    }, hidey_hole_colour))
+  end
+
+  return zyklib.highlights.HighlightGroup.new(highlights)
 end
 
 ---@param step Emote
