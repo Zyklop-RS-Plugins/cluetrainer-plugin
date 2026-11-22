@@ -127,6 +127,7 @@ clues.ClueTier = {
 
 
 ---@class Emote.HideyHole
+---@field config string Name of the hidey-hole's master loc, e.g. TRAIL17_STASH_09_LEGENDS_GUILD
 ---@field location TileRectangle
 ---@field name string
 

@@ -2738,6 +2738,7 @@ local clues = {
     emotes = { "Dance" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_26_LUMBRIDGE_SWAMP",
       name = "Barrel (hidey-hole)",
       location = { topleft = { x = 3204, y = 3169 }, botright = { x = 3204, y = 3169 }, level = 0 }
     }
@@ -2754,6 +2755,7 @@ local clues = {
     emotes = { "Think" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_44_LUMBRIDGE_MILL",
       name = "Sack of items (hidey-hole)",
       location = { topleft = { x = 3165, y = 3302 }, botright = { x = 3165, y = 3302 }, level = 0 }
     }
@@ -2770,6 +2772,7 @@ local clues = {
     emotes = { "Laugh" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_31_SINCLAIR_MANSION",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 2731, y = 3534 }, botright = { x = 2731, y = 3534 }, level = 0 }
     }
@@ -2786,6 +2789,7 @@ local clues = {
     emotes = { "Panic" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_35_LIMESTONE_MINE",
       name = "Crate (hidey-hole)",
       location = { topleft = { x = 3376, y = 3500 }, botright = { x = 3376, y = 3500 }, level = 0 }
     }
@@ -2815,6 +2819,7 @@ local clues = {
     emotes = { "Raspberry" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_04_ARDOUGNE_ZOO",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 2599, y = 3280 }, botright = { x = 2599, y = 3280 }, level = 0 }
     }
@@ -2831,6 +2836,7 @@ local clues = {
     emotes = { "Clap" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_17_WIZARDS_TOWER",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 3099, y = 3189 }, botright = { x = 3099, y = 3188 }, level = 0 }
     }
@@ -2847,6 +2853,7 @@ local clues = {
     emotes = { "Twirl" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_40_CROSSROADS",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 2959, y = 3241 }, botright = { x = 2960, y = 3240 }, level = 0 }
     }
@@ -2863,6 +2870,7 @@ local clues = {
     emotes = { "Raspberry" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_06_KEEP_LE_FAYE",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 2756, y = 3404 }, botright = { x = 2756, y = 3404 }, level = 0 }
     }
@@ -2879,6 +2887,7 @@ local clues = {
     emotes = { "Cheer" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_13_PORT_SARIM",
       name = "Crate (hidey-hole)",
       location = { topleft = { x = 3042, y = 3234 }, botright = { x = 3042, y = 3234 }, level = 0 }
     }
@@ -2893,6 +2902,7 @@ local clues = {
     emotes = { "Wave" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_47_MUDSKIPPER_POINT",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 3004, y = 3123 }, botright = { x = 3004, y = 3123 }, level = 0 }
     }
@@ -2909,6 +2919,7 @@ local clues = {
     emotes = { "Shrug" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_38_RIMMINGTON_MINE",
       name = "Cart (hidey-hole)",
       location = { topleft = { x = 2972, y = 3237 }, botright = { x = 2973, y = 3235 }, level = 0 }
     }
@@ -2925,6 +2936,7 @@ local clues = {
     emotes = { "Clap" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_15_EXAM_CENTRE",
       name = "Crate (hidey-hole)",
       location = { topleft = { x = 3351, y = 3348 }, botright = { x = 3351, y = 3348 }, level = 0 }
     }
@@ -2941,6 +2953,7 @@ local clues = {
     emotes = { "Yawn" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_48_VARROCK_LIBRARY",
       name = "Crate (hidey-hole)",
       location = { topleft = { x = 3217, y = 3494 }, botright = { x = 3217, y = 3494 }, level = 0 }
     }
@@ -2957,6 +2970,7 @@ local clues = {
     emotes = { "Dance" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_25_PARTY_ROOM",
       name = "Potted plant (hidey-hole)",
       location = { topleft = { x = 3041, y = 3372 }, botright = { x = 3041, y = 3372 }, level = 0 }
     }
@@ -2973,6 +2987,7 @@ local clues = {
     emotes = { "Twirl" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_41_DRAYNOR_MANOR",
       name = "Dead tree (hidey-hole)",
       location = { topleft = { x = 3090, y = 3341 }, botright = { x = 3092, y = 3340 }, level = 0 }
     }
@@ -2989,6 +3004,7 @@ local clues = {
     emotes = { "Jump for Joy" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_28_BEEHIVE",
       name = "Beehive (hidey-hole)",
       location = { topleft = { x = 2762, y = 3447 }, botright = { x = 2762, y = 3447 }, level = 0 }
     }
@@ -3005,6 +3021,7 @@ local clues = {
     emotes = { "Headbang" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_27_DESERT_MINE",
       name = "Rocks (hidey-hole)",
       location = { topleft = { x = 3295, y = 3282 }, botright = { x = 3295, y = 3282 }, level = 0 }
     }
@@ -3021,6 +3038,7 @@ local clues = {
     emotes = { "Bow or Curtsy" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_09_LEGENDS_GUILD",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 2732, y = 3352 }, botright = { x = 2732, y = 3352 }, level = 0 }
     }
@@ -3050,6 +3068,7 @@ local clues = {
     emotes = { "Dance" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_23_DRAYNOR_CROSSROADS",
       location = { topleft = { x = 3112, y = 3292 }, botright = { x = 3112, y = 3292 }, level = 0 },
       name = "Rock (hidey-hole)"
     }
@@ -3066,6 +3085,7 @@ local clues = {
     emotes = { "Jig" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_20_FISHING_GUILD",
       location = { topleft = { x = 2619, y = 3388 }, botright = { x = 2619, y = 3388 }, level = 0 },
       name = "Rock (hidey-hole)"
     }
@@ -3082,6 +3102,7 @@ local clues = {
     emotes = { "Bow or Curtsy" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_08_DUEL_ARENA",
       name = "Sack (hidey-hole)",
       location = { topleft = { x = 3323, y = 3236 }, botright = { x = 3323, y = 3236 }, level = 0 }
     }
@@ -3098,6 +3119,7 @@ local clues = {
     emotes = { "Cry" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_46_LUMBER_YARD",
       location = { topleft = { x = 3299, y = 3521 }, botright = { x = 3299, y = 3521 }, level = 0 },
       name = "Tree stump (hidey-hole)"
     }
@@ -3114,6 +3136,7 @@ local clues = {
     emotes = { "Clap" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_16_WINDMILL",
       location = { topleft = { x = 2635, y = 3383 }, botright = { x = 2635, y = 3383 }, level = 2 },
       name = "Crate (hidey-hole)"
     }
@@ -3130,6 +3153,7 @@ local clues = {
     emotes = { "Yawn" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_51_DRAYNOR_VILLAGE",
       name = "Barrel (hidey-hole)",
       location = { topleft = { x = 3078, y = 3246 }, botright = { x = 3078, y = 3246 }, level = 0 }
     }
@@ -3146,6 +3170,7 @@ local clues = {
     emotes = { "Cheer" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_11_DRUID_CIRCLE",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 2922, y = 3476 }, botright = { x = 2922, y = 3476 }, level = 0 }
     }
@@ -3162,6 +3187,7 @@ local clues = {
     emotes = { "Beckon", "Bow or Curtsy" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_02_DIGSITE",
       name = "Barrel (hidey-hole)",
       location = { topleft = { x = 3379, y = 3445 }, botright = { x = 3379, y = 3445 }, level = 0 }
     }
@@ -3178,6 +3204,7 @@ local clues = {
     emotes = { "Panic", "Wave" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_32_MAUSOLEUM",
       name = "Crate (hidey-hole)",
       location = { topleft = { x = 3506, y = 3574 }, botright = { x = 3506, y = 3574 }, level = 0 }
     }
@@ -3194,6 +3221,7 @@ local clues = {
     emotes = { "Jig", "Bow or Curtsy" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_21_SHANTAY_PASS",
       name = "Crate (hidey-hole)",
       location = { topleft = { x = 3302, y = 3130 }, botright = { x = 3302, y = 3130 }, level = 0 }
     }
@@ -3210,6 +3238,7 @@ local clues = {
     emotes = { "Think", "Twirl" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_43_OBSERVATORY",
       location = { topleft = { x = 2445, y = 3161 }, botright = { x = 2445, y = 3161 }, level = 1 },
       name = "Crate (hidey-hole)"
     }
@@ -3226,6 +3255,7 @@ local clues = {
     emotes = { "Twirl", "Salute" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_42_GUNNARSGRUNN",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 3114, y = 3418 }, botright = { x = 3115, y = 3417 }, level = 0 }
     }
@@ -3242,6 +3272,7 @@ local clues = {
     emotes = { "Jump for Joy", "Jig" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_29_YANILLE",
       name = "Crate (hidey-hole)",
       location = { topleft = { x = 2613, y = 3088 }, botright = { x = 2613, y = 3088 }, level = 0 }
     }
@@ -3258,6 +3289,7 @@ local clues = {
     emotes = { "Dance", "Bow or Curtsy" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_24_CANIFIS",
       name = "Barrel (hidey-hole)",
       location = { topleft = { x = 3491, y = 3480 }, botright = { x = 3491, y = 3480 }, level = 0 }
     }
@@ -3274,6 +3306,7 @@ local clues = {
     emotes = { "Cheer", "Headbang" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_12_BARBARIAN_AGILITY",
       name = "Barrel (hidey-hole)",
       location = { topleft = { x = 2545, y = 3556 }, botright = { x = 2545, y = 3556 }, level = 0 }
     }
@@ -3290,6 +3323,7 @@ local clues = {
     emotes = { "Cry", "No" },
     double_agent = false,
     hidey_hole = {
+      config = "TRAIL17_STASH_19_GNOME_AGILITY",
       name = "Tree stump (hidey-hole)",
       location = { topleft = { x = 2473, y = 3418 }, botright = { x = 2473, y = 3418 }, level = 2 }
     }
@@ -3306,6 +3340,7 @@ local clues = {
     double_agent = false,
     area = { origin = { x = 2778, y = 3057, level = 0 }, size = { x = 33, y = 17 } },
     hidey_hole = {
+      config = "TRAIL17_STASH_01_TAI_BWO_WANNAI",
       name = "Crate (hidey-hole)",
       location = { topleft = { x = 2793, y = 3073 }, botright = { x = 2793, y = 3073 }, level = 0 }
     }
@@ -3322,6 +3357,7 @@ local clues = {
     double_agent = false,
     area = { origin = { x = 2523, y = 3373, level = 0 }, size = { x = 11, y = 5 } },
     hidey_hole = {
+      config = "TRAIL17_STASH_14_COMBAT_TRAINING_CAMP",
       name = "Crate (hidey-hole)",
       location = { topleft = { x = 2521, y = 3377 }, botright = { x = 2521, y = 3377 }, level = 0 }
     }
@@ -3338,6 +3374,7 @@ local clues = {
     double_agent = false,
     area = { origin = { x = 2824, y = 3454, level = 0 }, size = { x = 6, y = 4 } },
     hidey_hole = {
+      config = "TRAIL17_STASH_18_CATHERBY",
       name = "Crates (hidey-hole)",
       location = { topleft = { x = 2829, y = 3455 }, botright = { x = 2829, y = 3455 }, level = 0 }
     }
@@ -3354,6 +3391,7 @@ local clues = {
     double_agent = false,
     area = { origin = { x = 2436, y = 3080, level = 0 }, size = { x = 13, y = 20 } },
     hidey_hole = {
+      config = "TRAIL17_STASH_49_CASTLE_WARS",
       name = "Stone blocks (hidey-hole)",
       location = { topleft = { x = 2448, y = 3088 }, botright = { x = 2448, y = 3087 }, level = 0 }
     }
@@ -3383,6 +3421,7 @@ local clues = {
     double_agent = true,
     area = { origin = { x = 2790, y = 3667, level = 0 }, size = { x = 8, y = 9 } },
     hidey_hole = {
+      config = "TRAIL17_STASH_30_MOUNTAIN_CAMP",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 2790, y = 3667 }, botright = { x = 2790, y = 3667 }, level = 0 }
     }
@@ -3399,6 +3438,7 @@ local clues = {
     double_agent = true,
     area = { origin = { x = 2843, y = 3489, level = 1 }, size = { x = 11, y = 10 } },
     hidey_hole = {
+      config = "TRAIL17_STASH_33_WHITE_WOLF_MOUNTAIN",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 2845, y = 3496 }, botright = { x = 2845, y = 3496 }, level = 1 }
     }
@@ -3415,6 +3455,7 @@ local clues = {
     double_agent = true,
     area = { origin = { x = 2908, y = 3155, level = 0 }, size = { x = 27, y = 20 } },
     hidey_hole = {
+      config = "TRAIL17_STASH_37_MUSA_POINT",
       name = "Log (hidey-hole)",
       location = { topleft = { x = 2914, y = 3154 }, botright = { x = 2914, y = 3154 }, level = 0 }
     }
@@ -3431,6 +3472,7 @@ local clues = {
     double_agent = true,
     area = { origin = { x = 3292, y = 2781, level = 0 }, size = { x = 6, y = 4 } },
     hidey_hole = {
+      config = "TRAIL17_STASH_22_SOPHANEM",
       name = "Crate (hidey-hole)",
       location = { topleft = { x = 3310, y = 2784 }, botright = { x = 3310, y = 2783 }, level = 0 }
     }
@@ -3447,6 +3489,7 @@ local clues = {
     emotes = { "Raspberry" },
     double_agent = true,
     hidey_hole = {
+      config = "TRAIL17_STASH_05_FISHING_GUILD",
       location = { topleft = { x = 2585, y = 3424 }, botright = { x = 2585, y = 3424 }, level = 0 },
       name = "Crate (hidey-hole)"
     }
@@ -3463,6 +3506,7 @@ local clues = {
     double_agent = true,
     area = { origin = { x = 2851, y = 2952, level = 0 }, size = { x = 3, y = 4 } },
     hidey_hole = {
+      config = "TRAIL17_STASH_03_SHILO_VILLAGE",
       name = "Potted plant (hidey-hole)",
       location = { topleft = { x = 2856, y = 2954 }, botright = { x = 2857, y = 2953 }, level = 0 }
     }
@@ -3479,6 +3523,7 @@ local clues = {
     emotes = { "Bow or Curtsy" },
     double_agent = true,
     hidey_hole = {
+      config = "TRAIL17_STASH_07_LIGHTHOUSE",
       location = { topleft = { x = 2512, y = 3639 }, botright = { x = 2512, y = 3639 }, level = 2 },
       name = "Crate (hidey-hole)"
     }
@@ -3494,6 +3539,7 @@ local clues = {
     emotes = { "Yawn" },
     area = { origin = { x = 3031, y = 3728, level = 0 }, size = { x = 9, y = 9 } },
     hidey_hole = {
+      config = "TRAIL17_STASH_50_BANDIT_CAMP",
       name = "Dead tree (hidey-hole)",
       location = { topleft = { x = 3031, y = 3723 }, botright = { x = 3032, y = 3722 }, level = 0 }
     },
@@ -3511,6 +3557,7 @@ local clues = {
     area = { origin = { x = 3234, y = 3603, level = 0 }, size = { x = 12, y = 12 } },
     double_agent = true,
     hidey_hole = {
+      config = "TRAIL17_STASH_39_CHAOS_TEMPLE",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 3245, y = 3610 }, botright = { x = 3245, y = 3610 }, level = 0 }
     }
@@ -3527,6 +3574,7 @@ local clues = {
     emotes = { "Cheer" },
     double_agent = true,
     hidey_hole = {
+      config = "TRAIL17_STASH_52_TZHAAR_CITY",
       name = "Table (hidey-hole)",
       location = { topleft = { x = 4638, y = 5106 }, botright = { x = 4638, y = 5106 }, level = 0 }
     }
@@ -3543,6 +3591,7 @@ local clues = {
     items = { "Imp-hide Hood", "Prifddinia Musician's Robe Top", "Amulet of Magic" },
     double_agent = true,
     hidey_hole = {
+      config = "TRAIL17_STASH_55_SLAYER_TOWER",
       name = "Crates (hidey-hole)",
       location = { topleft = { x = 3427, y = 3541 }, botright = { x = 3427, y = 3541 }, level = 0 }
     }
@@ -3559,6 +3608,7 @@ local clues = {
     double_agent = true,
     area = { origin = { x = 3671, y = 3489, level = 0 }, size = { x = 11, y = 11 } },
     hidey_hole = {
+      config = "TRAIL17_STASH_56_PORT_PHASMATYS",
       name = "Barrel (hidey-hole)",
       location = { topleft = { x = 3676, y = 3494 }, botright = { x = 3676, y = 3494 }, level = 0 }
     }
@@ -3575,6 +3625,7 @@ local clues = {
     items = { "Any Dragon Mask", "Dragon Rider Amulet", "Dragon Defender" },
     emotes = { "Raspberry" },
     hidey_hole = {
+      config = "TRAIL17_STASH_60_CELESTIAL_DRAGONS",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 2277, y = 5966 }, botright = { x = 2277, y = 5965 }, level = 0 }
     }
@@ -3591,6 +3642,7 @@ local clues = {
     emotes = { "Wave" },
     double_agent = true,
     hidey_hole = {
+      config = "TRAIL17_STASH_57_MENAPHOS_LIBRARY",
       name = "Plant (hidey-hole)",
       location = { topleft = { x = 3172, y = 2711 }, botright = { x = 3172, y = 2711 }, level = 0 }
     }
@@ -3607,6 +3659,7 @@ local clues = {
     double_agent = true,
     area = { origin = { x = 3046, y = 3501, level = 0 }, size = { x = 12, y = 8 } },
     hidey_hole = {
+      config = "TRAIL17_STASH_63_EDGEVILLE_MONASTERY",
       name = "Barrel (hidey-hole)",
       location = { topleft = { x = 3056, y = 3499 }, botright = { x = 3056, y = 3499 }, level = 0 }
     }
@@ -3623,6 +3676,7 @@ local clues = {
     emotes = { "Bow or Curtsy" },
     double_agent = true,
     hidey_hole = {
+      config = "TRAIL17_STASH_53_CHARM_SPRITE",
       name = "Rock (hidey-hole)",
       location = { topleft = { x = 2398, y = 3369 }, botright = { x = 2398, y = 3368 }, level = 0 }
     }
@@ -3639,6 +3693,7 @@ local clues = {
     area = { origin = { x = 2174, y = 3393, level = 1 }, size = { x = 30, y = 22 } },
     double_agent = true,
     hidey_hole = {
+      config = "TRAIL17_STASH_62_HEFIN_DISTRICT",
       name = "Potted plant (hidey-hole)",
       location = { topleft = { x = 2181, y = 3402 }, botright = { x = 2181, y = 3402 }, level = 1 }
     }
@@ -3655,6 +3710,7 @@ local clues = {
     emotes = { "Shrug" },
     double_agent = true,
     hidey_hole = {
+      config = "TRAIL17_STASH_61_LUMBRIDGE_FISHING",
       name = "Barrel (hidey-hole)",
       location = { topleft = { x = 3198, y = 3258 }, botright = { x = 3198, y = 3258 }, level = 0 }
     }
@@ -3671,6 +3727,7 @@ local clues = {
     area = { origin = { x = 6160, y = 1039, level = 0 }, size = { x = 18, y = 36 } },
     double_agent = true,
     hidey_hole = {
+      config = "TRAIL17_STASH_58_INVENTION_GUILD",
       name = "Barrel (hidey-hole)",
       location = { topleft = { x = 6176, y = 1050 }, botright = { x = 6176, y = 1050 }, level = 0 }
     }
@@ -3687,6 +3744,7 @@ local clues = {
     emotes = { "Dance" },
     double_agent = true,
     hidey_hole = {
+      config = "TRAIL17_STASH_54_UNCHARTED_ISLE",
       location = {
         topleft = { x = 1818, y = 11653 },
         botright = { x = 1818, y = 11653 },

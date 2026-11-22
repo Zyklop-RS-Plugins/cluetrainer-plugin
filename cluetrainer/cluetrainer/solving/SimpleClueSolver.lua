@@ -20,9 +20,6 @@ local ClueStateAction       = require "cluetrainer/solving/cluestateinterface/Cl
 local TeleportAction        = require "cluetrainer/solving/cluestateinterface/TeleportAction"
 local clues                 = require "cluetrainer/model/clues"
 
--- Size of a loc highlight relative to the loc itself
-local LOC_SCALE             = 1.05
-
 ---@param step Step
 local function create_step_highlights(step)
   local cube = MutableMesh.new()
@@ -47,25 +44,12 @@ local function create_step_highlights(step)
         end
       )
     else
-      return zyklib.highlights.LocHighlight.new({
-          coordGrid = coordinates and
-              tilecoordinates.toCoordGrid({ x = coordinates.x, y = coordinates.y, level = coordinates.level }),
-          range = 2,
-          configID = id.Loc[config.name]
-        },
-        function(loc)
-          -- Width and length at most the object's own tiles (512 units each), so an object placed diagonally,
-          -- such as the crates of clues 84, 153 and 158, isn't drawn larger than the same object placed straight.
-          local d = loc.aabb.dimensions
-          local size = Vector3.new(math.min(d.x, loc.width * 512), d.y, math.min(d.z, loc.length * 512))
-          return {
-            shapeData = cube,
-            translation = loc.aabb.centre - Vector3.new(LOC_SCALE / 2) * size,
-            scale = Vector3.new(LOC_SCALE) * size,
-            colour = 0x00FFFFA0
-          }
-        end
-      )
+      return path_shapes.locHighlight({
+        coordGrid = coordinates and
+            tilecoordinates.toCoordGrid({ x = coordinates.x, y = coordinates.y, level = coordinates.level }),
+        range = 2,
+        configID = id.Loc[config.name]
+      })
     end
   end
 

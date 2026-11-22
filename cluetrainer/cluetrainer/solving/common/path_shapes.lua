@@ -453,6 +453,34 @@ function path_shapes.digHighlight(spot, single_tile)
     return path_shapes.areaHighlight(TileArea.centered_on(spot, single_tile and SINGLE_TILE_SIZE or DIG_AREA_SIZE))
 end
 
+-- Size of an object highlight relative to the object itself.
+local LOC_HIGHLIGHT_SCALE = 1.05
+
+---The usual highlight of an object to interact with, such as a container to search or a hidey-hole: a box around
+---each object that matches the filter, cyan unless `colour_of` gives another colour. Not activated yet.
+---@param filter LocListFilterSettings
+---@param colour_of (fun(loc: LocEntity): ColourRGBA)? The colour of each object's box. Default is cyan.
+---@return zyklib.LocHighlight
+function path_shapes.locHighlight(filter, colour_of)
+    local cube = MutableMesh.new()
+        :add(MutableMesh.cube():faces_only():recolor(0xFFFFFF80))
+        :add(MutableMesh.cube():lines_only():recolor(0xFFFFFFFF))
+        :shapeData()
+
+    return LocHighlight.new(filter, function(loc)
+        -- Width and length at most the object's own tiles (512 units each), so an object placed diagonally,
+        -- such as the crates of clues 84, 153 and 158, isn't drawn larger than the same object placed straight.
+        local d = loc.aabb.dimensions
+        local size = Vector3.new(math.min(d.x, loc.width * 512), d.y, math.min(d.z, loc.length * 512))
+        return {
+            shapeData = cube,
+            translation = loc.aabb.centre - Vector3.new(LOC_HIGHLIGHT_SCALE / 2) * size,
+            scale = Vector3.new(LOC_HIGHLIGHT_SCALE) * size,
+            colour = colour_of and colour_of(loc) or 0x00FFFFA0
+        }
+    end)
+end
+
 ---@param step Path.Step?
 ---@return boolean
 local function ends_with_tile_marker(step)
