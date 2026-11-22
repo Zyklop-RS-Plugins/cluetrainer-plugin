@@ -106,6 +106,7 @@ local patches = { {
       item "Updated to PrettyUI 1.3.3. This fixes the crashes that could occur when trying to move an interface.",
       item "The required emote(s) for emote clues are not displayed alongside the other instructions for emote clues.",
       item "Fixed detection of an easy clue in Falador.",
+      item "Fixed another issue with a scan decision point being unreachable in the Lumbridge caves scan."
     },
   },
 }
