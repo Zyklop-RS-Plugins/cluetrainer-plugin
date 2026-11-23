@@ -14,13 +14,27 @@ local RichText           = require "cluetrainer/util/RichText"
 local ClueStateAction    = require("cluetrainer/solving/cluestateinterface/ClueStateAction")
 local TeleportAction     = require "cluetrainer/solving/cluestateinterface/TeleportAction"
 local zyklib             = require "zyklib"
+local schema             = require "cluetrainer/util/schema"
 
--- The box colour per state of a hidey-hole, by the suffix of the internal name of its current config.
-local HIDEY_HOLE_STATE_COLOURS = {
-  { suffix = "_UNBUILT", colour = 0xFF0000A0 }, -- Red: not built yet
-  { suffix = "_BUILT",   colour = 0xFF9900A0 }, -- Orange: built, but empty
-  { suffix = "_FILLED",  colour = 0x00FF00A0 }, -- Green: filled
-}
+--- An ActiveEmoteClue manages a single emote clue currently in progress.
+---@class ct.ActiveEmoteClue : ct.AbstractClueSolver
+---@field private navigator Navigator?
+---@field private map_navigator ct.MapSectionControl?
+---@field private path_twig prettymap.luaflet.Twig?
+---@field private clue_state ct.ClueStateInterface
+---@field private method Method.GenericPath?
+---@field actions ct.EmoteClueActions
+local EmoteClueSolver    = setmetatable({}, { __index = AbstractClueSolver })
+EmoteClueSolver.__index  = EmoteClueSolver
+
+EmoteClueSolver.settings = {
+  hideyhole_colour_unbuilt = ctGlobal.persistence:profileVariable("emotes/hidey_hole_highlight_colour_unbuilt",
+    schema.colour({ default = 0xF59E0BFF, allow_transparency = true }), "uint32"),
+  hideyhole_colour_built = ctGlobal.persistence:profileVariable("emotes/hidey_hole_highlight_colour_built",
+    schema.colour({ default = 0xDC2626FF, allow_transparency = true }), "uint32"),
+  hideyhole_colour_filled = ctGlobal.persistence:profileVariable("emotes/hidey_hole_highlight_colour_filled",
+    schema.colour({ default = 0x3B82F6FF, allow_transparency = true }), "uint32"),
+  }
 
 -- The state is the hidey-hole's current config, which the game picks per player, so the colour follows the player's
 -- own hidey-hole. A state change gives the object another config and thereby a new box with the new colour.
@@ -28,10 +42,21 @@ local HIDEY_HOLE_STATE_COLOURS = {
 ---@return ColourRGBA
 local function hidey_hole_colour(loc)
   local name = loc.config and loc.config.configName and string.upper(loc.config.configName) or ""
-  local state = zyklib.array.find(HIDEY_HOLE_STATE_COLOURS, function(entry)
-    return string.sub(name, -#entry.suffix) == entry.suffix
-  end)
-  return state and state.colour or 0x00FFFFA0 -- Cyan, like other objects, should the state be unknown
+
+  local function endsWith(str, suffix)
+    return str:sub(- #suffix) == suffix
+  end
+
+  if endsWith(name, "UNBUILT") then
+    return EmoteClueSolver.settings.hideyhole_colour_unbuilt:get()
+  elseif endsWith(name, "BUILT") then
+    return EmoteClueSolver.settings.hideyhole_colour_built:get()
+  elseif endsWith(name, "FILLED") then
+    return EmoteClueSolver.settings.hideyhole_colour_filled:get()
+  else
+    --- Fallback case, should be impossible. Uses the unbuilt colour as a default.
+    return EmoteClueSolver.settings.hideyhole_colour_unbuilt:get()
+  end
 end
 
 ---@param step Emote
@@ -85,16 +110,7 @@ end
 ---@field uri? ct.interfaces.cluestate.ClueStateAction
 ---@field emote_return_hideyhole? ct.interfaces.cluestate.ClueStateAction
 
---- An ActiveEmoteClue manages a single emote clue currently in progress.
----@class ct.ActiveEmoteClue : ct.AbstractClueSolver
----@field private navigator Navigator?
----@field private map_navigator ct.MapSectionControl?
----@field private path_twig prettymap.luaflet.Twig?
----@field private clue_state ct.ClueStateInterface
----@field private method Method.GenericPath?
----@field actions ct.EmoteClueActions
-local EmoteClueSolver = setmetatable({}, { __index = AbstractClueSolver })
-EmoteClueSolver.__index = EmoteClueSolver
+
 
 ---@param clue Emote
 ---@param clue_state ct.ClueStateInterface
