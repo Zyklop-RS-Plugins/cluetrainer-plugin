@@ -228,6 +228,7 @@ class Preprocessor:
     def run(self) -> Tuple[bool, List[str]]:
         """Run the preprocessor with queue-based workflow. Returns (success, errors)."""
         try:
+            self._log(f"Initial variables: {self.cli_symbols}")
             if self.output_dir:
                 self.output_dir.mkdir(parents=True, exist_ok=True)
                 
@@ -772,13 +773,13 @@ def parse_cli_args(args: List[str]) -> Tuple[Optional[str], Optional[str], Dict[
     """Parse CLI arguments.
     
     Modes:
-      - In-place: python preprocess.py <directory> [SYMBOL=value ...] [--preserve PATTERN ...]
-      - Out-of-place: python preprocess.py --input <input> --output <output> [SYMBOL=value ...] [--preserve PATTERN ...]
+      - In-place: python preprocess.py <directory> [SYMBOL=value ...] [--preserve PATTERN]...
+      - Out-of-place: python preprocess.py --input <input> --output <output> [SYMBOL=value ...] [--preserve PATTERN]...
     """
     if len(args) < 1:
         raise PreprocessorError(
-            "Usage: python preprocess.py <directory> [SYMBOL=value ...] [--preserve PATTERN ...]\n"
-            "   or: python preprocess.py --input <input> --output <output> [SYMBOL=value ...] [--preserve PATTERN ...]"
+            "Usage: python preprocess.py <directory> [SYMBOL=value ...] [--preserve PATTERN]...\n"
+            "   or: python preprocess.py --input <input> --output <output> [SYMBOL=value ...] [--preserve PATTERN]..."
         )
 
     input_dir = None
@@ -810,11 +811,10 @@ def parse_cli_args(args: List[str]) -> Tuple[Optional[str], Optional[str], Dict[
         arg = args[i]
         
         if arg == "--preserve":
-            # Consume following arguments as preserve patterns until next flag
-            i += 1
-            while i < len(args) and not args[i].startswith("-"):
-                preserve_patterns.append(args[i])
-                i += 1
+            if i + 1 >= len(args) or args[i + 1].startswith("-"):
+                raise PreprocessorError("--preserve requires a pattern")
+            preserve_patterns.append(args[i + 1])
+            i += 2
             continue
         
         if "=" not in arg:
