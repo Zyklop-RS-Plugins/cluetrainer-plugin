@@ -151,6 +151,7 @@ end
 ---@field teleport ct.solving.TeleportAction
 ---@field emote_get_hideyhole? ct.interfaces.cluestate.ClueStateAction
 ---@field equip_items? ct.interfaces.cluestate.ClueStateAction
+---@field emotes? ct.interfaces.cluestate.ClueStateAction
 ---@field summon? ct.interfaces.cluestate.ClueStateAction
 ---@field kill_double_agent? ct.interfaces.cluestate.ClueStateAction
 ---@field uri? ct.interfaces.cluestate.ClueStateAction
@@ -207,12 +208,10 @@ function EmoteClueSolver:buildActions()
   local requirements, heading = format_required_items(clue.items)
   self.actions.equip_items = state_panel:addAction(ClueStateAction.Text.new(requirements, heading))
 
-  if globetrotter_legs_owned then
-    self.actions.summon = state_panel:addAction(ClueStateAction.Text.new("Summon " ..
-      RichText.npc(clue.double_agent and "Double Agent" or "Uri")))
-  else
-    self.actions.summon = state_panel:addAction(ClueStateAction.Text.new(table.concat(clue.emotes, ", then ")))
-  end
+  self.actions.emotes = state_panel:addAction(
+    ClueStateAction.Text.new(table.concat(clue.emotes, RichText.newline()), "Emotes to summon " .. RichText.npc(clue.double_agent and "Double Agent" or "Uri")))
+
+  self.actions.summon = nil
 
   if clue.double_agent then
     self.actions.kill_double_agent = state_panel:addAction(ClueStateAction.Text.new("Kill " ..
