@@ -27,6 +27,52 @@ local schema             = require "cluetrainer/util/schema"
 local EmoteClueSolver    = setmetatable({}, { __index = AbstractClueSolver })
 EmoteClueSolver.__index  = EmoteClueSolver
 
+local empty_slot_names   = {
+  [zyklib.game.equipment.SLOTS.HEAD] = "No headwear",
+  [zyklib.game.equipment.SLOTS.CAPE] = "No cape",
+  [zyklib.game.equipment.SLOTS.NECK] = "No necklace",
+  [zyklib.game.equipment.SLOTS.MAINHAND] = "Empty Mainhand",
+  [zyklib.game.equipment.SLOTS.BODY] = "No body",
+  [zyklib.game.equipment.SLOTS.OFFHAND] = "Empty Offhand",
+  [zyklib.game.equipment.SLOTS.LEGS] = "Empty Legs",
+  [zyklib.game.equipment.SLOTS.HANDS] = "No gloves",
+  [zyklib.game.equipment.SLOTS.FEET] = "No boots",
+  [zyklib.game.equipment.SLOTS.RING] = "No ring",
+  [zyklib.game.equipment.SLOTS.AMMO] = "No ammo",
+  [zyklib.game.equipment.SLOTS.POCKET] = "Empty pocket",
+}
+
+---@param items {slot : zyklib.game.EquipmentSlotId, options: (ObjType?)[]}[]
+---@return string
+---@return string?
+local function format_required_items(items)
+  local EMPTY_SLOT_COLOR = "AAAAAAFF"
+
+  local has_item = false
+  for _, requirement in ipairs(items) do
+    if requirement.options[1] ~= nil then
+      has_item = true
+      break
+    end
+  end
+
+  if not has_item then
+    return RichText.coloured("Unequip everything", EMPTY_SLOT_COLOR)
+  end
+
+  local requirements = {}
+
+  for _, requirement in ipairs(items) do
+    local item = requirement.options[1]
+
+    requirements[#requirements + 1] = item ~= nil
+        and RichText.obj(item)
+        or RichText.coloured(empty_slot_names[requirement.slot], EMPTY_SLOT_COLOR)
+  end
+
+  return table.concat(requirements, RichText.newline()), "Equip"
+end
+
 EmoteClueSolver.settings = {
   hideyhole_colour_unbuilt = ctGlobal.persistence:profileVariable("emotes/hidey_hole_highlight_colour_unbuilt",
     schema.colour({ default = 0xF59E0BFF, allow_transparency = true }), "uint32"),
@@ -34,7 +80,7 @@ EmoteClueSolver.settings = {
     schema.colour({ default = 0xDC2626FF, allow_transparency = true }), "uint32"),
   hideyhole_colour_filled = ctGlobal.persistence:profileVariable("emotes/hidey_hole_highlight_colour_filled",
     schema.colour({ default = 0x3B82F6FF, allow_transparency = true }), "uint32"),
-  }
+}
 
 -- The state is the hidey-hole's current config, which the game picks per player, so the colour follows the player's
 -- own hidey-hole. A state change gives the object another config and thereby a new box with the new colour.
@@ -158,7 +204,8 @@ function EmoteClueSolver:buildActions()
     self.actions.emote_get_hideyhole = state_panel:addAction(ClueStateAction.Text.new("Get hidey-hole"))
   end
 
-  self.actions.equip_items = state_panel:addAction(ClueStateAction.Text.new("Equip outfit"))
+  local requirements, heading = format_required_items(clue.items)
+  self.actions.equip_items = state_panel:addAction(ClueStateAction.Text.new(requirements, heading))
 
   if globetrotter_legs_owned then
     self.actions.summon = state_panel:addAction(ClueStateAction.Text.new("Summon " ..

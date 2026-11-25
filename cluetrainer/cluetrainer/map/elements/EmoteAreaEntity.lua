@@ -37,7 +37,7 @@ function EmoteAreaEntity.new(clue)
   else
     tooltip:Paragraph(("Perform the %s here to summon and talk to Uri."):format(action))
   end
-  tooltip:Row("Items", join(clue.items, ", and "))
+  --tooltip:Row("Items", join(clue.items, ", and "))
   tooltip:Row(#clue.emotes ~= 1 and "Emotes" or "Emote", join(clue.emotes, ", then "))
   if clue.double_agent then tooltip:Subheader("Spawns double agent") end
   --self.marker:SetTooltip(tooltip)

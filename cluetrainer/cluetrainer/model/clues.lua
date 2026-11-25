@@ -135,7 +135,7 @@ clues.ClueTier = {
 ---@class Emote : StepShared
 ---@field type "emote"
 ---@field area TileArea
----@field items string[]
+---@field items {slot : zyklib.game.EquipmentSlotId, options: (ObjType?)[]}[]
 ---@field emotes string[]
 ---@field double_agent boolean
 ---@field hidey_hole Emote.HideyHole|nil

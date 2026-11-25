@@ -1,3 +1,5 @@
+local zyklib = require("zyklib")
+
 ---@type Step[]
 local clues = {
   {
@@ -1154,7 +1156,8 @@ local clues = {
       },
       spot = { level = 0, topleft = { x = 3056, y = 3497 }, botright = { x = 3056, y = 3497 } },
       key = {
-        instructions = "The chest has a crude note on top. It reads 'You'll never get these drawers open now! - Zamorak Monk.'",
+        instructions =
+        "The chest has a crude note on top. It reads 'You'll never get these drawers open now! - Zamorak Monk.'",
         answer = "Kill a Monk of Zamorak in the Chaos Temple near the Goblin Village.",
         area = { origin = { x = 2946, y = 3473, level = 0 }, size = { x = 9, y = 6 } }
       }
@@ -1321,7 +1324,8 @@ local clues = {
         { domain = "loc", name = "OMGE_BURTHORPE_HOUSE_DRAWERS_OPEN" }
       },
       key = {
-        instructions = "The drawers are locked! A note on the top of the drawer reads: Wait till I get my hands on Penda; he's nicked the key again!",
+        instructions =
+        "The drawers are locked! A note on the top of the drawer reads: Wait till I get my hands on Penda; he's nicked the key again!",
         answer = "Pickpocket Penda in the house north of Heroes's Guild.",
         area = { origin = { x = 2912, y = 3521, level = 0 }, size = { x = 5, y = 6 } }
       }
@@ -2734,7 +2738,10 @@ local clues = {
       "Dance in the shack in Lumbridge Swamp. Equip a bronze dagger, iron full helm and a gold ring."
     },
     area = { origin = { x = 3202, y = 3167, level = 0 }, size = { x = 4, y = 4 } },
-    items = { "Bronze Dagger", "Iron full helm", "Gold ring" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.BRONZE_DAGGER } },
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.IRON_FULL_HELM } },
+      { slot = zyklib.game.equipment.SLOTS.RING,     options = { config.Obj.GOLD_RING } } },
     emotes = { "Dance" },
     double_agent = false,
     hidey_hole = {
@@ -2751,7 +2758,10 @@ local clues = {
       "Think in the middle of the wheat field by the Lumbridge mill. Equip a sapphire necklace, polar camo legs and an oak shortbow."
     },
     area = { origin = { x = 3155, y = 3295, level = 0 }, size = { x = 6, y = 9 } },
-    items = { "Sapphire necklace", "Polar camo legs", "Oak shortbow" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { config.Obj.SAPPHIRE_NECKLACE } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.HUNTING_TROUSERS_POLAR } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.OAK_SHORTBOW } } },
     emotes = { "Think" },
     double_agent = false,
     hidey_hole = {
@@ -2768,7 +2778,10 @@ local clues = {
       "Laugh at the crossroads south of Sinclair Mansion. Equip a leather cowl, amulet of strength and iron scimitar."
     },
     area = { origin = { x = 2737, y = 3534, level = 0 }, size = { x = 8, y = 8 } },
-    items = { "Leather cowl", "Amulet of strength", "Iron scimitar" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.LEATHER_COWL } },
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { config.Obj.AMULET_OF_STRENGTH } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.IRON_SCIMITAR } } },
     emotes = { "Laugh" },
     double_agent = false,
     hidey_hole = {
@@ -2785,7 +2798,10 @@ local clues = {
       "Panic in the limestone mine. Equip bronze platelegs, a steel pickaxe and a steel helmet."
     },
     area = { origin = { x = 3367, y = 3497, level = 0 }, size = { x = 10, y = 6 } },
-    items = { "Bronze platelegs", "Steel pickaxe", "Steel helm" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.BRONZE_PLATELEGS } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.STEEL_PICKAXE } },
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.STEEL_MED_HELM } } },
     emotes = { "Panic" },
     double_agent = false,
     hidey_hole = {
@@ -2802,7 +2818,19 @@ local clues = {
       "Panic on the pier where you catch the Fishing Trawler. Have nothing equipped at all when you do."
     },
     area = { origin = { x = 2676, y = 3163, level = 0 }, size = { x = 1, y = 12 } },
-    items = { "Nothing" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.CAPE,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.BODY,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS,    options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.FEET,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.RING,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.AMMO,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.POCKET,   options = { nil } },
+    },
     emotes = { "Panic" },
     double_agent = false,
     hidey_hole = nil
@@ -2815,7 +2843,10 @@ local clues = {
       "Blow a raspberry at the monkey cage in Ardougne Zoo. Equip a studded leather body, bronze platelegs and a mud pie."
     },
     area = { origin = { x = 2597, y = 3273, level = 0 }, size = { x = 11, y = 11 } },
-    items = { "Studded leather body", "Bronze platelegs", "Mud pie" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.BODY,     options = { config.Obj.STUDDED_BODY } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.BRONZE_PLATELEGS } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.MUD_PIE } } },
     emotes = { "Raspberry" },
     double_agent = false,
     hidey_hole = {
@@ -2832,7 +2863,10 @@ local clues = {
       "Clap on the causeway to the Wizards' Tower. Equip an iron helmet, emerald ring and leather gloves."
     },
     area = { origin = { x = 3101, y = 3187, level = 0 }, size = { x = 4, y = 23 } },
-    items = { "Iron helmet", "Emerald ring", "Leather gloves" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,  options = { config.Obj.IRON_MED_HELM } },
+      { slot = zyklib.game.equipment.SLOTS.RING,  options = { config.Obj.EMERALD_RING } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS, options = { config.Obj.LEATHER_GLOVES } } },
     emotes = { "Clap" },
     double_agent = false,
     hidey_hole = {
@@ -2849,7 +2883,10 @@ local clues = {
       "Twirl at the crossroads north of Rimmington. Equip a Sapphire ring, yellow flowers and leather chaps."
     },
     area = { origin = { x = 2953, y = 3239, level = 0 }, size = { x = 3, y = 5 } },
-    items = { "Sapphire ring", "Yellow flowers", "Leather chaps" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.RING,     options = { config.Obj.SAPPHIRE_RING } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.FLOWERS_WATERFALL_QUEST_YELLOW } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.LEATHER_CHAPS } } },
     emotes = { "Twirl" },
     double_agent = false,
     hidey_hole = {
@@ -2866,7 +2903,10 @@ local clues = {
       "Blow raspberries outside the entrance to Keep Le Faye. Equip a studded leather coif, iron platebody and leather gloves."
     },
     area = { origin = { x = 2757, y = 3398, level = 0 }, size = { x = 7, y = 8 } },
-    items = { "Studded leather coif", "Iron platebody", "Leather gloves" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,  options = { config.Obj.COIF } },
+      { slot = zyklib.game.equipment.SLOTS.BODY,  options = { config.Obj.IRON_PLATEBODY } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS, options = { config.Obj.LEATHER_GLOVES } } },
     emotes = { "Raspberry" },
     double_agent = false,
     hidey_hole = {
@@ -2883,7 +2923,10 @@ local clues = {
       "Cheer for the monks at Port Sarim. Equip a studded leather coif, steel plateskirt and a sapphire necklace."
     },
     area = { origin = { x = 3044, y = 3234, level = 0 }, size = { x = 6, y = 4 } },
-    items = { "Studded Leather coif", "Steel plateskirt", "Sapphire necklace" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD, options = { config.Obj.COIF } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS, options = { config.Obj.STEEL_PLATESKIRT } },
+      { slot = zyklib.game.equipment.SLOTS.NECK, options = { config.Obj.SAPPHIRE_NECKLACE } } },
     emotes = { "Cheer" },
     double_agent = false,
     hidey_hole = {
@@ -2898,7 +2941,10 @@ local clues = {
     tier = "easy",
     text = { "Wave on Mudskipper Point. Equip a gold ring, leather chaps and a steel mace." },
     area = { origin = { x = 2981, y = 3106, level = 0 }, size = { x = 25, y = 25 } },
-    items = { "Gold ring", "Leather chaps", "Steel mace" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.RING,     options = { config.Obj.GOLD_RING } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.LEATHER_CHAPS } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.STEEL_MACE } } },
     emotes = { "Wave" },
     double_agent = false,
     hidey_hole = {
@@ -2915,7 +2961,10 @@ local clues = {
       "Shrug in the mine near Rimmington. Equip a gold necklace, gold ring and a bronze spear."
     },
     area = { origin = { x = 2970, y = 3230, level = 0 }, size = { x = 20, y = 22 } },
-    items = { "Gold necklace", "Gold ring", "Bronze spear" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { config.Obj.GOLD_NECKLACE } },
+      { slot = zyklib.game.equipment.SLOTS.RING,     options = { config.Obj.GOLD_RING } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.BRONZE_SPEAR } } },
     emotes = { "Shrug" },
     double_agent = false,
     hidey_hole = {
@@ -2932,7 +2981,10 @@ local clues = {
       "Clap in the main exam room of the Exam Centre. Equip a ruby amulet, blue flowers and leather gloves."
     },
     area = { origin = { x = 3351, y = 3342, level = 0 }, size = { x = 9, y = 8 } },
-    items = { "Ruby amulet", "Blue flowers", "Leather gloves" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { config.Obj.STRUNG_RUBY_AMULET } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.FLOWERS_WATERFALL_QUEST_BLUE } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS,    options = { config.Obj.LEATHER_GLOVES } } },
     emotes = { "Clap" },
     double_agent = false,
     hidey_hole = {
@@ -2949,7 +3001,10 @@ local clues = {
       "Yawn in Varrock Palace library. Equip a holy symbol, leather vambraces and an iron warhammer."
     },
     area = { origin = { x = 3207, y = 3490, level = 0 }, size = { x = 8, y = 8 } },
-    items = { "Holy symbol", "Leather vambraces", "Iron warhammer" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { config.Obj.BLESSEDSTAR } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS,    options = { config.Obj.LEATHER_VAMBRACES } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.IRON_WARHAMMER } } },
     emotes = { "Yawn" },
     double_agent = false,
     hidey_hole = {
@@ -2966,7 +3021,10 @@ local clues = {
       "Dance in the Party Room. Equip a steel full helmet, steel platebody and an iron plateskirt."
     },
     area = { origin = { x = 3036, y = 3371, level = 0 }, size = { x = 20, y = 15 } },
-    items = { "Steel full helmet", "Steel platebody", "Iron plateskirt" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD, options = { config.Obj.STEEL_FULL_HELM } },
+      { slot = zyklib.game.equipment.SLOTS.BODY, options = { config.Obj.STEEL_PLATEBODY } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS, options = { config.Obj.IRON_PLATESKIRT } } },
     emotes = { "Dance" },
     double_agent = false,
     hidey_hole = {
@@ -2983,7 +3041,10 @@ local clues = {
       "Twirl in Draynor Manor by the fountain. Equip an iron platebody, studded chaps and a bronze full helm."
     },
     area = { origin = { x = 3085, y = 3332, level = 0 }, size = { x = 6, y = 6 } },
-    items = { "Iron platebody", "Studden chaps", "Bronze full helm" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.BODY, options = { config.Obj.IRON_PLATEBODY } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS, options = { config.Obj.STUDDED_CHAPS } },
+      { slot = zyklib.game.equipment.SLOTS.HEAD, options = { config.Obj.BRONZE_FULL_HELM } } },
     emotes = { "Twirl" },
     double_agent = false,
     hidey_hole = {
@@ -3000,7 +3061,10 @@ local clues = {
       "Jump for joy at the beehives. Equip iron boots, an unholy symbol and a steel hatchet."
     },
     area = { origin = { x = 2752, y = 3437, level = 0 }, size = { x = 15, y = 14 } },
-    items = { "Iron boots", "Unholy smybol", "Steel hatchet" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.FEET,     options = { config.Obj.IRON_ARMOURED_BOOTS } },
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { config.Obj.BLESSEDSNAKE } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.STEEL_AXE } } },
     emotes = { "Jump for Joy" },
     double_agent = false,
     hidey_hole = {
@@ -3017,7 +3081,10 @@ local clues = {
       "Headbang in the mine north of Al-kharid. Equip a Polar Camo Top, Leather Gloves and Leather Boots."
     },
     area = { origin = { x = 3296, y = 3291, level = 0 }, size = { x = 8, y = 26 } },
-    items = { "Polar Camo Top", "Leather Gloves", "Leather Boots" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.BODY,  options = { config.Obj.HUNTING_CAMOFLAUGE_ROBE_POLAR } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS, options = { config.Obj.LEATHER_GLOVES } },
+      { slot = zyklib.game.equipment.SLOTS.FEET,  options = { config.Obj.LEATHER_BOOTS } } },
     emotes = { "Headbang" },
     double_agent = false,
     hidey_hole = {
@@ -3034,7 +3101,10 @@ local clues = {
       "Bow or curtsy outside the entrance to the Legends' Guild. Equip iron platelegs, an emerald amulet and an oak shieldbow."
     },
     area = { origin = { x = 2726, y = 3346, level = 0 }, size = { x = 6, y = 4 } },
-    items = { "Iron platelegs", "Emerald Amulet", "Oak Shieldbow" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.IRON_PLATELEGS } },
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { config.Obj.STRUNG_EMERALD_AMULET } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.OAK_LONGBOW } } },
     emotes = { "Bow or Curtsy" },
     double_agent = false,
     hidey_hole = {
@@ -3051,7 +3121,19 @@ local clues = {
       "Cheer in the centre of the Burthorpe Games Room. Have nothing equipped at all when you do."
     },
     area = { origin = { x = 2194, y = 4946, level = 0 }, size = { x = 28, y = 28 } },
-    items = { "Nothing" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.CAPE,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.BODY,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS,    options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.FEET,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.RING,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.AMMO,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.POCKET,   options = { nil } },
+    },
     emotes = { "Cheer" },
     double_agent = false,
     hidey_hole = nil
@@ -3064,7 +3146,10 @@ local clues = {
       "Dance at the crossroads north of Draynor. Equip an iron chainbody, sapphire ring and a shieldbow."
     },
     area = { origin = { x = 3108, y = 3293, level = 0 }, size = { x = 4, y = 4 } },
-    items = { "Iron Chainbody", "Sapphire Ring", "Shieldbow" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.BODY,     options = { config.Obj.IRON_CHAINBODY } },
+      { slot = zyklib.game.equipment.SLOTS.RING,     options = { config.Obj.SAPPHIRE_RING } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.LONGBOW } } },
     emotes = { "Dance" },
     double_agent = false,
     hidey_hole = {
@@ -3081,7 +3166,10 @@ local clues = {
       "Dance a jig by the entrance to the Fishing Guild. Equip an emerald ring, sapphire amulet, and a bronze chainbody."
     },
     area = { origin = { x = 2611, y = 3384, level = 0 }, size = { x = 5, y = 3 } },
-    items = { "Emerald Ring", "Sapphire Amulet", "Bronze Chainbody" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.RING, options = { config.Obj.EMERALD_RING } },
+      { slot = zyklib.game.equipment.SLOTS.NECK, options = { config.Obj.STRUNG_SAPPHIRE_AMULET } },
+      { slot = zyklib.game.equipment.SLOTS.BODY, options = { config.Obj.BRONZE_CHAINBODY } } },
     emotes = { "Jig" },
     double_agent = false,
     hidey_hole = {
@@ -3098,7 +3186,10 @@ local clues = {
       "Bow or curtsy at the entrance to Het's Oasis. Equip an iron chainbody, leather chaps and a studded leather coif."
     },
     area = { origin = { x = 3318, y = 3225, level = 0 }, size = { x = 9, y = 17 } },
-    items = { "Iron Chainbody", "Leather Chaps", "Leather Coif" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.BODY, options = { config.Obj.IRON_CHAINBODY } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS, options = { config.Obj.LEATHER_CHAPS } },
+      { slot = zyklib.game.equipment.SLOTS.HEAD, options = { config.Obj.COIF } } },
     emotes = { "Bow or Curtsy" },
     double_agent = false,
     hidey_hole = {
@@ -3115,7 +3206,10 @@ local clues = {
       "Cry outside the south gates of Fort Forinthry. Equip a hard leather body, leather chaps and a bronze hatchet."
     },
     area = { origin = { x = 3296, y = 3520, level = 0 }, size = { x = 16, y = 9 } },
-    items = { "Hard Leather Body", "Leather Chaps", "Bronze Hatchet" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.BODY,     options = { config.Obj.HARDLEATHER_BODY } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.LEATHER_CHAPS } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.BRONZE_AXE } } },
     emotes = { "Cry" },
     double_agent = false,
     hidey_hole = {
@@ -3132,7 +3226,10 @@ local clues = {
       "Clap on the top level of the mill north of East Ardougne. Equip an emerald ring, wood camo top and an unenchanted tiara."
     },
     area = { origin = { x = 2630, y = 3381, level = 2 }, size = { x = 6, y = 6 } },
-    items = { "Emerald Ring", "Wood Camo Top", "Unenchanted Tiara" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.RING, options = { config.Obj.EMERALD_RING } },
+      { slot = zyklib.game.equipment.SLOTS.BODY, options = { config.Obj.HUNTING_CAMOFLAUGE_ROBE_WOOD } },
+      { slot = zyklib.game.equipment.SLOTS.HEAD, options = { config.Obj.TIARA } } },
     emotes = { "Clap" },
     double_agent = false,
     hidey_hole = {
@@ -3149,7 +3246,10 @@ local clues = {
       "Yawn in Draynor Marketplace. Equip an iron kiteshield, steel longsword and studded leather chaps."
     },
     area = { origin = { x = 3074, y = 3246, level = 0 }, size = { x = 13, y = 10 } },
-    items = { "Iron Kiteshield", "Steel Longsword", "Studded Leather Chaps" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.OFFHAND,  options = { config.Obj.IRON_KITESHIELD } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.STEEL_LONGSWORD } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.STUDDED_CHAPS } } },
     emotes = { "Yawn" },
     double_agent = false,
     hidey_hole = {
@@ -3166,7 +3266,10 @@ local clues = {
       "Cheer at the Druids' Circle. Equip an air tiara, bronze two-handed sword and a gold amulet."
     },
     area = { origin = { x = 2917, y = 3476, level = 0 }, size = { x = 10, y = 11 } },
-    items = { "Air Tiara", "Bronze 2h Sword", "Gold Amulet" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.TIARA_AIR } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.BRONZE_2H_SWORD } },
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { config.Obj.STRUNG_GOLD_AMULET } } },
     emotes = { "Cheer" },
     double_agent = false,
     hidey_hole = {
@@ -3183,7 +3286,10 @@ local clues = {
       "Beckon at the Digsite, near the eastern winch. Bow or curtsy before you talk to me. Equip a pointed red and black snelm, snakeskin boots, and an iron pickaxe."
     },
     area = { origin = { x = 3375, y = 3440, level = 0 }, size = { x = 7, y = 7 } },
-    items = { "Pointed Red and Black Snelm", "Snakeskin Boots", "Iron Pickaxe" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.SNELM_POINT_REDPLUSBLACK } },
+      { slot = zyklib.game.equipment.SLOTS.FEET,     options = { config.Obj.SNAKESKIN_BOOTS } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.IRON_PICKAXE } } },
     emotes = { "Beckon", "Bow or Curtsy" },
     double_agent = false,
     hidey_hole = {
@@ -3200,7 +3306,11 @@ local clues = {
       "Panic by the mausoleum in Morytania. Wave before you speak to me. Equip a mithril plateskirt, a maple shieldbow and no boots."
     },
     area = { origin = { x = 3490, y = 3565, level = 0 }, size = { x = 25, y = 17 } },
-    items = { "Mithril Plateskirt", "Maple Shieldbow", "No boots" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.MITHRIL_PLATESKIRT } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.MAPLE_LONGBOW } },
+      { slot = zyklib.game.equipment.SLOTS.FEET,     options = { nil } }
+    },
     emotes = { "Panic", "Wave" },
     double_agent = false,
     hidey_hole = {
@@ -3217,7 +3327,9 @@ local clues = {
       "Dance a jig under Shantay's Awning. Bow or curtsy before you talk to me. Equip a pointed blue snail helmet and an air staff."
     },
     area = { origin = { x = 3303, y = 3121, level = 0 }, size = { x = 4, y = 4 } },
-    items = { "Pointed Blue Snelm", "Air Staff" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.SNELM_POINT_BLUE } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.DOM_AIR_STAFF } } },
     emotes = { "Jig", "Bow or Curtsy" },
     double_agent = false,
     hidey_hole = {
@@ -3234,7 +3346,10 @@ local clues = {
       "Think under the lens in the Observatory. Twirl before you talk to me. Equip a mithril chainbody, green dragonhide chaps and a ruby amulet."
     },
     area = { origin = { x = 2439, y = 3164, level = 1 }, size = { x = 3, y = 3 } },
-    items = { "Mithril Chainbody", "Green Dragonhide Chaps", "Ruby Amulet" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.BODY, options = { config.Obj.MITHRIL_CHAINBODY } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS, options = { config.Obj.DRAGONHIDE_CHAPS } },
+      { slot = zyklib.game.equipment.SLOTS.NECK, options = { config.Obj.STRUNG_RUBY_AMULET } } },
     emotes = { "Think", "Twirl" },
     double_agent = false,
     hidey_hole = {
@@ -3251,7 +3366,10 @@ local clues = {
       "Twirl on the bridge by Barbarian Village. Salute before you talk to me. Equip an iron hatchet, steel kiteshield and a mithril full helmet."
     },
     area = { origin = { x = 3102, y = 3420, level = 0 }, size = { x = 7, y = 2 } },
-    items = { "Iron Hatchet", "Steel Kiteshield", "Mithril Full Helm" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.IRON_AXE } },
+      { slot = zyklib.game.equipment.SLOTS.OFFHAND,  options = { config.Obj.STEEL_KITESHIELD } },
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.MITHRIL_FULL_HELM } } },
     emotes = { "Twirl", "Salute" },
     double_agent = false,
     hidey_hole = {
@@ -3268,7 +3386,10 @@ local clues = {
       "Jump for joy in Yanille bank. Dance a jig before you talk to me. Equip an iron crossbow, adamant helmet and snakeskin chaps."
     },
     area = { origin = { x = 2609, y = 3088, level = 0 }, size = { x = 5, y = 10 } },
-    items = { "Iron Crossbow", "Adamant Med Helmet", "Snakeskin Chaps" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.XBOWS_CROSSBOW_IRON } },
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.ADAMANT_MED_HELM } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.SNAKESKIN_CHAPS } } },
     emotes = { "Jump for Joy", "Jig" },
     double_agent = false,
     hidey_hole = {
@@ -3285,7 +3406,10 @@ local clues = {
       "Dance in the centre of Canifis. Bow or curtsy before you talk to me. Equip a spiny helmet, mithril platelegs and an iron two-handed sword."
     },
     area = { origin = { x = 3485, y = 3480, level = 0 }, size = { x = 19, y = 17 } },
-    items = { "Spine Helm", "Mithril Platelegs", "Iron two-handed sword" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.WALLBEAST_SPIKE_HELMET } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.MITHRIL_PLATELEGS } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.IRON_2H_SWORD } } },
     emotes = { "Dance", "Bow or Curtsy" },
     double_agent = false,
     hidey_hole = {
@@ -3302,7 +3426,10 @@ local clues = {
       "Cheer in the Barbarian Agility Arena. Headbang before you talk to me. Equip a steel platebody, maple shortbow and bronze boots."
     },
     area = { origin = { x = 2528, y = 3542, level = 0 }, size = { x = 28, y = 18 } },
-    items = { "Steel Platebody", "Maple Shortbow", "Bronze Boots" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.BODY,     options = { config.Obj.STEEL_PLATEBODY } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.MAPLE_SHORTBOW } },
+      { slot = zyklib.game.equipment.SLOTS.FEET,     options = { config.Obj.BRONZE_ARMOURED_BOOTS } } },
     emotes = { "Cheer", "Headbang" },
     double_agent = false,
     hidey_hole = {
@@ -3319,7 +3446,10 @@ local clues = {
       "Cry on the platform of the south-west tree in the Gnome Agility Arena. Indicate 'no' before you talk to me. Equip a steel kiteshield, ring of forging and green dragonhide chaps."
     },
     area = { origin = { x = 2472, y = 3418, level = 2 }, size = { x = 6, y = 4 } },
-    items = { "Green Dragonhide Chaps", "Steel Kiteshield", "Ring of Forging" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.LEGS,    options = { config.Obj.DRAGONHIDE_CHAPS } },
+      { slot = zyklib.game.equipment.SLOTS.OFFHAND, options = { config.Obj.STEEL_KITESHIELD } },
+      { slot = zyklib.game.equipment.SLOTS.RING,    options = { config.Obj.RING_OF_FORGING } } },
     emotes = { "Cry", "No" },
     double_agent = false,
     hidey_hole = {
@@ -3335,7 +3465,10 @@ local clues = {
     text = {
       "Beckon in Tai Bwo Wannai. Clap before you talk to me. Equip green dragonhide chaps, a ring of duelling and a mithril helmet."
     },
-    items = { "Green dragonhide chaps", "Ring of duelling", "Mithril helm" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.LEGS, options = { config.Obj.DRAGONHIDE_CHAPS } },
+      { slot = zyklib.game.equipment.SLOTS.RING, options = { config.Obj.RING_OF_DUELING_CHARGED } },
+      { slot = zyklib.game.equipment.SLOTS.HEAD, options = { config.Obj.MITHRIL_MED_HELM } } },
     emotes = { "Beckon", "Clap" },
     double_agent = false,
     area = { origin = { x = 2778, y = 3057, level = 0 }, size = { x = 33, y = 17 } },
@@ -3352,7 +3485,10 @@ local clues = {
     text = {
       "Cheer in the Ogre Pen in the Training Camp. Show you are angry before you talk to me. Equip a green dragonhide body and chaps, and a steel squareshield."
     },
-    items = { "Green dragonhide body", "Green dragonhide chaps", "Steel square shield" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.BODY,    options = { config.Obj.DRAGONHIDE_BODY } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,    options = { config.Obj.DRAGONHIDE_CHAPS } },
+      { slot = zyklib.game.equipment.SLOTS.OFFHAND, options = { config.Obj.STEEL_SQ_SHIELD } } },
     emotes = { "Cheer", "Angry" },
     double_agent = false,
     area = { origin = { x = 2523, y = 3373, level = 0 }, size = { x = 11, y = 5 } },
@@ -3369,7 +3505,10 @@ local clues = {
     text = {
       "Cry in the Catherby archery shop. Bow or curtsy before you talk to me. Equip a round red and black snelm, a hard leather body and an unblessed silver sickle."
     },
-    items = { "Round red and black snelm", "Hard leather body", "Unblessed silver sickle" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.SNELM_ROUND_REDPLUSBLACK } },
+      { slot = zyklib.game.equipment.SLOTS.BODY,     options = { config.Obj.HARDLEATHER_BODY } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.SILVER_SICKLE } } },
     emotes = { "Cry", "Bow or Curtsy" },
     double_agent = false,
     area = { origin = { x = 2824, y = 3454, level = 0 }, size = { x = 6, y = 4 } },
@@ -3386,7 +3525,10 @@ local clues = {
     text = {
       "Yawn in the Castle Wars lobby. Shrug before you talk to me. Equip a ruby amulet, mithril scimitar and an iron square shield."
     },
-    items = { "Ruby amulet", "Mithril scimitar", "Iron square shield" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { config.Obj.STRUNG_RUBY_AMULET } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.MITHRIL_SCIMITAR } },
+      { slot = zyklib.game.equipment.SLOTS.OFFHAND,  options = { config.Obj.IRON_SQ_SHIELD } } },
     emotes = { "Yawn", "Shrug" },
     double_agent = false,
     area = { origin = { x = 2436, y = 3080, level = 0 }, size = { x = 13, y = 20 } },
@@ -3404,7 +3546,19 @@ local clues = {
       "Panic in the heart of the Haunted Woods. Beware of double agents! Have no items equipped when you do."
     },
     emotes = { "Panic" },
-    items = { "Nothing" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.CAPE,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.BODY,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS,    options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.FEET,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.RING,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.AMMO,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.POCKET,   options = { nil } },
+    },
     double_agent = true,
     area = { origin = { x = 3611, y = 3483, level = 0 }, size = { x = 11, y = 11 } },
     hidey_hole = nil
@@ -3416,7 +3570,10 @@ local clues = {
     text = {
       "Laugh in the Jokul's tent in the Mountain Camp. Beware of double agents! Equip a rune full helmet, blue dragonhide chaps and a fire battlestaff."
     },
-    items = { "Rune full helm", "Blue dragonhide chaps", "Fire battlestaff" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.RUNE_FULL_HELM } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.BLUE_DRAGONHIDE_CHAPS } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.FIRE_BATTLESTAFF } } },
     emotes = { "Laugh" },
     double_agent = true,
     area = { origin = { x = 2790, y = 3667, level = 0 }, size = { x = 8, y = 9 } },
@@ -3433,7 +3590,10 @@ local clues = {
     text = {
       "Panic by the pilot on White Wolf Mountain. Beware of double agents! Equip mithril platelegs, a ring of life, and a rune hatchet."
     },
-    items = { "Mithril platelegs", "Ring of life", "Rune hatchet" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.MITHRIL_PLATELEGS } },
+      { slot = zyklib.game.equipment.SLOTS.RING,     options = { config.Obj.RING_OF_LIFE } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.RUNE_AXE } } },
     emotes = { "Panic" },
     double_agent = true,
     area = { origin = { x = 2843, y = 3489, level = 1 }, size = { x = 11, y = 10 } },
@@ -3450,7 +3610,12 @@ local clues = {
     text = {
       "Salute in the banana plantation. Beware of double agents! Equip a diamond ring, amulet of power and nothing on your chest and legs."
     },
-    items = { "Diamond ring", "Amulet of power", "Nothing on your chest and legs" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.RING, options = { config.Obj.DIAMOND_RING } },
+      { slot = zyklib.game.equipment.SLOTS.NECK, options = { config.Obj.AMULET_OF_POWER } },
+      { slot = zyklib.game.equipment.SLOTS.BODY, options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS, options = { nil } },
+    },
     emotes = { "Salute" },
     double_agent = true,
     area = { origin = { x = 2908, y = 3155, level = 0 }, size = { x = 27, y = 20 } },
@@ -3467,7 +3632,10 @@ local clues = {
     text = {
       "Dance at the cat-doored pyramid in Sophanem. Beware of double agents! Equip a ring of life, an amulet of glory and an adamant two-handed sword."
     },
-    items = { "Ring of life", "Uncharged amulet of glory", "Adamant 2h sword" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.RING,     options = { config.Obj.RING_OF_LIFE } },
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { config.Obj.AMULET_OF_GLORY } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.ADAMANT_2H_SWORD } } },
     emotes = { "Dance" },
     double_agent = true,
     area = { origin = { x = 3292, y = 2781, level = 0 }, size = { x = 6, y = 4 } },
@@ -3485,7 +3653,10 @@ local clues = {
       "Blow a raspberry in the Fishing Guild bank. Beware of double agents! Equip an elemental shield, blue dragonhide chaps and a rune warhammer."
     },
     area = { origin = { x = 2585, y = 3420, level = 0 }, size = { x = 3, y = 4 } },
-    items = { "Elemental shield", "Blue dragonhide chaps", "Rune warhammer" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.OFFHAND,  options = { config.Obj.ELEMENTAL_SHIELD } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.BLUE_DRAGONHIDE_CHAPS } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.RUNE_WARHAMMER } } },
     emotes = { "Raspberry" },
     double_agent = true,
     hidey_hole = {
@@ -3501,7 +3672,10 @@ local clues = {
     text = {
       "Blow a kiss between the tables in Shilo Village bank. Beware of double agents! Equip a splitbark helm, mud pie and rune platebody."
     },
-    items = { "Splitbark helmet", "Mud pie", "Rune platebofy" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.SPLITBARK_HELM } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.MUD_PIE } },
+      { slot = zyklib.game.equipment.SLOTS.BODY,     options = { config.Obj.RUNE_PLATEBODY } } },
     emotes = { "Blow kiss" },
     double_agent = true,
     area = { origin = { x = 2851, y = 2952, level = 0 }, size = { x = 3, y = 4 } },
@@ -3519,7 +3693,12 @@ local clues = {
       "Bow or curtsy at the top of the lighthouse. Beware of double agents! Equip a blue dragonhide body, blue dragonhide vambraces and no jewellery."
     },
     area = { origin = { x = 2504, y = 3636, level = 2 }, size = { x = 10, y = 10 } },
-    items = { "Blue dragonhide body", "Blue dragon vambraces", "No jewellry" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.BODY,  options = { config.Obj.BLUE_DRAGONHIDE_BODY } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS, options = { config.Obj.BLUE_DRAGON_VAMBRACES } },
+      { slot = zyklib.game.equipment.SLOTS.RING,  options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.NECK,  options = { nil } },
+    },
     emotes = { "Bow or Curtsy" },
     double_agent = true,
     hidey_hole = {
@@ -3535,7 +3714,10 @@ local clues = {
     text = {
       "Yawn near the Wilderness Bandit camp obelisk. Beware of double agents! Equip an iron square shield, blue dragon vambraces and an iron pickaxe."
     },
-    items = { "Iron square shield", "Blue dragonhide vambraces", "Iron pickaxe" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.OFFHAND,  options = { config.Obj.IRON_SQ_SHIELD } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS,    options = { config.Obj.BLUE_DRAGON_VAMBRACES } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.IRON_PICKAXE } } },
     emotes = { "Yawn" },
     area = { origin = { x = 3031, y = 3728, level = 0 }, size = { x = 9, y = 9 } },
     hidey_hole = {
@@ -3552,7 +3734,10 @@ local clues = {
     text = {
       "Shrug in the Zamorak temple, found in the eastern Wilderness. Beware of double agents! Equip bronze platelegs, an iron platebody and blue dragonhide vambraces."
     },
-    items = { "Bronze platelegs", "Iron platebody", "Blue dragonhide vambraces" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.LEGS,  options = { config.Obj.BRONZE_PLATELEGS } },
+      { slot = zyklib.game.equipment.SLOTS.BODY,  options = { config.Obj.IRON_PLATEBODY } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS, options = { config.Obj.BLUE_DRAGON_VAMBRACES } } },
     emotes = { "Shrug" },
     area = { origin = { x = 3234, y = 3603, level = 0 }, size = { x = 12, y = 12 } },
     double_agent = true,
@@ -3570,7 +3755,10 @@ local clues = {
       "Cheer by the sulphur pit in the TzHaar City. Beware of double agents! Equip a fire cape, a Toktz-ket-xil and a spork."
     },
     area = { origin = { x = 4630, y = 5104, level = 0 }, size = { x = 14, y = 14 } },
-    items = { "Fire Cape", "Toktz-Ket-Xil", "Spork" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.CAPE,     options = { config.Obj.TZHAAR_CAPE_FIRE } },
+      { slot = zyklib.game.equipment.SLOTS.OFFHAND,  options = { config.Obj.TZHAAR_SPIKESHIELD } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.HUNDRED_SPORK } } },
     emotes = { "Cheer" },
     double_agent = true,
     hidey_hole = {
@@ -3588,7 +3776,10 @@ local clues = {
     },
     emotes = { "Headbang" },
     area = { origin = { x = 3400, y = 3541, level = 0 }, size = { x = 47, y = 34 } },
-    items = { "Imp-hide Hood", "Prifddinia Musician's Robe Top", "Amulet of Magic" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD, options = { config.Obj.IMPHIDE_HOOD } },
+      { slot = zyklib.game.equipment.SLOTS.BODY, options = { config.Obj.ELFCITY_MUSICIAN_BODY } },
+      { slot = zyklib.game.equipment.SLOTS.NECK, options = { config.Obj.AMULET_OF_MAGIC } } },
     double_agent = true,
     hidey_hole = {
       config = "TRAIL17_STASH_55_SLAYER_TOWER",
@@ -3604,7 +3795,21 @@ local clues = {
       "Dare to laugh in the Green Ghost inn at Port Phasmatys. Beware of double agents! Equip an Iban's staff, a ghostly cloak and a cavalier."
     },
     emotes = { "Laugh" },
-    items = { "Iban's Staff", "Ghostly Cloak", "Cavalier" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.IBANSTAFF } },
+      { slot = zyklib.game.equipment.SLOTS.CAPE,     options = { config.Obj.SECRET_GHOST_CLOAK } },
+      {
+        slot = zyklib.game.equipment.SLOTS.HEAD,
+        options = {
+          config.Obj.CAVALIER_BROWN,
+          config.Obj.CAVALIER_DARK,
+          config.Obj.CAVALIER_BLACK,
+          config.Obj.TRAIL17_CAVALIER_GILDED,
+          config.Obj.PIRATE_HAT_CAVALIER_HIGHWAY_MASK,
+          config.Obj.TRAIL17_CAVALIER_GILDED_HIGHWAY_MASK,
+        }
+      }
+    },
     double_agent = true,
     area = { origin = { x = 3671, y = 3489, level = 0 }, size = { x = 11, y = 11 } },
     hidey_hole = {
@@ -3622,7 +3827,28 @@ local clues = {
     },
     double_agent = true,
     area = { origin = { x = 2242, y = 5956, level = 0 }, size = { x = 60, y = 57 } },
-    items = { "Any Dragon Mask", "Dragon Rider Amulet", "Dragon Defender" },
+    items = {
+      {
+        slot = zyklib.game.equipment.SLOTS.HEAD,
+        options = {
+          config.Obj.TRAIL_GREENDRAGON_HEAD,
+          config.Obj.TRAIL_BLUEDRAGON_HEAD,
+          config.Obj.TRAIL_REDDRAGON_HEAD,
+          config.Obj.TRAIL_BLACKDRAGON_HEAD,
+          config.Obj.TRAIL_FROSTDRAGON_HEAD,
+          config.Obj.TRAIL_BRONZEDRAGON_HEAD,
+          config.Obj.TRAIL_IRONDRAGON_HEAD,
+          config.Obj.TRAIL_STEELDRAGON_HEAD,
+          config.Obj.TRAIL_MITHRILDRAGON_HEAD,
+          config.Obj.TRAIL17_ADAMANT_DRAGON_HEAD,
+          config.Obj.TRAIL17_DRAGONSTONE_DRAGON_HEAD,
+          config.Obj.TRAIL17_ONYX_DRAGON_HEAD,
+          config.Obj.TRAIL17_RUNE_DRAGON_HEAD,
+          config.Obj.TRAIL17_HYDRIX_DRAGON_HEAD,
+        }
+      },
+      { slot = zyklib.game.equipment.SLOTS.NECK,    options = { config.Obj.OOAK_DRAGONRIDER_AMULET } },
+      { slot = zyklib.game.equipment.SLOTS.OFFHAND, options = { config.Obj.DRAGON_PARRYINGDAGGER } } },
     emotes = { "Raspberry" },
     hidey_hole = {
       config = "TRAIL17_STASH_60_CELESTIAL_DRAGONS",
@@ -3638,7 +3864,9 @@ local clues = {
       "Wave in front of the entrance to the Grand Library of Menaphos. Beware of double agents! Equip an asylum surgeon's ring and the Scabaras mask."
     },
     area = { origin = { x = 3173, y = 2708, level = 0 }, size = { x = 3, y = 4 } },
-    items = { "Asylum Surgeon's Ring", "Scabaras Mask" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.RING, options = { config.Obj.HOUSE_RING_HIGH } },
+      { slot = zyklib.game.equipment.SLOTS.HEAD, options = { config.Obj.OZAN2_TOMB_MASK_SCABARAS } } },
     emotes = { "Wave" },
     double_agent = true,
     hidey_hole = {
@@ -3655,7 +3883,10 @@ local clues = {
       "Jig in the Edgeville Monastery garden. Beware of double agents! Equip a holy cithara, Saradomin's murmur and a ring of devotion."
     },
     emotes = { "Jig" },
-    items = { "Holy Cithara", "Saradomin's Murmur", "Ring of Devotion" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.OFFHAND, options = { config.Obj.OPN_CITHARA } },
+      { slot = zyklib.game.equipment.SLOTS.NECK,    options = { config.Obj.GODWARS_AMULET_RANGE } },
+      { slot = zyklib.game.equipment.SLOTS.RING,    options = { config.Obj.RING_OF_PRAYER } } },
     double_agent = true,
     area = { origin = { x = 3046, y = 3501, level = 0 }, size = { x = 12, y = 8 } },
     hidey_hole = {
@@ -3671,7 +3902,10 @@ local clues = {
     text = {
       "Bow or curtsy at the charm sprite hunter area. Beware of double agents! Equip an enhanced yaktwee stick, a Dagon-hai hat and an amulet of ranging."
     },
-    items = { "Enhances Yaktwee Stick", "Dagon-Hai Hat", "Amulet of Ranging" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.HUNTCHARM_STAVE_ENHANCED } },
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { config.Obj.LUC2_DAGONHAI_HAT } },
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { config.Obj.AMULET_OF_RANGING } } },
     area = { origin = { x = 2391, y = 3362, level = 0 }, size = { x = 26, y = 22 } },
     emotes = { "Bow or Curtsy" },
     double_agent = true,
@@ -3689,7 +3923,10 @@ local clues = {
       "Think in the Hefin district of Prifddinas. Beware of double agents! Equip an ancient staff, Prifddinian worker's trousers and a berserker ring."
     },
     emotes = { "Think" },
-    items = { "Ancient Staff", "Prifdiinia Worker's Trousers", "Berserker Ring" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.STAFF_OF_ZAROS } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.ELFCITY_SKILLER_LEGS } },
+      { slot = zyklib.game.equipment.SLOTS.RING,     options = { config.Obj.BERZERKER_RING } } },
     area = { origin = { x = 2174, y = 3393, level = 1 }, size = { x = 30, y = 22 } },
     double_agent = true,
     hidey_hole = {
@@ -3706,7 +3943,20 @@ local clues = {
       "Shrug in the Lumbridge Fishing Supplies shop. Beware of double agents! Equip demon slayer gloves, a boater and the cape of legends."
     },
     area = { origin = { x = 3194, y = 3251, level = 0 }, size = { x = 5, y = 8 } },
-    items = { "Demon Slayer Gloves", "Any Boater", "Cape of Legends" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HANDS, options = { config.Obj.DND_SUMMON_ARMOUR_GLOVES } },
+      {
+        slot = zyklib.game.equipment.SLOTS.HEAD,
+        options = {
+          config.Obj.STRAWBOATER_RED,
+          config.Obj.STRAWBOATER_ORANGE,
+          config.Obj.STRAWBOATER_GREEN,
+          config.Obj.STRAWBOATER_BLUE,
+          config.Obj.STRAWBOATER_BLACK,
+          config.Obj.TRAIL17_STRAWBOATER_GILDED,
+        }
+      },
+      { slot = zyklib.game.equipment.SLOTS.CAPE,  options = { config.Obj.CAPE_OF_LEGENDS } } },
     emotes = { "Shrug" },
     double_agent = true,
     hidey_hole = {
@@ -3722,7 +3972,10 @@ local clues = {
     text = {
       "Have an idea inside the Invention Guild. Beware of double agents! Equip a lab coat top, lab coat legs and a staff of light."
     },
-    items = { "Lab Coat Top", "Lab Coat Legs", "Staff of Light" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.BODY,     options = { config.Obj.INVENT_LABCOAT_TORSO } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { config.Obj.INVENT_LABCOAT_LEGS } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.STAFF_OF_LIGHT } } },
     emotes = { "Idea" },
     area = { origin = { x = 6160, y = 1039, level = 0 }, size = { x = 18, y = 36 } },
     double_agent = true,
@@ -3740,7 +3993,10 @@ local clues = {
       "Dance on an Uncharted Isle. Beware of double agents! Equip a dark bow, some infinity boots and culinaromancer gloves 10."
     },
     area = { origin = { x = 1185, y = 7372, level = 0 }, size = { x = 21, y = 22 } },
-    items = { "Dark bow", "Infinity boots", "Culinaromancer gloves 10" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { config.Obj.DARKBOW } },
+      { slot = zyklib.game.equipment.SLOTS.FEET,     options = { config.Obj.MAGICTRAINING_INFINITYBOOTS } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS,    options = { config.Obj.HUNDRED_GAUNTLETS_LEVEL_10 } } },
     emotes = { "Dance" },
     double_agent = true,
     hidey_hole = {
@@ -3761,7 +4017,19 @@ local clues = {
       "Salute in the Max Guild Garden. Beware of double agents! Have no items equipped when you do."
     },
     area = { origin = { x = 2268, y = 3318, level = 1 }, size = { x = 17, y = 18 } },
-    items = { "Nothing" },
+    items = {
+      { slot = zyklib.game.equipment.SLOTS.HEAD,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.CAPE,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.NECK,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.MAINHAND, options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.BODY,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.LEGS,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.HANDS,    options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.FEET,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.RING,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.AMMO,     options = { nil } },
+      { slot = zyklib.game.equipment.SLOTS.POCKET,   options = { nil } },
+    },
     emotes = { "Salute" },
     hidey_hole = nil,
     double_agent = true
@@ -4023,7 +4291,7 @@ local clues = {
         question = "How many fishermen are there on the Fishing Platform?",
         answers = {
           { answer = 11, note = "Before 'Kennith's Concerns'" },
-          { answer = 0, note = "After 'Kennith's Concerns'" }
+          { answer = 0,  note = "After 'Kennith's Concerns'" }
         }
       }
     },
@@ -4145,7 +4413,8 @@ local clues = {
     challenge = {
       {
         type = "challengescroll",
-        question = "I have 16 kebabs, I eat one myself and share the rest equally between 3 friends. How many do they have each?",
+        question =
+        "I have 16 kebabs, I eat one myself and share the rest equally between 3 friends. How many do they have each?",
         answers = { { answer = 5 } }
       }
     },
@@ -5833,18 +6102,18 @@ local clues = {
       "This scroll will work in the Fremennik Slayer Dungeons. Orb scan range: 16 paces."
     },
     spots = {
-      { x = 2720, y = 9969, level = 0 },
-      { x = 2741, y = 9977, level = 0 },
-      { x = 2701, y = 9978, level = 0 },
-      { x = 2724, y = 9977, level = 0 },
-      { x = 2714, y = 9990, level = 0 },
-      { x = 2731, y = 9998, level = 0 },
+      { x = 2720, y = 9969,  level = 0 },
+      { x = 2741, y = 9977,  level = 0 },
+      { x = 2701, y = 9978,  level = 0 },
+      { x = 2724, y = 9977,  level = 0 },
+      { x = 2714, y = 9990,  level = 0 },
+      { x = 2731, y = 9998,  level = 0 },
       { x = 2718, y = 10000, level = 0 },
       { x = 2722, y = 10025, level = 0 },
       { x = 2705, y = 10027, level = 0 },
       { x = 2745, y = 10024, level = 0 },
-      { x = 2743, y = 9986, level = 0 },
-      { x = 2751, y = 9995, level = 0 },
+      { x = 2743, y = 9986,  level = 0 },
+      { x = 2751, y = 9995,  level = 0 },
       { x = 2754, y = 10009, level = 0 },
       { x = 2804, y = 10004, level = 0 },
       { x = 2808, y = 10018, level = 0 },
@@ -6825,7 +7094,7 @@ local clues = {
       }
     },
     target = "Fire",
-    relevant_configs = {  },
+    relevant_configs = {},
     areas = {
       {
         origin = { x = 4310, y = 823, level = 0 },
@@ -7018,7 +7287,7 @@ local clues = {
     cursor = "herblore",
     ingredients = { { name = "Elder logs", configs = { { domain = "obj", name = "ELDER_LOGS" } } } },
     target = "Fire",
-    relevant_configs = {  },
+    relevant_configs = {},
     areas = {
       {
         origin = { x = 4310, y = 823, level = 0 },
@@ -7863,5 +8132,4 @@ local clues = {
     }
   }
 }
-
 return clues
